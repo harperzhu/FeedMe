@@ -1,1 +1,17 @@
+h1, h2 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #393E41;
+}
 
+#slogan {
+    font-style: italic;
+}
+
+body {
+    background-color: #e7e5df;
+    text-align: center;
+}
+
+p {
+    margin: 50px;
+}
