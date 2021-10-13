@@ -13,5 +13,7 @@ body {
 }
 
 p {
-    margin: 50px;
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
