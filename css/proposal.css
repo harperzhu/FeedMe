@@ -1,19 +1,43 @@
 h1, h2 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #393E41;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h1 {
+    font-size: 3em;
 }
 
 #slogan {
     font-style: italic;
+    text-align: center;
 }
 
 body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
     background-color: #e7e5df;
-    text-align: center;
+    line-height: 1.5;
 }
 
 p {
     margin-top: 30px;
     margin-left: 150px;
     margin-right: 150px;
+    font-size: 1.5em;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+a {
+    color: #44BBA4;
 }
