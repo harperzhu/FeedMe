@@ -1,0 +1,106 @@
+
+#donation-form-wrapper {
+    width: 100%;
+    min-height: 100%;
+    background: #f6f6f6 url(/files/aspca/themes/aspca_2015/images/wrappers/donation-bg.png) repeat-x 0 0;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.donation-steps {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    color: #363636;
+}
+
+.step.active {
+    color: #272626;
+}
+
+.step {
+    color: #cfcfcf;
+    display: inline;
+    clear: none;
+    margin-right: 0;
+    text-align: center;
+    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    font-size: 20px;
+    margin-right: 18px;
+    height: 40px;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.step-wrapper {
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.step-wrapper {
+    margin: 10px 20px 16px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 30px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.individual-profile{
+    background-color: #E3DAD0;
+}
+
+#donation-form-wrapper {
+    width: 100%;
+    min-height: 100%;
+    background: #f6f6f6 url(/files/aspca/themes/aspca_2015/images/wrappers/donation-bg.png) repeat-x 0 0;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    color: #363636;
+}
+
+ b{
+     color:#8C7B6E;
+     font-family:"Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif
+ }
+
+#webform-component-donation--amount .form-type-radio input + label {
+    background-color: #cfcfcf;
+    display: block;
+    color: #fff;
+    padding: 18px 22px;
+    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
