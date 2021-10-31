@@ -15,8 +15,9 @@
 }
 
 .donation-steps {
-    overflow: hidden;
     background-color: #fff;
+    display: flex;
+    float:none;
 }
 
 div {
@@ -164,3 +165,171 @@ p {
     border: 0;
     box-sizing: content-box;
 }
+
+.payment{
+    flex-wrap: wrap;
+
+}
+
+@media only screen and (min-width: 1140px){
+    .step.active {
+        color: #272626;
+        background-position: 0
+    px
+     100%;
+    }
+
+
+.step {
+    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png");
+    float: left;
+    clear: none;
+    width: 200px;
+    text-align: center;
+    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png") no-repeat scroll -200px 100%;
+    margin-right: 18px;
+}
+
+}
+
+
+.step {
+    color: #cfcfcf;
+    display: inline;
+    clear: none;
+    margin-right: 0;
+    text-align: center;
+    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    font-size: 20px;
+    margin-right: 18px;
+    height: 40px;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+
+.donation-steps {
+    display: inline;
+    overflow: hidden;
+    text-align: center;
+}
+
+.step-wrapper{
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.step-num {
+    padding-right: 5px;
+}
+.step-num, .step-label, .step-bar {
+    display: inline;
+}
+
+.step {
+    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png");
+    float: left;
+    clear: none;
+    width: 200px;
+    text-align: center;
+    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png") no-repeat scroll -200px 100%;
+    margin-right: 18px;
+}
+
+.step {
+    color: #cfcfcf;
+    display: inline;
+    clear: none;
+    margin-right: 0;
+    text-align: center;
+    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    font-size: 20px;
+    margin-right: 18px;
+    height: 40px;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+
+  .step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  
+  }
+
+  .step::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+  }
+
+  .step::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+  }
+
+  .step .step-num {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+  }
+
+  .step.active {
+    font-weight: bold;
+  }
+
+  .step.done .step-num {
+    background-color: #4bb543;
+  }
+  
+  .step.done::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #4bb543;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+  }
+  
+  .step:first-child::before {
+    content: none;
+  }
+  .step:last-child::after {
+    content: none;
+  }
