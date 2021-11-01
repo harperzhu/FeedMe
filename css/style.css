@@ -65,7 +65,8 @@ body {
     margin: 10px 20px 16px;
     overflow: hidden;
     position: relative;
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
     height: 50px;
     overflow: hidden;
     position: relative;
@@ -76,7 +77,7 @@ body {
 
 #donation-form-wrapper {
     width: 100%;
-    min-height: 100%;
+    height:250px;
     background: white url(/files/aspca/themes/aspca_2015/images/wrappers/donation-bg.png) repeat-x 0 0;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
@@ -94,13 +95,14 @@ body {
     color: #363636;
 }
 
- b{
+div.donation-form-wrapper div.individual-profile div.row div.col-sm b{
      color:#8C7B6E;
      font-family:"Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif
  }
 
-#webform-component-donation--amount .form-type-radio input + label {
-    width: 22%;
+#webform-component-donation--amount .form-type-radio input {
+    width: 15px;
+    height: 15px;
     flex-direction: column;
     align-items:baseline;
     flex-wrap: wrap;
@@ -109,7 +111,9 @@ body {
     text-align: center;
     display: flex;
     color: #fff;
-    padding: 18px 22px;
+    padding: 10px;
+    margin: 20px 55px;
+    border: 10px;
     font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -117,10 +121,30 @@ body {
     cursor: pointer;
 }
 
+#webform-component-donation--amount .form-type-radio label {
+    width: 60px;
+    height: 60px;
+    flex-direction: column;
+    align-items:baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #DDC9BE;
+    text-align: center;
+    display: flex;
+    color: #fff;
+    padding: 20px;
+    margin: 30px 30px;
+    border: 80px;
+    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .gift-amount{
     display: flex;
-    background-color: #E3DAD0;
+    background-color: white;
 }
 
 html{
@@ -130,20 +154,19 @@ html{
 .donation-title h1 {
     display: table-cell;
     vertical-align: middle;
-    color: #fff;
+    color: #344960;
     font-size: 42px;
     font-family: "Museo Slab 900","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
     line-height: 1.2em;
-    background-color: #344960;
+    background-color: white;
 }
 
 
 .individual-profile{
     float:right;
-
 }
 
-p {
+.card-title p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -168,7 +191,6 @@ p {
 
 .payment{
     flex-wrap: wrap;
-
 }
 
 @media only screen and (min-width: 1140px){
@@ -219,7 +241,7 @@ p {
 
 .step-wrapper{
     width: 300px;
-    height: 200px;
+    height: 150px;
     display: flex;
     flex-wrap: wrap;
 
@@ -338,4 +360,67 @@ p {
   #webform-component-donation .progress-buttons .continue {
     display: inline-block;
     float: none;
+}
+
+
+label.option{
+    font-size:15px;
+    text-align: left;
+}
+
+#webform-component-donation .progress-buttons .continue {
+    display: inline-block;
+    float: none;
+}
+
+body.page-node-done .center-message a.thank-you-continue, .progress-buttons .continue, .progress-buttons .complete, .progress-buttons .processing {
+    background: transparent url(/files/aspca/themes/aspca_2015/images/wrappers/donation-progress-button-gradient@2x.png) repeat 0 0;
+    background-size: 8px 8px;
+}
+
+body.page-node-done .center-message a.thank-you-continue, .progress-buttons .back, .progress-buttons .continue, .progress-buttons .complete, .progress-buttons .processing {
+    background: transparent url(/files/aspca/themes/aspca_2015/images/wrappers/donation-progress-button-gradient.png) repeat 0 0;
+    font-family: "Museo Slab 900","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    padding: 0 70px;
+    height: 96px;
+    float: left;
+    clear: none;
+    text-align: center;
+    font-size: 30px;
+    line-height: 96px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 20px;
+    cursor: pointer;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.progress-buttons .continue{
+    background-color: #CC8561;
+    background-size: 8px 8px;
+    text-align: center;
+}
+
+.progress-buttons{
+    padding:10px 250px
+}
+
+#position-mover{
+    padding-left:250px;
+}
+
+
+h1#page-title{
+    padding-top: 20px;
+    padding-left: 70px;
+    padding-bottom: 20px;
+    padding-right: 20px;
 }
