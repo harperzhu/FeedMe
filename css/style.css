@@ -36,19 +36,13 @@ div.step.active span.step-num{
     text-align: center;
     font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
     font-size: 20px;
-    margin-right: 18px;
     height: 40px;
     image-rendering: crisp-edges;
 }
 
 .step-wrapper {
     display: flex;
-    margin: 10px 20px 16px;
-    padding-top: 10px;
-    padding-left: 20px;
-    height: 20px;
     overflow: hidden;
-    position: relative;
 }
 
 .individual-profile{
@@ -61,7 +55,10 @@ div.step.active span.step-num{
      color:#8C7B6E;
      font-family:"Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif
  }
-
+.wrapper-container {
+    flex:1;
+    flex-direction: column;
+}
 #gift-amount-form .form-type-radio input {
     width: 15px;
     height: 15px;
@@ -142,8 +139,6 @@ html{
 }
 
 .row{
-    margin: 0;
-    padding: 0;
     border: 0;
     box-sizing: content-box;
 }
@@ -163,13 +158,9 @@ html{
 
 
 .step {
-    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png");
     float: left;
     clear: none;
-    width: 200px;
     text-align: center;
-    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png") no-repeat scroll -200px 100%;
-    margin-right: 18px;
 }
 
 }
@@ -179,11 +170,9 @@ html{
     color: #cfcfcf;
     display: inline;
     clear: none;
-    margin-right: 0;
     text-align: center;
     font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
     font-size: 20px;
-    margin-right: 18px;
     height: 40px;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
@@ -207,32 +196,25 @@ html{
 
 }
 
-.step-num {
-    padding-right: 5px;
-}
+
 .step-num, .step-label, .step-bar {
     display: inline;
 }
 
 .step {
-    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png");
     float: left;
     clear: none;
     width: 200px;
     text-align: center;
-    background: transparent url("/files/aspca/themes/aspca_2015/images/wrappers/donation-step-bg.png") no-repeat scroll -200px 100%;
-    margin-right: 18px;
 }
 
 .step {
     color: #cfcfcf;
     display: inline;
     clear: none;
-    margin-right: 0;
     text-align: center;
     font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
     font-size: 20px;
-    margin-right: 18px;
     height: 40px;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
@@ -254,7 +236,6 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
   
   }
 

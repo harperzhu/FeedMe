@@ -1,0 +1,30 @@
+.donation-page{
+display: flex;
+flex:1;
+flex-direction: row;
+}
+
+.donation-window{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+}
+body{
+    display: flex;
+}
+
+.individual-profile{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+}
+
+.donation-steps{
+    display: flex;
+    flex:1;
+}
+    
+.payment-amount{
+    display: flex;
+    flex:1;
+}
