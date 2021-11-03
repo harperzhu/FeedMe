@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <title>Donation</title>
     <meta name="description" content="Donation page">
@@ -23,136 +23,194 @@
 </header>
 
 <body>
-    <div id="position-mover">
-    <div id="donation-form-wrapper" class="page-form">
-        <section class="individual-profile">
-            <div class="row">
-                <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-7">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <!-- wrapping the image -->
-                                <section class="image">
+    <div class="row">
+        <div class="col">
+                
+            <!-- wrapping the donation -->       
+                <div id="donation-wrapper">
+                <!-- wrapping the card body -->       
+                <section class="individual-profile">
+                <div class="row">
+                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-7">
+                        <div class="card mb-4">
+                            <!-- wrapping the card body -->       
+                            <div class="card-body">
+                                    <!-- wrapping the image -->
+                                    <section class="image col-sm-auto col-md-auto col-lg-auto col-xl-12">
+                                            <img class="dog-image" src="../updates/img/16821635369022_.pic.jpg"
+                                                alt="dog image" width="460" height="372">
+                                    </section>
+                                    <!-- wrapping the content -->
                                     <div class="col-sm-auto col-md-auto col-lg-auto col-xl-12">
-                                        <img class="card-img-top" src="../updates/img/16821635369022_.pic.jpg"
-                                            alt="dog image" width="460" height="372">
+                                    <!-- card title -->
+                                        <h2 class="card-title">Pochi</h2>
+                                        <!-- card text -->
+                                        <div class="card-text">
+                                        <!-- pet info -->   
+                                        <section class="name">
+                                            <b>Name: Pochi</b>
+                                        </section>
+                                        <section class="Age">
+                                            <b>Age: 3 years old</b>
+                                        </section>
+                                        <section class="Health">
+                                            <b>Heath: excellent</b>
+                                        </section>
+                                        <section class="Size">
+                                            <b>Size: small</b>
+                                        </section>
+                                        <section class="gender">
+                                            <b>gender: Male</b>
+                                        </section>
+                                        <section class="X meals left">
+                                            <b>Number of meals left: 1 Meal</b>
+                                        </section>
+                                        </div>
+                                        <!-- button to donate -->   
+                                        <a class="btn btn-dark" href="#">Donate</a>
                                     </div>
-                                </section>
-                                <!-- wrapping the content -->
-                                <div class="col-sm">
-                                    <h2 class="card-title">Pochi</h2>
-                                    <p class="card-text">
-                                    <section class="name">
-                                        <b>Name: Pochi</b>
-                                    </section>
-                                    <section class="Age">
-                                        <b>Age: 3 years old</b>
-                                    </section>
-                                    <section class="Health">
-                                        <b>Heath: excellent</b>
-                                    </section>
-                                    <section class="Size">
-                                        <b>Size: small</b>
-                                    </section>
-                                    <section class="gender">
-                                        <b>gender: Male</b>
-                                    </section>
-                                    <section class="X meals left">
-                                        <b>Number of meals left: 1 Meal</b>
-                                    </section>
-                                    </p>
-                                    <a class="btn btn-dark" href="#">Donate</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-        </section>
+                        </div>
+                </section>
+            
+            </div>
+        </div>
 
 
+        <div class="col">
         <section class="payment">
+        <!-- donation slogan -->
             <div class="donation-title">
                 <h1 class="title" id="page-title">You can help save animals today.</h1>
             </div>
-            <div class="donation-steps">
-                <div class="step-wrapper">
-                    <!-- STEP 1 -->
-                    <div class="step step-0 active done">
-                        <span class="step-num">1</span>
-                        <span class="step-label">Gift
-                            Amount</span>
-                            <span class="step-bar"></span>
-                        </div>
-                    <!-- STEP 2 -->
-                    <div class="step step-1">
-                        <span class="step-num">2</span>
-                        <span class="step-label">Billing</span>
-                        <span
-                            class="step-bar"></span>
-                        </div>
+            <div class="row">
+                <!-- donation steps -->
+                <div class="donation-steps">
+                <!-- donation steps wrapper-->
+                    <div class="step-wrapper">
+                        <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <!-- STEP 1 -->
+                        <div class="step step-0 active done">
+                            <span class="step-num">1</span>
+                            <span class="step-label">Gift
+                                Amount</span>
+                                <span class="step-bar"></span>
+                            </div>
+                        <!-- STEP 2 -->
+                        <div class="step step-1">
+                            <span class="step-num">2</span>
+                            <span class="step-label">Billing</span>
+                            <span
+                                class="step-bar"></span>
+                            </div>
 
-                    <!-- STEP 3 -->
-                    <div class="step step-2 last">
-                        <span class="step-num">3</span><span class="step-label">Payment</span>
+                        <!-- STEP 3 -->
+                        <div class="step step-2 last">
+                            <span class="step-num">3</span><span class="step-label">Payment</span>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
 
-            <div class="form-item webform-component webform-component-radios control-group"
-                id="webform-component-donation--amount">
 
-                <section class="gift-amount">
-                    <div class="form-item form-type-radio form-item-submitted-donation-amount control-group success">
-                        <input type="radio" id="edit-submitted-donation-amount-1" name="submitted[donation][amount]"
-                            value="15">
-                        <label class="option" for="edit-submitted-donation-amount-1">$15 </label>
-                    </div>
-                    <div class="form-item form-type-radio form-item-submitted-donation-amount control-group success">
-                        <input type="radio" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]"
-                            value="20">
-                        <label class="option" for="edit-submitted-donation-amount-2">$20 </label>
-                    </div>
-                    <div class="form-item form-type-radio form-item-submitted-donation-amount control-group success">
+                <section class="gift-amount-form">
+                    
+                    <!-- gift amount 1: 15 dollars-->
+                    <div class="row">
+                        <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+
+                            <div class="form-item form-type-radio">
+                                <input type="radio" id="edit-submitted-donation-amount-1" name="submitted[donation][amount]"
+                                    value="15">
+                                <label class="option" for="edit-submitted-donation-amount-1">$15 </label>
+                            </div>
+                        </div>
+
+                    <!-- gift amount 2: 20 dollars-->
+                        <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                            <div class="form-item form-type-radio">
+                                <input type="radio" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]"
+                                    value="20">
+                                <label class="option" for="edit-submitted-donation-amount-2">$20 </label>
+                            </div>
+                        </div>
+
+
+                    <!-- gift amount 3: 25 dollars-->
+                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+
+                    <div class="form-item form-type-radio">
                         <input type="radio" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]"
                             value="25">
                         <label class="option" for="edit-submitted-donation-amount-3">$25 </label>
                     </div>
-                    <div class="form-item form-type-radio form-item-submitted-donation-amount control-group success">
+                    </div>
+
+                    <!-- gift amount 4: 35 dollars-->
+                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                            <div class="form-item form-type-radio">
 
                         <input type="radio" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]"
                             value="35">
                         <label class="option" for="edit-submitted-donation-amount-4">$35 </label>
                     </div>
-                    <div class="form-item form-type-radio form-item-submitted-donation-amount control-group success">
+                    </div>
+
+                    <!-- gift amount 5: 60 dollars-->
+                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="form-item form-type-radio">
 
                         <input type="radio" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]"
                             value="60">
                         <label class="option" for="edit-submitted-donation-amount-5">$60 </label>
                     </div>
-                    <div class="form-item form-type-radio form-item-submitted-donation-amount control-group success">
+                    </div>
+                
 
+                    <!-- gift amount 6: 100 dollars-->
+                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="form-item form-type-radio">
                         <input type="radio" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
                             value="100">
                         <label class="option" for="edit-submitted-donation-amount-6">$100 </label>
                     </div>
-            </div>
-            <p>Every gift saves lives. Please make a&nbsp;<strong><a href="/donate/ps-gn-p1?linked=1">one time
-                        gift</a>&nbsp;</strong>if you are not able to make a monthly commitment.</p>
-        </section>
+                    </div>
+                    </div>
+                    
+            </section>  
+            </section>
+        </div>
 
+            <!-- slogan to encourage donation-->
+            <p class = "donation-slogan">
+                Every gift saves lives. Please make a&nbsp;<strong><a href="/donate/ps-gn-p1?linked=1">one time
+                        gift</a>&nbsp;</strong>if you are not able to make a monthly commitment.</p>
+
+        <!-- continue to billing-->
         <div class="progress-buttons">
             <div class="progress-wrap">
             
-            <div class="continue">Continue</div></div></div>
+            <div class="continue">Continue</div>
+        </div>
+    </div>
 
-        
+        <!-- billing session-->        
         <section class="Billing">
         </section>
+
+
+
+         <!-- payment-->               
         <section class="Payment">
         </section>
-        </section>
+                         <!-- the payment col-->               
+        </div>
+    <!-- the outter most row-->               
     </div>
-</div>
+
 </body>
 
 </html>
