@@ -1,14 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color: #E3DAD0;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    margin: 15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: inherit;
 }
-
 
 .container {
-
-}
+    display: flex;
+    flex: column;
+    flex-wrap: wrap;
+  }
 
 .card {
-    flex: 0 0 250px;
     background-color: white;
     padding: .5rem;
     margin: .5rem;
@@ -18,9 +28,19 @@ body {
 
 .card p {
     padding: .5rem 1rem;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .card img {
-height: 20rem;
-border-radius: 10px 10px 0 0;
+    height: 20rem;
+    border-radius: 10px 10px 0 0;
+}
+
+main {
+  flex: 1;
+}
+
+button {
+  font-size: 1.2rem;
 }
