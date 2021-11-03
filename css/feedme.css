@@ -3,11 +3,14 @@
 }
 
 body {
-    background-color: #E3DAD0;
     font-family: 'Ubuntu', sans-serif;
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.item {
+    background-color: #e3dad0;
 }
 
 .container {
@@ -67,12 +70,12 @@ a:visited {
 }
 
 header {
-  height: 100vh;
-  text-align: center;
-  color: white; 
-  background-image: url("../img/goldens-holding-food-bowls.jpeg");
-  background-size: cover;
-  flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    color: white; 
+    background-image: url("../img/goldens-holding-food-bowls.jpeg");
+    background-size: cover;
+    flex-direction: column;
 }
 
 header h1 {
@@ -89,4 +92,61 @@ header h1, header p {
 header p {
     margin-top: 0;
     font-size: 7vh;
+}
+
+.navbar nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#cc8561;
+    box-shadow: 1px 2px grey;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    display: inline;
+    margin: 0 1rem;
+    padding: 0;
+}
+
+.navbar nav ul li a {
+    font-size: 1.2rem;
+    color: #344960;
+    text-decoration: none;
+}
+
+.navbar img {
+    width: 7rem;
+    padding: 0;
+    margin: 0;
+}
+
+#sign-in-btn a{
+    color: white;
+}
+
+#sign-in-btn {
+    margin-left: 15%;
+    background-color: #344960;
+    display: none;
+}
+
+#sign-in-btn:hover {
+    border-color: #cc8561;
+}
+
+.navbar nav ul li a:hover {
+    color:  #877c71 ;
+    border-bottom: #877c71 .2rem solid;
+}
+
+@media (min-width: 992px){
+    #sign-in-btn {
+        display: inline-block;
+    }
 }
