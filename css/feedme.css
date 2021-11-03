@@ -4,21 +4,21 @@
 
 body {
     background-color: #E3DAD0;
-    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-    margin: 15rem;
+    font-family: 'Ubuntu', sans-serif;
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: inherit;
 }
 
 .container {
+    margin: 4rem;
     display: flex;
     flex: column;
     flex-wrap: wrap;
   }
 
 .card {
+    text-align: center;
     background-color: white;
     padding: .5rem;
     margin: .5rem;
@@ -27,9 +27,9 @@ body {
   }
 
 .card p {
-    padding: .5rem 1rem;
+    color: #cc8561;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .card img {
@@ -42,5 +42,51 @@ main {
 }
 
 button {
-  font-size: 1.2rem;
+    font-size: 1rem;
+    padding:0.46em 1.6em;
+    border:0.1em solid #cc8561;
+    margin:0 0.2em 2em 0rem;
+    border-radius:0.5em;
+    background-color: white;
+    color:#cc8561;
+    transition: all 0.15s;
+}
+
+button:hover{
+  background-color: #f7e1d6;
+}
+
+a:link {
+    text-decoration: none;
+    color: #cc8561;
+} 
+
+a:visited {
+    text-decoration: none;
+    color: #cc8561; 
+}
+
+header {
+  height: 100vh;
+  text-align: center;
+  color: white; 
+  background-image: url("../img/goldens-holding-food-bowls.jpeg");
+  background-size: cover;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 20vh;
+  margin-top: 30vh;
+  margin-bottom: 0;
+}
+
+header h1, header p {
+  text-shadow: .5vh .5vh .2vh #cc8561;
+  font-family: 'East Sea Dokdo', cursive;
+}
+
+header p {
+    margin-top: 0;
+    font-size: 7vh;
 }
