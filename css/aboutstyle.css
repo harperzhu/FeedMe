@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    color: #363636;
+    background-color: #e3dad0;
+}
+
+.navbar nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#cc8561;
+    padding: .7rem;
+    padding-bottom: .1rem;
+    border-bottom: #cc8561 .1rem dashed;
+}
+
+.navbar nav ul li {
+    display: inline;
+    margin: 0 1rem;
+    padding: 0;
+}
+
+.navbar nav ul li a {
+    color: #344960;
+    text-decoration: none;
+}
+
+#sign-in-btn a{
+    color: white;
+}
+
+.navbar nav ul li a:hover {
+    color:  #877c71 ;
+    border-bottom: #877c71 .2rem solid;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    color: #344960;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+h1 {
+    margin-top: 10%;
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+#sign-in-btn {
+    margin-left: 50%;
+    background-color: #344960;
+}
+
+main p {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 2rem;
+}
+
+main {
+    padding-bottom: 5%;
+}
+
+footer {
+    text-align: left;
+    color: white;
+    background-color: #344960;
+    padding-bottom: 5%;
+}
+
+footer a{
+    text-decoration: none;
+}
