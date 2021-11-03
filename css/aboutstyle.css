@@ -18,9 +18,12 @@ body {
     left: 0;
     width: 100%;
     background-color:#cc8561;
-    padding: .7rem;
-    padding-bottom: .1rem;
-    border-bottom: #cc8561 .1rem dashed;
+    box-shadow: 1px 2px grey;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
 }
 
 .navbar nav ul li {
@@ -30,12 +33,23 @@ body {
 }
 
 .navbar nav ul li a {
+    font-size: larger;
     color: #344960;
     text-decoration: none;
 }
 
+.navbar img {
+    width: 7rem;
+    padding: 0;
+    margin: 0;
+}
+
 #sign-in-btn a{
     color: white;
+}
+
+#sign-in-btn:hover {
+    border-color: #cc8561;
 }
 
 .navbar nav ul li a:hover {
@@ -67,7 +81,7 @@ h2 {
 }
 
 #sign-in-btn {
-    margin-left: 50%;
+    margin-left: 15%;
     background-color: #344960;
 }
 
@@ -86,9 +100,14 @@ footer {
     text-align: left;
     color: white;
     background-color: #344960;
-    padding-bottom: 5%;
 }
 
 footer a{
     text-decoration: none;
+    color: white;
+}
+
+footer p:last-child {
+    text-align: center;
+    padding-top: 8px;
 }
