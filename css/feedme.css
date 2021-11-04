@@ -74,10 +74,10 @@ a:visited {
     color: #cc8561; 
 }
 
-header {
+.header-img {
     height: 100vh;
     text-align: center;
-    color: white; 
+    color: white;     
     background-image: url("../img/goldens-holding-food-bowls.jpeg");
     background-size: cover;
     flex-direction: column;
@@ -88,6 +88,12 @@ header h1 {
   margin-top: 30vh;
   margin-bottom: 0;
 }
+
+.header-update h1{
+    font-size: 20vh;
+    margin-top: 10vh;
+    margin-bottom: 0;
+  }
 
 header h1, header p {
   text-shadow: .5vh .5vh .2vh #cc8561;
