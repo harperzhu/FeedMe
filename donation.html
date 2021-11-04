@@ -2,223 +2,148 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Donation</title>
     <meta name="description" content="Donation page">
 </head>
 
-<header>
-    <div id="header">
-        <h1>
-            Donation
-        </h1>
-        <div class="section clearfix">
-            <!-- FeedMe Logo -->
-            <a id="logo" href="http://FeedMe.org/" title="Home" rel="home"></a>
-        </div>
-    </div>
-</header>
+
 
 <body>
-    <div class="row">
-        <div class="wrapper-container">
-            <!-- wrapping the donation -->       
-                <div id="donation-wrapper">
-                <!-- wrapping the card body -->       
-                <section class="individual-profile">
-                <div class="row">
-                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-7">
-                        <div class="card mb-4">
-                            <!-- wrapping the card body -->       
-                            <div class="card-body">
-                                    <!-- wrapping the image -->
-                                    <section class="image col-sm-auto col-md-auto col-lg-auto col-xl-12">
-                                            <img class="dog-image" src="../updates/img/16821635369022_.pic.jpg"
-                                                alt="dog image" width="460" height="372">
-                                    </section>
-                                    <!-- wrapping the content -->
-                                    <div class="col-sm-auto col-md-auto col-lg-auto col-xl-12">
-                                    <!-- card title -->
-                                        <h2 class="card-title">Pochi</h2>
-                                        <!-- card text -->
-                                        <div class="card-text">
-                                        <!-- pet info -->   
-                                        <section class="name">
-                                            <b>Name: Pochi</b>
-                                        </section>
-                                        <section class="Age">
-                                            <b>Age: 3 years old</b>
-                                        </section>
-                                        <section class="Health">
-                                            <b>Heath: excellent</b>
-                                        </section>
-                                        <section class="Size">
-                                            <b>Size: small</b>
-                                        </section>
-                                        <section class="gender">
-                                            <b>gender: Male</b>
-                                        </section>
-                                        <section class="X meals left">
-                                            <b>Number of meals left: 1 Meal</b>
-                                        </section>
-                                        </div>
-                                        <!-- button to donate -->   
-                                        <a class="btn btn-dark" href="#">Donate</a>
-                                    </div>
-                                </div>
-                            </div>
+
+    <header>
+        <div id="header">
+            <h1 class="page-title">
+                Donation
+            </h1>
+            <div class="section clearfix">
+                <!-- FeedMe Logo -->
+                <a id="logo" href="http://FeedMe.org/" title="Home" rel="home"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="donation-page">
+
+            <div class="individual-profile">
+                <div class="profile-background-wrapper">
+
+                <div class="picture">
+                    <img src="img/16821635369022_.pic.jpg" alt="dog image" width="460" height="372">
+                </div>
+
+
+                <div class="pet-info">
+                    <!-- card title -->
+                    <h2 class="card-title">Pochi</h2>
+                    <!-- card text -->
+                    <div class="card-text">
+                        <!-- pet info -->
+                        <div class="name">
+                            <b>Name: Pochi</b>
                         </div>
+                        <div class="Age">
+                            <b>Age: 3 years old</b>
                         </div>
-                </section>
-            
+                        <div class="Health">
+                            <b>Heath: excellent</b>
+                        </div>
+                        <div class="Size">
+                            <b>Size: small</b>
+                        </div>
+                        <div class="gender">
+                            <b>gender: Male</b>
+                        </div>
+                        <div class="X meals left">
+                            <b>Number of meals left: 1 Meal</b>
+                        </div>
+                    </div>
+                    <!-- button to donate -->
+                    <div class="donation-button-wrapper">
+                </div>
+            </div>
+            </div>
             </div>
         </div>
 
+        <div class="donation-window">
+            <h1>
+                You can help save animals today.
+            </h1>
 
-        <div class="col">
-        <section class="payment">
-        <!-- donation slogan -->
-            <div class="col">
-                <div class="donation-title">
-                    <h1 class="title" id="page-title">You can help save animals today.</h1>
-                </div>
-            </div>   
 
-                <div class="col">
+            <div class="donation-steps">
+                <!-- STEP 1 -->
+                    <a href="#" class="donation-step-button donation-step-button-green">Donation Amount</a>
+                    <hr class="donation-button-line"></hr>
+                    <a href="#" class="donation-step-button donation-step-button-grey">Billing</a>
+                    <a href="#" class="donation-step-button donation-step-button-grey">Payment</a>
+                <!-- STEP 2 -->
 
-                    <!-- donation steps -->
-                    <div class="donation-steps">
-                    <!-- donation steps wrapper-->
-                        <div class="step-wrapper">
-                            
-                                <!-- STEP 1 -->
-                                <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
-                                <div class="step step-0 active done">
-                                    <span class="step-num">1</span>
-                                    <span class="step-label">Gift
-                                        Amount</span>
-                                        <span class="step-bar"></span>
-                                </div>
-                                </div>
-                                <!-- STEP 2 -->
-                                <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
-                                <div class="step step-1">
-                                    <span class="step-num">2</span>
-                                    <span class="step-label">Billing</span>
-                                    <span
-                                        class="step-bar"></span>
-                                    </div>
-                                </div>
-                                <!-- STEP 3 -->
-                                <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
-                                <div class="step step-2 last">
-                                    <span class="step-num">3</span>
-                                    <span class="step-label">Payment</span>
-                                </div>
-                            </div>
-                        
-                    
-                </div>
+                <!-- STEP 3 -->
             </div>
 
-                <section class="gift-amount-form">
-                    
-                    <!-- gift amount 1: 15 dollars-->
-                    <div class="row">
-                        <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-4">
+            <div class="payment-amount">
+                <!-- gift amount 1: 15 dollars-->
 
-                            <div class="form-item form-type-radio">
-                                <input type="radio" id="edit-submitted-donation-amount-1" name="submitted[donation][amount]"
-                                    value="15">
-                                <label class="option" for="edit-submitted-donation-amount-1">$15 </label>
-                            </div>
-                        </div>
+                <div class="form-item form-type-radio">
+                    <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$15">
+                </div>
+                <!-- gift amount 1: 20 dollars-->
 
-                    <!-- gift amount 2: 20 dollars-->
-                        <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                            <div class="form-item form-type-radio">
-                                <input type="radio" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]"
-                                    value="20">
-                                <label class="option" for="edit-submitted-donation-amount-2">$20 </label>
-                            </div>
-                        </div>
+                <div class="form-item form-type-radio">
+                    <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$20">
+                </div>
+
+                <!-- gift amount 1: 25 dollars-->
+
+                <div class="form-item form-type-radio">
+                    <input type="button" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]" value="$25">
+                </div>
+
+                <!-- gift amount 1: 35 dollars-->
+
+                <div class="form-item form-type-radio">
+                    <input type="button" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]" value="$35">
+                </div>
+
+                <!-- gift amount 1: 60 dollars-->
+
+                <div class="form-item form-type-radio">
+                    <input type="button" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]" value="$60">
+                </div>
+                <!-- gift amount 1: 100 dollars-->
+
+                <div class="form-item form-type-radio">
+                    <input type="button" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
+                        value="$100">
+                </div>
 
 
-                    <!-- gift amount 3: 25 dollars-->
-                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-4">
+            </div>
 
-                    <div class="form-item form-type-radio">
-                        <input type="radio" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]"
-                            value="25">
-                        <label class="option" for="edit-submitted-donation-amount-3">$25 </label>
-                    </div>
-                    </div>
-
-                    <!-- gift amount 4: 35 dollars-->
-                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                            <div class="form-item form-type-radio">
-
-                        <input type="radio" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]"
-                            value="35">
-                        <label class="option" for="edit-submitted-donation-amount-4">$35 </label>
-                    </div>
-                    </div>
-
-                    <!-- gift amount 5: 60 dollars-->
-                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="form-item form-type-radio">
-
-                        <input type="radio" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]"
-                            value="60">
-                        <label class="option" for="edit-submitted-donation-amount-5">$60 </label>
-                    </div>
-                    </div>
-                
-
-                    <!-- gift amount 6: 100 dollars-->
-                    <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="form-item form-type-radio">
-                        <input type="radio" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
-                            value="100">
-                        <label class="option" for="edit-submitted-donation-amount-6">$100 </label>
-                    </div>
-                    </div>
-                    </div>
-                    
-            </section>  
-            </section>
-        </div>
+            <div class="donation-slogan">
 
             <!-- slogan to encourage donation-->
-            <p class = "donation-slogan">
-                Every gift saves lives. Please make a&nbsp;<strong><a href="/donate/ps-gn-p1?linked=1">one time
-                        gift</a>&nbsp;</strong>if you are not able to make a monthly commitment.</p>
+        
+        <div class = "donation-slogan-text">
+            <p>
+                Every gift saves lives.
+            </p>
+        </div>
 
         <!-- continue to billing-->
         <div class="progress-buttons">
-            <div class="progress-wrap">
-            
-            <div class="continue">Continue</div>
+                <a href="updates.html" class="donate">
+                    Donate </a>
+                </div>
+
+
+            </div>
+
         </div>
-    </div>
-
-        <!-- billing session-->        
-        <section class="Billing">
-        </section>
-
-
-
-         <!-- payment-->               
-        <section class="Payment">
-        </section>
-                         <!-- the payment col-->               
-        </div>
-    <!-- the outter most row-->               
-    </div>
+    </main>
 
 </body>
-
-</html>
