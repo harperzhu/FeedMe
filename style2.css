@@ -29,6 +29,7 @@ main {
 .donation-steps{
     display: flex;
     flex:1;
+    align-items: center;
 }
     
 .payment-amount{
@@ -61,12 +62,12 @@ body {
     overflow: hidden;
     display: flex;
     flex:1;
-    display: inline;
     overflow: hidden;
     text-align: center;
     padding-right: 10%;
     padding-left:20%;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -341,7 +342,7 @@ h1#page-title{
 }
 
 .donation-button {
-        background-color: #4CAF50; /* Green */
+        background-color: #877471; /* Green */
         border: none;
         color: white;
         padding: 15px 32px;
@@ -378,27 +379,8 @@ h1#page-title{
 
 
       .payment-amount .form-type-radio input {
-        width: 15px;
-        height: 15px;
-        flex-direction: column;
-        align-items:baseline;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #DDC9BE;
-        text-align: center;
-        display: flex;
-        color: #fff;
-        padding: 10px;
-        margin: 20px 55px;
-        border: 10px;
-        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .payment-amount .form-type-radio label {
-        width: 60px;
-        height: 60px;
+        width: 60%;
+        height: 60%;
         flex-direction: column;
         align-items:baseline;
         flex-wrap: wrap;
@@ -419,6 +401,7 @@ h1#page-title{
         cursor: pointer;
     }
 
+ 
     
     .profile-background-wrapper{
         background-color: white;
@@ -489,25 +472,28 @@ h1#page-title{
     font-size: 100%;
 }
 
-.w3-bar .w3-button {
-    border:none;
-    display:inline-block;
-    padding:5% 5%;
-    vertical-align:middle;
-    overflow:hidden;
-    text-decoration:none;
-    color:inherit;
-    background-color:inherit;
-    text-align:center;
-    cursor:pointer;
-    white-space:nowrap;
-
-}
 
 
 
-.w3-green, .w3-hover-green:hover {
+.donation-step-button-green {
     color: #fff!important;
-    background-color: #4CAF50!important;
+    background-color: #CC8561!important;
 }
 
+
+.donation-step-button-grey{
+    color: #fff!important;
+    background-color: grey!important;
+    width: 49%;
+}
+
+.donation-step-button{
+    border-radius: 60%;
+    padding:10%;
+
+}
+
+
+.payment-amount .form-type-radio input:focus {
+    background-color: #877471;
+}
