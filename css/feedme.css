@@ -81,6 +81,7 @@ a:visited {
     background-image: url("../img/goldens-holding-food-bowls.jpeg");
     background-size: cover;
     flex-direction: column;
+    display: none;
 }
 
 header h1 {
@@ -191,15 +192,16 @@ footer p:last-child {
 } 
 
 
-@media (min-width: 992px){
-    #sign-in-btn {
+
+@media (min-width: 768px){
+    .header-img {
         display: inline-block;
     }
 }
 
 
-@media (max-width: 598px){
-    .header-img {
-        display: none;
+@media (min-width: 992px){
+    #sign-in-btn {
+        display: inline-block;
     }
 }
