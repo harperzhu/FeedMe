@@ -198,14 +198,14 @@ footer p:last-child {
 
 
 @media (min-width: 768px){
-    .header-img {
+    .header-img, .img-fluid {
         display: inline-block;
     }
 }
 
 
 @media (min-width: 992px){
-    #sign-in-btn {
+    #sign-in-btn, .img-fluid {
         display: inline-block;
     }
 .donation-page{
@@ -372,3 +372,4 @@ main {
     border-radius: 60%;
     padding:10%;
 }
+
