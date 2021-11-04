@@ -13,11 +13,13 @@ body {
     background-color: #e3dad0;
 }
 
-.container {
+.profile-cards {
     margin: 4rem;
     display: flex;
     flex: column;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
 .card {
@@ -38,6 +40,7 @@ body {
 .card img {
     height: 20rem;
     border-radius: 10px 10px 0 0;
+    margin-bottom: 2rem;
 }
 
 main {
@@ -45,6 +48,8 @@ main {
 }
 
 button {
+    align-self: center;
+    width: 10rem;
     font-size: 1rem;
     padding:0.46em 1.6em;
     border:0.1em solid #cc8561;
@@ -95,6 +100,7 @@ header p {
 }
 
 .navbar nav {
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -150,3 +156,35 @@ header p {
         display: inline-block;
     }
 }
+
+footer {
+    padding: 1rem 10% 0 10%;
+    text-align: left;
+    color: white;
+    background-color: #344960;
+}
+
+#contact-info a{
+    text-decoration: none;
+    color: white;
+}
+
+.contact-info p:last-child {
+    padding-bottom: 1rem;
+}
+
+footer p:last-child {
+    text-align: center;
+    padding-top: 8px;
+}
+
+.introduction h2, .description h2, .contact-info h2 {
+    color: #344960;
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+
+.introduction, .description, .contact-info {
+    padding-left: 10%;
+    padding-right: 10%;
+} 
