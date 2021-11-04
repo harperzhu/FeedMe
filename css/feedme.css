@@ -157,11 +157,6 @@ header p {
     border-bottom: #877c71 .2rem solid;
 }
 
-@media (min-width: 992px){
-    #sign-in-btn {
-        display: inline-block;
-    }
-}
 
 footer {
     padding: 1rem 10% 0 10%;
@@ -194,3 +189,17 @@ footer p:last-child {
     padding-left: 10%;
     padding-right: 10%;
 } 
+
+
+@media (min-width: 992px){
+    #sign-in-btn {
+        display: inline-block;
+    }
+}
+
+
+@media (max-width: 598px){
+    .header-img {
+        display: none;
+    }
+}
