@@ -75,14 +75,14 @@ h2 {
 
 .container {
     max-width: 960px;
-    margin-left: 10%;
-    padding-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
 }
 
 #sign-in-btn {
     margin-left: 15%;
     background-color: #344960;
-    display: none;
 }
 
 main p {
@@ -110,10 +110,4 @@ footer a{
 footer p:last-child {
     text-align: center;
     padding-top: 8px;
-}
-
-@media (min-width: 992px){
-    #sign-in-btn {
-        display: inline-block;
-    }
 }
