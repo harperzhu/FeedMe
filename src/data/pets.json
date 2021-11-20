@@ -2,7 +2,7 @@
     {"name":"Bear", "gender":"Male", "type": "Dog", "breed":"Samoyed", "img":"img/profile_pics/bear.jpeg"},
     {"name":"Blot", "gender":"Male", "type": "Cat", "breed":"Tuxedo", "img":"img/profile_pics/blot.jpeg"},
     {"name":"Coffee", "gender":"Female", "type": "Cat", "breed":"Golden Retriever", "img":"img/profile_pics/coffee.jpeg"},
-    {"name":"Logan", "gender":"Female", "type": "Cat", "breed":"Husky", "img":"img/profile_pics/logan.jpeg"},
+    {"name":"Logan", "gender":"Female", "type": "Dog", "breed":"Husky", "img":"img/profile_pics/logan.jpeg"},
     {"name":"Periwinkle", "gender":"Male", "type": "Dog", "breed":"Hound", "img":"img/profile_pics/periwinkle.jpeg"},
     {"name":"Pochi", "gender":"Male", "type": "Dog", "breed":"Shiba", "img":"img/profile_pics/pochi.jpeg"},
     {"name":"Rusty", "gender":"Male", "type": "Cat", "breed":"Hound", "img":"img/profile_pics/rusty.jpeg"},
