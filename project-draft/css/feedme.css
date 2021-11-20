@@ -64,30 +64,6 @@ button {
     transition: all 0.15s;
 }
 
-.payment-amount .custom-amount input{
-    width: 60%;
-    height: 60%;
-    flex-direction: column;
-    align-items:baseline;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #344960;
-    justify-content: center;
-    font-size: 150%;
-    text-align: center;
-    display: flex;
-    color: white;
-    padding: 20px;
-    margin: 30px 30px;
-    border: 80px;
-    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input 
 
 button:hover{
   background-color: #f7e1d6;
@@ -222,18 +198,9 @@ footer p:last-child {
 
 
 
-@media (min-width: 768px){
-    .header-img, .img-fluid {
-        display: inline-block;
-    }
-}
 
 
-@media (min-width: 575px){
-    #sign-in-btn, .img-fluid {
-        display: inline-block;
-    }
-}
+
 .donation-page{
     display: flex;
     flex:1;
@@ -259,13 +226,7 @@ main {
 }
 
     
-.payment-amount{
-    display: flex;
-    flex:1;
-    flex-shrink: 1;
-    flex-wrap: wrap;
-    background-color:white;
-}
+
 
 .donation-window {
     width: 100%;
@@ -316,28 +277,7 @@ main {
     padding:10px 250px;
 }
 
-.payment-amount .form-type-radio input {
-    width: 60%;
-    height: 60%;
-    flex-direction: column;
-    align-items:baseline;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #344960;
-    justify-content: center;
-    font-size: 150%;
-    text-align: center;
-    display: flex;
-    color: white;
-    padding: 20px;
-    margin: 30px 30px;
-    border: 80px;
-    font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
 
 
 
@@ -398,7 +338,99 @@ main {
     padding:10%;
 }
 
-@media screen and (max-width: 575px){
-
-
+#edit-submitted-donation-amount-7{
+    width: 4em;
 }
+
+
+@media screen and (max-width: 575px){
+    #sign-in-btn, .img-fluid {
+        display: inline-block;
+    }
+    .payment-amount .form-type-radio input{
+        color:red;
+    }
+    .payment-amount{
+        color:red;
+    }
+    .payment-amount .custom-amount input{
+        color:red;
+    }
+}
+
+@media screen and (min-width: 575px){
+    .header-img, .img-fluid {
+        display: inline-block;
+    }
+    .donation-steps{
+        display: flex;
+        height: fit-content;
+        overflow: hidden;
+        display: flex;
+        flex:1;
+        overflow: hidden;
+        text-align: center;
+        padding-right: 12.5%;
+        padding-left:25%;
+        justify-content: center;
+        align-items: center;
+    }
+    .payment-amount .custom-amount input{
+        width: 60%;
+        height: 60%;
+        flex-direction: column;
+        align-items:baseline;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #344960;
+        justify-content: center;
+        font-size: 150%;
+        text-align: center;
+        display: flex;
+        color: white;
+        padding: 20px;
+        margin: 30px 30px;
+        border: 80px;
+        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .payment-amount{
+        display: flex;
+        flex:1;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        background-color:white;
+    }
+    
+    .payment-amount .form-type-radio input {
+        width: 60%;
+        height: 60%;
+        flex-direction: column;
+        align-items:baseline;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #344960;
+        justify-content: center;
+        font-size: 150%;
+        text-align: center;
+        display: flex;
+        color: white;
+        padding: 20px;
+        margin: 30px 30px;
+        border: 80px;
+        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    
+}
+
+
+
+
