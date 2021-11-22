@@ -8,7 +8,7 @@ import { UpdateBanner } from "./components/update/UpdateBanner";
 import { UpdateBoard } from "./components/update/UpdateBoard";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
-import { MyPets } from "./components/mypets/MyPets";
+import { MyPetList } from "./components/mypets/MyPetList";
 
 export default class App extends Component {
   render() {
@@ -22,7 +22,7 @@ export default class App extends Component {
         <DonationForm />
         <UpdateBanner />
         <UpdateBoard />
-        <MyPets />
+        <MyPetList />
         <Footer />
       </div>
     )
