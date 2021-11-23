@@ -8,22 +8,27 @@ import { UpdateBanner } from "./components/update/UpdateBanner";
 import { UpdateBoard } from "./components/update/UpdateBoard";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
-import { MyPets } from "./components/mypets/MyPets";
+import { MyPetList } from "./components/mypets/MyPetList";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    const pets = this.props.pets;
+  }
+
   render() {
     return(
       <div>
-        <Header />
-        <AboutUs />
+        {/* <Header />
+        <AboutUs /> */}
         <Cover />
-        <PetList />
-        <Profile />
+        <PetList pets={this.props.pets} />ç
+        {/* <Profile />
         <DonationForm />
         <UpdateBanner />
         <UpdateBoard />
-        <MyPets />
-        <Footer />
+        <MyPetList />
+        <Footer /> */}
       </div>
     )
   }

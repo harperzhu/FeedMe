@@ -1,10 +1,10 @@
 [
-    {"name":"Bear", "gender":"Male", "type": "Dog", "breed":"Samoyed", "img":"img/profile_pics/bear.jpeg"},
-    {"name":"Blot", "gender":"Male", "type": "Cat", "breed":"Tuxedo", "img":"img/profile_pics/blot.jpeg"},
-    {"name":"Coffee", "gender":"Female", "type": "Cat", "breed":"Golden Retriever", "img":"img/profile_pics/coffee.jpeg"},
-    {"name":"Logan", "gender":"Female", "type": "Dog", "breed":"Husky", "img":"img/profile_pics/logan.jpeg"},
-    {"name":"Periwinkle", "gender":"Male", "type": "Dog", "breed":"Hound", "img":"img/profile_pics/periwinkle.jpeg"},
-    {"name":"Pochi", "gender":"Male", "type": "Dog", "breed":"Shiba", "img":"img/profile_pics/pochi.jpeg"},
-    {"name":"Rusty", "gender":"Male", "type": "Cat", "breed":"Hound", "img":"img/profile_pics/rusty.jpeg"},
-    {"name":"Sammy", "gender":"Male", "type": "Dog", "breed":"Mix", "img":"img/profile_pics/sammy.jpeg"}
+    {"name":"Bear", "gender":"Male", "type": "Dog", "breed":"Samoyed", "img":"./img/profile_pics/bear.jpeg", "meals": 0, "fed": false},
+    {"name":"Blot", "gender":"Male", "type": "Cat", "breed":"Tuxedo", "img":"img/profile_pics/blot.jpeg", "meals": 5, "fed": false},
+    {"name":"Coffee", "gender":"Female", "type": "Cat", "breed":"Golden Retriever", "img":"img/profile_pics/coffee.jpeg", "meals": 7, "fed": false},
+    {"name":"Logan", "gender":"Female", "type": "Dog", "breed":"Husky", "img":"img/profile_pics/logan.jpeg", "meals": 2, "fed": false},
+    {"name":"Periwinkle", "gender":"Male", "type": "Dog", "breed":"Hound", "img":"img/profile_pics/periwinkle.jpeg", "meals": 1, "fed": false},
+    {"name":"Pochi", "gender":"Male", "type": "Dog", "breed":"Shiba", "img":"img/profile_pics/pochi.jpeg", "meals": 3, "fed": true},
+    {"name":"Rusty", "gender":"Male", "type": "Cat", "breed":"Hound", "img":"img/profile_pics/rusty.jpeg", "meals": 9, "fed": false},
+    {"name":"Sammy", "gender":"Male", "type": "Dog", "breed":"Mix", "img":"img/profile_pics/sammy.jpeg", "meals": 1, "fed": false}
 ]
