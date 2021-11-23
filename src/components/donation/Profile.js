@@ -1,12 +1,9 @@
-<<<<<<< HEAD
+// export function Profile(props){
+// return(
 
-export function Profile(props){
-return(
+// );
 
-    
-);
-=======
-import { Component } from "react";
+import React, { Component } from "react";
 
 export class Profile extends Component {
   render() {
@@ -14,5 +11,4 @@ export class Profile extends Component {
         <p>Profile placeholder</p>
     );
   }
->>>>>>> a8f9412f3a5f3718654a09a9445f743ed0f9327a
 }

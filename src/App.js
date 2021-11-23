@@ -11,19 +11,24 @@ import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    const pets = this.props.pets;
+  }
+
   render() {
     return(
       <div>
-        <Header />
-        <AboutUs />
+        {/* <Header />
+        <AboutUs /> */}
         <Cover />
-        <PetList />
-        <Profile />
+        <PetList pets={this.props.pets} />ç
+        {/* <Profile />
         <DonationForm />
         <UpdateBanner />
         <UpdateBoard />
         <MyPetList />
-        <Footer />
+        <Footer /> */}
       </div>
     )
   }

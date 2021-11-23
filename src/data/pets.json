@@ -1,5 +1,5 @@
 [
-    {"name":"Bear", "gender":"Male", "type": "Dog", "breed":"Samoyed", "img":"img/profile_pics/bear.jpeg", "meals": 0, "fed": false},
+    {"name":"Bear", "gender":"Male", "type": "Dog", "breed":"Samoyed", "img":"./img/profile_pics/bear.jpeg", "meals": 0, "fed": false},
     {"name":"Blot", "gender":"Male", "type": "Cat", "breed":"Tuxedo", "img":"img/profile_pics/blot.jpeg", "meals": 5, "fed": false},
     {"name":"Coffee", "gender":"Female", "type": "Cat", "breed":"Golden Retriever", "img":"img/profile_pics/coffee.jpeg", "meals": 7, "fed": false},
     {"name":"Logan", "gender":"Female", "type": "Dog", "breed":"Husky", "img":"img/profile_pics/logan.jpeg", "meals": 2, "fed": false},
