@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 export class PetCard extends Component {
   render() {
     return(
-      <div className="card">
-        <img src={this.props.pet.img} alt={this.props.pet.name} />
-        <div className="card-body">
-          <h3 className="card-title">{this.props.pet.name}</h3>
-          <p>{this.props.pet.meals} meals left</p>  
-          <button>Feed Me</button>
+      <div className="pet-card">
+        <img className="pet-image" src={this.props.pet.img} alt={this.props.pet.name} />
+        <div className="pet-content">
+          <h3 className="pet-name">{this.props.pet.name}</h3>
+          <p className="meals-left">{this.props.pet.meals} meals left</p>
+          <button className="feed-me">Feed Me</button>
         </div>
       </div>
     );
@@ -24,8 +24,15 @@ export class PetList extends Component {
               return <PetCard key={pet.name} pet={pet} />
             })}
           </div>
-          
         </div>
     );
+  }
+}
+
+export class MyPetToggle extends Component {
+  render() {
+    return(
+      <div> placeholder </div>
+    )
   }
 }
