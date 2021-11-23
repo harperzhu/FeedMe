@@ -348,8 +348,8 @@
           display: inline-block;
       }
       .payment-amount .form-type-radio input{
-          display: none;
-        /* background-color: #344960;
+          
+        background-color: #344960;
         color: white;
         font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
         -webkit-border-radius: 5px;
@@ -357,7 +357,7 @@
         border-radius: 5px;      
         justify-content: center;
         font-size: 100%;
-        text-align: center;   */
+        text-align: center;   
         
     }
 
@@ -366,6 +366,9 @@
     }
     .card-text b{
         display: flex;
+
+
+
     }
     .donation-window h1{
         display: none;
@@ -378,6 +381,11 @@
     /* the button to donate*/
     .progress-buttons .donate{
        display: none;
+    }
+
+    .mobile-container{
+        background-color: red;
+
     }
   }
   
