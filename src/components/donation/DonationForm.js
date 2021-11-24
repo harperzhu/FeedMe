@@ -33,10 +33,7 @@ export function DonationForm(props) {
         <div className="mobile-container">
             <div className="payment-amount">
                 {createButton}
-                <div className="form-item form-type-radio">
-                    <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$"/>
-                    <label for="amount-7"></label>
-                </div>
+              <CustomDonationAmount/>
             </div>
         </div>
       <DonationABotton/>
@@ -56,7 +53,7 @@ export function DonationAmount(props) {
 
 
 
-  export function DonationABotton() {
+export function DonationABotton() {
     return (
       <div className="progress-buttons">
       <a href="updates.html" className="donate"> Donate </a>
@@ -65,10 +62,15 @@ export function DonationAmount(props) {
   }
 
 
-  // export function DonationAmount() {
-  //   return (
 
-  //   );
-  // }
+
+  export function CustomDonationAmount() {
+    return (
+      <div className="form-item form-type-radio">
+      <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$"/>
+      <label for="amount-7"></label>
+  </div>
+    );
+  }
 
 
