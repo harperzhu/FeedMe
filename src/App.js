@@ -42,7 +42,7 @@ function App(props) {
 
     return(
         <div>
-          {/* <Header /> */}
+          <Header />
           {/* <AboutUs /> */}
           <Cover />
           <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
