@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useState } from "react";
 import { AboutUs } from "./components/AboutUs";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
@@ -12,7 +12,7 @@ import { MyPetList } from "./components/mypets/MyPetList";
 
  
 function App(props) {  
-    const [pets, setPets] = useState(props.pets);
+    let [pets, setPets] = useState(props.pets);
     
     // callback func
     const handleAdopt = (event) => {
@@ -31,7 +31,7 @@ function App(props) {
         {/* <Header />
         <AboutUs /> */}
         <Cover />
-        <PetList pets={this.props.pets} />ç
+        <PetList pets={this.props.pets} />
         {/* <Profile />
         <DonationForm />
         <UpdateBanner />
