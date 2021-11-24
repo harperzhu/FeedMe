@@ -14,7 +14,7 @@ document.querySelector('meta[name="viewport"]')
 
 export function DonationForm(props) {
 
-    const donationAmountArray = ["$15", "$25", "$25", "$25", "$25"];
+    const donationAmountArray = ["$1", "$2", "$3", "$4", "$5"];
     let createButton = donationAmountArray.map((amount) => 
         <DonationAmount amount={amount}/>
     );
@@ -22,7 +22,12 @@ export function DonationForm(props) {
 
     return(
       <div className="donation-window">
-        <h1> You can help save animals today. </h1>
+        <h1> You can help save animals today.
+          <br/>
+          For every dollar you donated, 
+          <br/>
+          the selected pet gets one meal.
+          </h1>
 
         <div className="donation-steps">
             <a href="#" className="donation-step-button donation-step-button-green">Amount</a>
@@ -30,20 +35,13 @@ export function DonationForm(props) {
             <a href="#" className="donation-step-button donation-step-button-grey">Billing</a>
             <a href="#" className="donation-step-button donation-step-button-grey">Payment</a>
         </div>
-
         <div className="mobile-container">
             <div className="payment-amount">
                 {createButton}
-                <div className="form-item form-type-radio">
-                    <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$"/>
-                    <label for="amount-7"></label>
-                </div>
+              <CustomDonationAmount/>
             </div>
         </div>
-
-        <div className="progress-buttons">
-            <a href="updates.html" className="donate"> Donate </a>
-        </div>
+      <DonationABotton/>
       </div>
     );
   
@@ -57,4 +55,27 @@ export function DonationAmount(props) {
         </div>
     );
   }
+
+
+
+export function DonationABotton() {
+    return (
+      <div className="progress-buttons">
+      <a href="updates.html" className="donate"> Donate </a>
+  </div>
+    );
+  }
+
+
+
+
+  export function CustomDonationAmount() {
+    return (
+      <div className="form-item form-type-radio">
+      <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$"/>
+      <label for="amount-7"></label>
+  </div>
+    );
+  }
+
 

@@ -1,41 +1,40 @@
 import React, { Component } from "react";
 
-export class Profile extends Component {
-  render() {
+export function Profile(props) {
     return(
-        <div class="donation-page">
+        <div className="donation-page">
 
-            <div class="individual-profile">
-                <div class="profile-background-wrapper">
-                    <div class="picture">
+            <div className="individual-profile">
+                <div className="profile-background-wrapper">
+                    <div className="picture">
                         <img src="img/16821635369022_.pic.jpg" alt="dog image" width="460" height="372" />
                     </div>
 
-                    <div class="mobile-container">
-                        <div class="pet-info">
-                            <h2 class="card-title">Pochi</h2>
-                            <div class="card-text">
+                    <div className="mobile-container">
+                        <div className="pet-info">
+                            <h2 className="card-title">Pochi</h2>
+                            <div className="card-text">
                                 {/* TODO: REMOVE ALL THE BOLD TAGS AND REPLACE WITH CSS */}
-                                <div class="name">
+                                <div className="name">
                                     <b>Name: Pochi</b>
                                 </div>
-                                <div class="Age">
+                                <div className="Age">
                                     <b>Age: 3 years old</b>
                                 </div>
-                                <div class="Health">
+                                <div className="Health">
                                     <b>Heath: excellent</b>
                                 </div>
-                                <div class="Size">
+                                <div className="Size">
                                     <b>Size: small</b>
                                 </div>
-                                <div class="gender">
+                                <div className="gender">
                                     <b>gender: Male</b>
                                 </div>
-                                <div class="X meals left">
+                                <div className="X meals left">
                                     <b>Number of meals left: 1 Meal</b>
                                 </div>
                             </div>
-                            <div class="donation-button-wrapper">
+                            <div className="donation-button-wrapper">
                             </div>
                         </div>
                     </div>
@@ -43,5 +42,5 @@ export class Profile extends Component {
             </div>
         </div>
         );
-    }
+
 }
