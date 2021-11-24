@@ -8,8 +8,7 @@ var scale = screen.width /siteWidth;
 
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 
-export class DonationForm extends Component {
-  render() {
+export function DonationForm(props) {
     return(
       <div class="donation-window">
       <h1>
@@ -26,35 +25,29 @@ export class DonationForm extends Component {
 
       <div class="mobile-container">
       <div class="payment-amount">
-          <!-- gift amount 1: 15 dollars-->
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$15">
           </div>
-          <!-- gift amount 1: 20 dollars-->
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$20">
           </div>
 
-          <!-- gift amount 1: 25 dollars-->
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]" value="$25">
           </div>
 
-          <!-- gift amount 1: 35 dollars-->
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]" value="$35">
           </div>
 
-          <!-- gift amount 1: 60 dollars-->
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]" value="$60">
           </div>
-          <!-- gift amount 1: 100 dollars-->
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
@@ -79,5 +72,5 @@ export class DonationForm extends Component {
 
       </div>
     );
-  }
+  
 }
