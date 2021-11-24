@@ -51,6 +51,7 @@ function App(props) {
           {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList /> */}
+          <AboutUs />
           <Footer /> 
         </div>
     )

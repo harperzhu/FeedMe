@@ -15,7 +15,7 @@ export function Header(){
             </ul>
 
             <ul className="nav navbar-nav navbar-right">                 
-                <div className="btn btn-dark" href="#" role="button" id="sign-in-btn">
+                <div className="btn btn-outline-dark" href="#" role="button" id="sign-in-btn">
                     <div className="login">
                         <a href="#">Log In</a>
                     </div>
