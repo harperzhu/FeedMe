@@ -47,7 +47,7 @@ function App(props) {
           <Cover />
           <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
           {/* <Profile /> */}
-          {/* <DonationForm /> */}
+          <DonationForm />
           {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList /> */}
