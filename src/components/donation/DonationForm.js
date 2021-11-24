@@ -27,35 +27,35 @@ export function DonationForm(props) {
       <div class="payment-amount">
 
           <div class="form-item form-type-radio">
-              <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$15">
+              <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$15"/>
           </div>
 
           <div class="form-item form-type-radio">
-              <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$20">
-          </div>
-
-
-          <div class="form-item form-type-radio">
-              <input type="button" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]" value="$25">
+              <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$20"/>
           </div>
 
 
           <div class="form-item form-type-radio">
-              <input type="button" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]" value="$35">
+              <input type="button" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]" value="$25"/>
           </div>
 
 
           <div class="form-item form-type-radio">
-              <input type="button" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]" value="$60">
+              <input type="button" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]" value="$35"/>
+          </div>
+
+
+          <div class="form-item form-type-radio">
+              <input type="button" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]" value="$60"/>
           </div>
 
           <div class="form-item form-type-radio">
               <input type="button" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
-                  value="$100">
+                  value="$100"/>
           </div>
 
           <div class="form-item form-type-radio">
-                  <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$">
+                  <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$"/>
                   <label for="amount-7"></label>
           </div>
 
