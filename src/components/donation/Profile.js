@@ -6,28 +6,27 @@ export function Profile(props) {
 
       <div className="individual-profile">
         <div className="profile-background-wrapper">
-      <CardPicture/>
+      <CardPicture pet={props.pet}/>
 
           <div className="mobile-container">
             <div className="pet-info">
-              <CardTitle />
-              <CardText />
+              <CardTitle pet={props.pet}/>
+              <CardText pet={props.pet}/>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+);
 
 }
 
 export function CardText(props) {
-  let currentPet = props.pets;
   return (
     <div className="card-text">
       {/* TODO: REMOVE ALL THE BOLD TAGS AND REPLACE WITH CSS */}
       <div className="name">
-        <b>Name: Pochi</b>
+        <b>Name: {props.pet.name}</b>
       </div>
       <div className="Age">
         <b>Age: 3 years old</b>
@@ -50,7 +49,7 @@ export function CardText(props) {
 
 export function CardTitle(props) {
   return (
-    <h2 className="card-title">Pochi</h2>
+    <h2 className="card-title">{props.pet.name}</h2>
   );
 }
 
@@ -58,7 +57,7 @@ export function CardTitle(props) {
 export function CardPicture(props) {
   return (
     <div className="picture">
-      <img src="img/16821635369022_.pic.jpg" alt="dog image" width="460" height="372" />
+      <img src={props.pet.img} alt="dog image" width="460" height="372" />
     </div>
   );
 }

@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Ubuntu&display=swap" rel="stylesheet">
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/feedme-icon.ico">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/feedme.css">
     <title>Donation</title>
     <meta name="description" content="Donation page">
@@ -23,140 +23,149 @@
         <!----- Navigation Bar ------>
         <div class="container ">
             <div class="navbar">
-                    <nav>
-                        <ul class="text-center">
-                            <li><img class="img-fluid" src="img/icon-dark.jfif"></li>
-                            <li><a href="index.html">Feed a Pet</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li>                    
-                                <div class="btn btn-dark" href="#" role="button" id="sign-in-btn">
-                                    <div class="login">
-                                        <a href="#">Sign In</a>
-                                    </div>
-                                </div>   
-                            </li>
-                        </ul>
-                    
-                    </nav>
-            </div>  
-        </div> 
+                <nav>
+                    <ul class="text-center">
+                        <li><img class="img-fluid" src="img/icon-dark.jfif"></li>
+                        <li><a href="index.html">Feed a Pet</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li>
+                            <div class="btn btn-dark" href="#" role="button" id="sign-in-btn">
+                                <div class="login">
+                                    <a href="#">Sign In</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
 
         <div class="header-update jumbotron jumbotron-fluid text-white bg-dark">
             <h1 class="donation-header">Donation</h1>
         </div>
-</header>
+    </header>
 
     <main>
-        <div class="donation-page">
+        <div class="container">
+            <div class="donation-page">
 
-            <div class="individual-profile">
-                <div class="profile-background-wrapper">
+                <div class="individual-profile">
+                    <div class="profile-background-wrapper">
 
-                <div class="picture">
-                    <img src="img/16821635369022_.pic.jpg" alt="dog image" width="460" height="372">
-                </div>
+                        <div class="picture">
+                            <img src="img/16821635369022_.pic.jpg" alt="dog image" width="460" height="372">
+                        </div>
 
-            <div class="mobile-container">
-                <div class="pet-info">
-                    <!-- card title -->
-                    <h2 class="card-title">Pochi</h2>
-                    <!-- card text -->
-                    <div class="card-text">
-                        <!-- pet info -->
-                        <div class="name">
-                            <b>Name: Pochi</b>
-                        </div>
-                        <div class="Age">
-                            <b>Age: 3 years old</b>
-                        </div>
-                        <div class="Health">
-                            <b>Heath: excellent</b>
-                        </div>
-                        <div class="Size">
-                            <b>Size: small</b>
-                        </div>
-                        <div class="gender">
-                            <b>gender: Male</b>
-                        </div>
-                        <div class="X meals left">
-                            <b>Number of meals left: 1 Meal</b>
+                        <div class="mobile-container">
+                            <div class="pet-info">
+                                <!-- card title -->
+                                <h2 class="card-title">Pochi</h2>
+                                <!-- card text -->
+                                <div class="card-text">
+                                    <!-- pet info -->
+                                    <div class="name">
+                                        <b>Name: Pochi</b>
+                                    </div>
+                                    <div class="Age">
+                                        <b>Age: 3 years old</b>
+                                    </div>
+                                    <div class="Health">
+                                        <b>Heath: excellent</b>
+                                    </div>
+                                    <div class="Size">
+                                        <b>Size: small</b>
+                                    </div>
+                                    <div class="gender">
+                                        <b>gender: Male</b>
+                                    </div>
+                                    <div class="X meals left">
+                                        <b>Number of meals left: 1 Meal</b>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                    <!-- button to donate -->
-                    <div class="donation-button-wrapper">
                 </div>
-             </div>   
             </div>
-            </div>
-            </div>
-        </div>
 
-        <div class="donation-window">
-            <h1>
-                You can help save animals today.
-            </h1>
+            <div class="donation-window">
+                <h1>
+                    You can help save animals today.
+                </h1>
 
 
-            <div class="donation-steps">
+                <div class="donation-steps">
                     <a href="#" class="donation-step-button donation-step-button-green">Amount</a>
-                    <hr class="donation-button-line"></hr>
+                    <hr class="donation-button-line">
+                    </hr>
                     <a href="#" class="donation-step-button donation-step-button-grey">Billing</a>
                     <a href="#" class="donation-step-button donation-step-button-grey">Payment</a>
+                </div>
+
+                <div class="mobile-container">
+                    <div class="payment-amount">
+                        <!-- gift amount 1: 15 dollars-->
+
+                        <div class="form-item form-type-radio">
+                            <input type="button" id="edit-submitted-donation-amount-2"
+                                name="submitted[donation][amount]" value="$15">
+                        </div>
+                        <!-- gift amount 1: 20 dollars-->
+
+                        <div class="form-item form-type-radio">
+                            <input type="button" id="edit-submitted-donation-amount-2"
+                                name="submitted[donation][amount]" value="$20">
+                        </div>
+
+                        <!-- gift amount 1: 25 dollars-->
+
+                        <div class="form-item form-type-radio">
+                            <input type="button" id="edit-submitted-donation-amount-3"
+                                name="submitted[donation][amount]" value="$25">
+                        </div>
+
+                        <!-- gift amount 1: 35 dollars-->
+
+                        <div class="form-item form-type-radio">
+                            <input type="button" id="edit-submitted-donation-amount-4"
+                                name="submitted[donation][amount]" value="$35">
+                        </div>
+
+                        <!-- gift amount 1: 60 dollars-->
+
+                        <div class="form-item form-type-radio">
+                            <input type="button" id="edit-submitted-donation-amount-5"
+                                name="submitted[donation][amount]" value="$60">
+                        </div>
+                        <!-- gift amount 1: 100 dollars-->
+
+                        <div class="form-item form-type-radio">
+                            <input type="button" id="edit-submitted-donation-amount-6"
+                                name="submitted[donation][amount]" value="$100">
+                        </div>
+
+                        <div class="form-item form-type-radio">
+                            <input type="number" id="edit-submitted-donation-amount-7"
+                                name="submitted[donation][amount]" value="$">
+                            <label for="amount-7"></label>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- continue to billing-->
+                <div class="progress-buttons">
+                    <a href="updates.html" class="donate"> Donate </a>
+                </div>
+
+
             </div>
 
-            <div class="mobile-container">
-            <div class="payment-amount">
-                <!-- gift amount 1: 15 dollars-->
-
-                <div class="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$15">
-                </div>
-                <!-- gift amount 1: 20 dollars-->
-
-                <div class="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$20">
-                </div>
-
-                <!-- gift amount 1: 25 dollars-->
-
-                <div class="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]" value="$25">
-                </div>
-
-                <!-- gift amount 1: 35 dollars-->
-
-                <div class="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]" value="$35">
-                </div>
-
-                <!-- gift amount 1: 60 dollars-->
-
-                <div class="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]" value="$60">
-                </div>
-                <!-- gift amount 1: 100 dollars-->
-
-                <div class="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
-                        value="$100">
-                </div>
-
-                <div class="form-item form-type-radio">
-                        <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$">
-                        <label for="amount-7"></label>
-                </div>
-
-
-
-            </div>
-            </div>
-
-        <!-- continue to billing-->
-        <div class="progress-buttons">
-                <a href="updates.html" class="donate"> Donate </a>
         </div>
-            </div>
-
         </div>
     </main>
 
@@ -165,9 +174,9 @@
 <footer>
     <div id="contact-info">
         <p><span class="material-icons">email</span> <a href="mailto:feedme@gmail.com">feedme@gmail.com</a></p>
-        <p><span class="material-icons">phone</span> <a href="tel:123-456-789">(123)-456-789</a></p> 
-        <p>&copy; Info340 FeedMe Project 2021. All rights reserved.</p>             
+        <p><span class="material-icons">phone</span> <a href="tel:123-456-789">(123)-456-789</a></p>
+        <p>&copy; Info340 FeedMe Project 2021. All rights reserved.</p>
     </div>
 </footer>
 
-</html> 
+</html>

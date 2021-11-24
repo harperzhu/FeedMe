@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "./Profile"
+import {Profile} from "./Profile"
 
 var siteWidth = 1280;
 // TODO: YOU DONT HAVE SCREEN DEFINED
@@ -21,16 +21,40 @@ export function DonationForm(props) {
 
 
   return (
-    <div className="donation-window">
+    <div class="container">
+      <Profile pet={props.pet}/>
+            {/* <div class="donation-page">
+              <div class="individual-profile">
+                <div class="profile-background-wrapper">
+                  <CardPicture />
+                  <div class="mobile-container">
+                    <div class="pet-info">
+                      <h2 class="card-title">Pochi</h2>
+                      <CardText />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> */}
 
-      <DonationSlogan />
-      <DonationSteps />
-      <div className="payment-amount">
-        {createButton}
-        <CustomDonationAmount />
-      </div>
-      <DonationABotton />
+            <div class="donation-window">
+              <DonationSlogan />
+              <DonationSteps />
+
+              <div class="mobile-container">
+                <div class="payment-amount">
+
+                  {createButton}
+                  <CustomDonationAmount />
+                </div>
+              </div>
+
+              <DonationABotton />
+
+            </div>
+
     </div>
+  
   );
 
 }
