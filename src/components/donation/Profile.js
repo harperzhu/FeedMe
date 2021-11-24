@@ -29,19 +29,22 @@ export function CardText(props) {
         <b>Name: {props.pet.name}</b>
       </div>
       <div className="Age">
-        <b>Age: 3 years old</b>
+        <b>Age: {props.pet.age}</b>
       </div>
       <div className="Health">
-        <b>Heath: excellent</b>
+        <b>Heath: {props.pet.health}</b>
       </div>
-      <div className="Size">
-        <b>Size: small</b>
+      <div className="Type">
+        <b>Type: {props.pet.type}</b>
+      </div>
+      <div className="Breed">
+        <b>Breed: {props.pet.breed}</b>
       </div>
       <div className="gender">
-        <b>gender: Male</b>
+        <b>gender: {props.pet.gender}</b>
       </div>
       <div className="X meals left">
-        <b>Number of meals left: 1 Meal</b>
+        <b>Number of meals left: {props.pet.meals} Meal</b>
       </div>
     </div>
   );
