@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function PetCard(props) {
     return(
@@ -7,7 +7,14 @@ function PetCard(props) {
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
           <p className="meals-left">{props.pet.meals} meals left</p>
-          <button className="feed-me">Feed Me</button>
+          <button className="feed-me"
+            id={props.pet.name} 
+            onClick={
+              (event) => {props.handleCurrentPetCallback(event.currentTarget.id)}
+            }
+          >
+              Feed Me
+          </button>
         </div>
       </div>
     );
@@ -15,10 +22,10 @@ function PetCard(props) {
 
 function PetList(props) {
     return(
-        <div id="petList" className="col-9">
+        <div id="petList">
           <div className='profile-cards'>
-            {props.pets.map((pet) => {
-              return <PetCard key={pet.name} pet={pet} />
+            {Object.values(props.pets).map((pet) => {
+              return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
             })}
           </div>
         </div>
