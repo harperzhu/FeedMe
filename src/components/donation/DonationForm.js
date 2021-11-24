@@ -13,6 +13,13 @@ document.querySelector('meta[name="viewport"]')
         );
 
 export function DonationForm(props) {
+
+    const donationAmountArray = ["$15", "$25", "$25", "$25", "$25"];
+    let createButton = donationAmountArray.map((amount) => 
+        <DonationAmount amount={amount}/>
+    );
+
+
     return(
       <div className="donation-window">
         <h1> You can help save animals today. </h1>
@@ -26,32 +33,7 @@ export function DonationForm(props) {
 
         <div className="mobile-container">
             <div className="payment-amount">
-
-                <div className="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$15"/>
-                </div>
-
-                <div className="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value="$20"/>
-                </div>
-
-                <div className="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-3" name="submitted[donation][amount]" value="$25"/>
-                </div>
-
-                <div className="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-4" name="submitted[donation][amount]" value="$35"/>
-                </div>
-
-                <div className="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-5" name="submitted[donation][amount]" value="$60"/>
-                </div>
-
-                <div className="form-item form-type-radio">
-                    <input type="button" id="edit-submitted-donation-amount-6" name="submitted[donation][amount]"
-                        value="$100"/>
-                </div>
-
+                {createButton}
                 <div className="form-item form-type-radio">
                     <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$"/>
                     <label for="amount-7"></label>
@@ -66,3 +48,13 @@ export function DonationForm(props) {
     );
   
 }
+
+
+export function DonationAmount(props) {
+    return (
+        <div className="form-item form-type-radio">
+            <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value={props.amount}/>
+        </div>
+    );
+  }
+
