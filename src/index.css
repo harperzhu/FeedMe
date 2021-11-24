@@ -231,15 +231,11 @@ footer p:last-child {
     padding-right: 10%;
 }
 
-
-
-
-
-
 .donation-page{
     display: flex;
     flex:1;
     flex-direction: row;
+    background-color: red;
 }
 
 .donation-window{
@@ -486,4 +482,8 @@ main {
     }
 
 
+}
+
+.container {
+    display: flex;
 }
