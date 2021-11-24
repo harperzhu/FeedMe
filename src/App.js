@@ -14,7 +14,7 @@ function App(props) {
     // let [pets, setPets] = useState(props.pets);
 
     // key for petsMap state
-    let [currentPet, setCurrentPet] = useState(null);
+    let [currentPet, setCurrentPet] = useState("Pochi");
 
     /**
      * Remaps the array of pets into a key/value store (e.g. map)
@@ -47,8 +47,7 @@ function App(props) {
           <AboutUs /> */}
           <Cover />
           <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
-          {/* <Profile /> */}
-          {/* <DonationForm /> */}
+           <DonationForm pet={petsMap[currentPet]}/>
           {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList />
