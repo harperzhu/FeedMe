@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { AboutUs } from "./components/AboutUs";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
@@ -11,18 +11,34 @@ import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 
 function App(props) {
-    let [pets, setPets] = useState(props.pets);
-      
-    // callback func
-    const handleAdopt = (event) => {
-      //create copy of array
-      const petCopy = pets.map((pet) => {
-        if(pet.name === event.currentTarget.id) { //transform objects if needed
-          pet.adopted = true;
-        }
-        return pet; //return object to go into new array
+    // let [pets, setPets] = useState(props.pets);
+
+    // key for petsMap state
+    let [currentPet, setCurrentPet] = useState(null);
+
+    /**
+     * Remaps the array of pets into a key/value store (e.g. map)
+     * 
+     * to access the same pet array call it like this: Object.values(<THE_RETURN_VALUE>)
+     * @param {*} mypets - list of pets such as the one from pets.json
+     * @returns {
+     *  'coffee' : {...},
+     *  'pochi' : {...}
+     * }
+     */
+    const remapPets = (mypets) => {
+      let obj = {};
+      mypets.forEach((pet) => {
+        obj[pet.name] = pet;
       })
-      setPets(petCopy);
+      return obj;
+    }
+
+    let [petsMap, setPetsMap] = useState(remapPets(props.pets));
+
+    const handleCurrentPet = (id) => {
+      setCurrentPet(id);
+      console.log(currentPet);
     }
 
     return(
@@ -30,9 +46,9 @@ function App(props) {
           {/* <Header />
           <AboutUs /> */}
           <Cover />
-          <PetList pets={props.pets} />
+          <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
           {/* <Profile /> */}
-          <DonationForm />
+          {/* <DonationForm /> */}
           {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList />
