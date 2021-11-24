@@ -30,10 +30,10 @@ function App(props) {
           {/* <Header />
           <AboutUs /> */}
           <Cover />
-          <PetList pets={props.pets} />ç
-          {/* <Profile />
+          <PetList pets={props.pets} />
+          {/* <Profile /> */}
           <DonationForm />
-          <UpdateBanner />
+          {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList />
           <Footer /> */}
