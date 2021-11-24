@@ -14,7 +14,7 @@ document.querySelector('meta[name="viewport"]')
 
 export function DonationForm(props) {
 
-    const donationAmountArray = ["$15", "$25", "$25", "$25", "$25"];
+    const donationAmountArray = ["$1", "$2", "$3", "$4", "$5"];
     let createButton = donationAmountArray.map((amount) => 
         <DonationAmount amount={amount}/>
     );
@@ -22,7 +22,12 @@ export function DonationForm(props) {
 
     return(
       <div className="donation-window">
-        <h1> You can help save animals today. </h1>
+        <h1> You can help save animals today.
+          <br/>
+          For every dollar you donated, 
+          <br/>
+          the selected pet gets one meal.
+          </h1>
 
         <div className="donation-steps">
             <a href="#" className="donation-step-button donation-step-button-green">Amount</a>
