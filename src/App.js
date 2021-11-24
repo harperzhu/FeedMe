@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useState } from "react";
 import { AboutUs } from "./components/AboutUs";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
@@ -10,26 +10,36 @@ import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    const pets = this.props.pets;
-  }
+function App(props) {
+    let [pets, setPets] = useState(props.pets);
+      
+    // callback func
+    const handleAdopt = (event) => {
+      //create copy of array
+      const petCopy = pets.map((pet) => {
+        if(pet.name === event.currentTarget.id) { //transform objects if needed
+          pet.adopted = true;
+        }
+        return pet; //return object to go into new array
+      })
+      setPets(petCopy);
+    }
 
-  render() {
     return(
-      <div>
-        {/* <Header />
-        <AboutUs /> */}
-        <Cover />
-        <PetList pets={this.props.pets} />ç
-        {/* <Profile />
-        <DonationForm />
-        <UpdateBanner />
-        <UpdateBoard />
-        <MyPetList />
-        <Footer /> */}
-      </div>
+        <div>
+          {/* <Header />
+          <AboutUs /> */}
+          <Cover />
+          <PetList pets={props.pets} />
+          {/* <Profile /> */}
+          <DonationForm />
+          {/* <UpdateBanner />
+          <UpdateBoard />
+          <MyPetList />
+          <Footer /> */}
+        </div>
     )
-  }
 }
+ 
+
+export default App;

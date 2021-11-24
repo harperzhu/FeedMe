@@ -1,9 +1,7 @@
 import { Component } from "react";
 
-export class MyPetList extends Component {
-  render() {
+function PetList(props) {
     return(
         <p className="page-banner">MyPetList placeholder</p>
     );
-  }
 }
