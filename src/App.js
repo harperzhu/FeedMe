@@ -33,9 +33,9 @@ function App(props) {
           <PetList pets={props.pets} />
           {/* <Profile /> */}
           <DonationForm />
-          {/* <UpdateBanner />
+          
           <UpdateBoard />
-          <MyPetList />
+          {/* <MyPetList />
           <Footer /> */}
         </div>
     )
