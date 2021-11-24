@@ -30,7 +30,6 @@ export function DonationForm(props) {
             <a href="#" className="donation-step-button donation-step-button-grey">Billing</a>
             <a href="#" className="donation-step-button donation-step-button-grey">Payment</a>
         </div>
-
         <div className="mobile-container">
             <div className="payment-amount">
                 {createButton}
@@ -40,10 +39,7 @@ export function DonationForm(props) {
                 </div>
             </div>
         </div>
-
-        <div className="progress-buttons">
-            <a href="updates.html" className="donate"> Donate </a>
-        </div>
+      <DonationABotton/>
       </div>
     );
   
@@ -57,4 +53,22 @@ export function DonationAmount(props) {
         </div>
     );
   }
+
+
+
+  export function DonationABotton() {
+    return (
+      <div className="progress-buttons">
+      <a href="updates.html" className="donate"> Donate </a>
+  </div>
+    );
+  }
+
+
+  // export function DonationAmount() {
+  //   return (
+
+  //   );
+  // }
+
 
