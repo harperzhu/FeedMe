@@ -9,31 +9,18 @@ import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 
+
 function App(props) {
     // let [pets, setPets] = useState(props.pets);
 
     // key for petsMap state
     let [currentPet, setCurrentPet] = useState("Pochi");
 
-    /**
-     * Remaps the array of pets into a key/value store (e.g. map)
-     * 
-     * to access the same pet array call it like this: Object.values(<THE_RETURN_VALUE>)
-     * @param {*} mypets - list of pets such as the one from pets.json
-     * @returns {
-     *  'coffee' : {...},
-     *  'pochi' : {...}
-     * }
-     */
-    const remapPets = (mypets) => {
-      let obj = {};
-      mypets.forEach((pet) => {
-        obj[pet.name] = pet;
-      })
-      return obj;
-    }
 
-    let [petsMap, setPetsMap] = useState(remapPets(props.pets));
+
+    let [petsMap, setPetsMap] = useState(props.pets);
+
+
 
     const handleCurrentPet = (id) => {
       setCurrentPet(id);
