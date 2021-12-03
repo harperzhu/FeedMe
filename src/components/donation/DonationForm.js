@@ -1,5 +1,5 @@
 import React from "react";
-import {Profile} from "./Profile"
+import { Profile } from "./Profile"
 
 var siteWidth = 1280;
 // TODO: YOU DONT HAVE SCREEN DEFINED
@@ -22,39 +22,38 @@ export function DonationForm(props) {
 
   return (
     <div class="container">
-      <Profile pet={props.pet}/>
-            {/* <div class="donation-page">
-              <div class="individual-profile">
-                <div class="profile-background-wrapper">
-                  <CardPicture />
-                  <div class="mobile-container">
-                    <div class="pet-info">
-                      <h2 class="card-title">Pochi</h2>
-                      <CardText />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+      <Profile pet={props.pet} />
 
-            <div class="donation-window">
-              <DonationSlogan />
-              <DonationSteps />
 
-              <div class="mobile-container">
-                <div class="payment-amount">
+      <div class="donation-window">
+        <div>
+          <h1> You can help save animals today.
+            <br />
+            For every dollar you donated,
+            <br />
+            the selected pet gets one meal.
+          </h1>
+        </div>
 
-                  {createButton}
-                  <CustomDonationAmount />
-                </div>
-              </div>
+        <div class="mobile-container">
+          <div class="payment-amount">
 
-              <DonationABotton />
-
+            {createButton}
+            <div className="form-item form-type-radio">
+              <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$" />
+              <label for="amount-7"></label>
             </div>
+          </div>
+        </div>
+
+        <div className="progress-buttons">
+          <a href="updates.html" className="donate"> Donate </a>
+        </div>
+
+      </div>
 
     </div>
-  
+
   );
 
 }
@@ -70,52 +69,9 @@ export function DonationAmount(props) {
 
 
 
-export function DonationABotton() {
-  return (
-    <div className="progress-buttons">
-      <a href="updates.html" className="donate"> Donate </a>
-    </div>
-  );
-}
 
 
 
-
-export function CustomDonationAmount() {
-  return (
-    <div className="form-item form-type-radio">
-      <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$" />
-      <label for="amount-7"></label>
-    </div>
-  );
-}
-
-export function DonationSteps() {
-  return (
-    <div className="donation-steps">
-      <a href="#" className="donation-step-button donation-step-button-green">Amount</a>
-      <hr className="donation-button-line"></hr>
-      <a href="#" className="donation-step-button donation-step-button-grey">Billing</a>
-      <a href="#" className="donation-step-button donation-step-button-grey">Payment</a>
-    </div>
-
-
-  );
-}
-
-export function DonationSlogan() {
-  return (
-    <div>
-      <h1> You can help save animals today.
-        <br />
-        For every dollar you donated,
-        <br />
-        the selected pet gets one meal.
-      </h1>
-    </div>
-
-  );
-}
 
 
 
