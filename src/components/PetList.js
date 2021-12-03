@@ -22,7 +22,7 @@ function PetCard(props) {
 
 function PetList(props) {
     return(
-        <div id="petList" className="col-9">
+        <div id="petList">
           <div className='profile-cards'>
             {Object.values(props.pets).map((pet) => {
               return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
