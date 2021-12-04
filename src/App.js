@@ -3,7 +3,6 @@ import { AboutUs } from "./components/AboutUs";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
-import { UpdateBanner } from "./components/update/UpdateBanner";
 import { UpdateBoard } from "./components/update/UpdateBoard";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
@@ -34,9 +33,8 @@ function App(props) {
           <Cover />
           <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
            <DonationForm pet={petsMap[currentPet]}/>
-          {/* <UpdateBanner />
           <UpdateBoard />
-          <MyPetList /> */}
+          {/* <MyPetList /> */}
           <AboutUs />
           <Footer /> 
         </div>
