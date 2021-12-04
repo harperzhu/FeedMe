@@ -3,13 +3,11 @@ import { AboutUs } from "./components/AboutUs";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
-import { UpdateBanner } from "./components/update/UpdateBanner";
 import { UpdateBoard } from "./components/update/UpdateBoard";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
-import { Redirect } from 'react-router';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 
 
 function App(props) {
@@ -54,17 +52,18 @@ function App(props) {
 
           <Switch>
                 <Route  exact path="/">
-                  <HomePage />
+                  <Cover />
+                  <PetList pets={props.pets}/>
                 </Route>
                 
 
                 <Route path="/petList">
-                  <PetList pets={pets} />
+                  <PetList pets={props.pets} />
                 </Route>
 
                 <Route  path="/adopt/:id" element={<id />}>
                   <Profile />
-                  <DonationAmount/>
+                  <DonationForm/>
                 </Route>
 
 
@@ -79,7 +78,8 @@ function App(props) {
                 </Route>
 
 
-                <Redirect to="/" />
+                <Redirect to="/"> </Redirect>
+
           </Switch>
 
           </div>
