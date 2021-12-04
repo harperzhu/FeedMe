@@ -6,7 +6,9 @@ export function Profile(props) {
 
       <div className="individual-profile">
         <div className="profile-background-wrapper">
-      <CardPicture pet={props.pet}/>
+        <div className="picture">
+      <img src={props.pet.img} alt="dog image" width="460" height="372" />
+    </div>
 
           <div className="mobile-container">
             <div className="pet-info">

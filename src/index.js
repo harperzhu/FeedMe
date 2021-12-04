@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './index.css';
 import App from './App';
 import SAMPLE_PETS from './data/pets.json';
-import {BrowserRouter} from 'react-router-dom';
 
 import firebase from 'firebase/app';
 
@@ -36,7 +36,11 @@ const analytics = getAnalytics(app);
 
 
 // our app
+<<<<<<< HEAD
 ReactDOM.render(
 <BrowserRouter>
   <App pets={SAMPLE_PETS} />
 </BrowserRouter>, document.getElementById('root'));
+=======
+ReactDOM.render(<BrowserRouter> <App pets={SAMPLE_PETS} /> </BrowserRouter>, document.getElementById('root'));
+>>>>>>> 15fdb127b1dd3b37325c8dfecae727fdbd1115e7

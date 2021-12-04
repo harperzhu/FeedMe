@@ -7,6 +7,7 @@ import { UpdateBoard } from "./components/update/UpdateBoard";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
+import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 
 
 function App(props) {
@@ -15,6 +16,7 @@ function App(props) {
     // key for petsMap state
     let [currentPet, setCurrentPet] = useState("Pochi");
 
+    let [currentBalance, setCurrentBalance] = useState("100");
 
 
     let [petsMap, setPetsMap] = useState(props.pets);
@@ -26,17 +28,69 @@ function App(props) {
       console.log(currentPet);
     }
 
+    const handleCurrentBalance = (balance) => {
+      setCurrentBalance(balance);
+      console.log(currentBalance);
+    }
+
+
     return(
         <div>
           <Header />
           {/* <AboutUs /> */}
-          <Cover />
-          <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
+          {/* <Cover /> */}
+          
+          {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
            <DonationForm pet={petsMap[currentPet]}/>
           <UpdateBoard />
+<<<<<<< HEAD
           {/* <MyPetList /> */}
           <AboutUs />
           <Footer /> 
+=======
+          <MyPetList /> */}
+          {/* <AboutUs /> */}
+            
+
+
+          <div>
+
+          <Switch>
+                <Route  exact path="/">
+                  <Cover />
+                  <AboutUs/>
+                </Route>
+                
+
+                <Route path="/petList">
+                  <PetList pets={props.pets} />
+                </Route>
+
+                {/* <Route  path="/adopt/:id" element={<id />}>
+                  <Profile />
+                  <DonationForm/>
+                </Route> */}
+
+
+
+                {/* <Route  path="/update">
+                  <UpdateBoard pets={props.pets}/>
+                </Route> */}
+
+
+                <Route  path="/about">
+                  <AboutUs />
+                </Route>
+
+
+                {/* <Redirect to="/"> </Redirect> */}
+
+          </Switch>
+
+          <Footer />
+
+          </div>
+>>>>>>> 15fdb127b1dd3b37325c8dfecae727fdbd1115e7
         </div>
     )
 }
