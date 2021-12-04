@@ -1,0 +1,37 @@
+{
+    "Ashley": {
+        "name": "Ashley",
+        "currentBalance": "100",
+        "numberOfPetsFed": "3"
+    },
+    "Crosby": {
+        "name": "Crosby",
+        "currentBalance": "100",
+        "numberOfPetsFed": "5"
+    },
+    "Coffee": {
+        "name": "Coffee",
+        "currentBalance": "100",
+        "numberOfPetsFed": "8"
+    },
+    "Aurora": {
+        "name": "Aurora",
+        "currentBalance": "100",
+        "numberOfPetsFed": "4"
+    },
+    "Ray": {
+        "name": "Ray",
+        "currentBalance": "100",
+        "numberOfPetsFed": "9"
+    },
+    "Pochi": {
+        "name": "Ashley",
+        "currentBalance": "100",
+        "numberOfPetsFed": "2"
+    },
+    "Harper": {
+        "name": "Harper",
+        "currentBalance": "100",
+        "numberOfPetsFed": "6"
+    }
+}
