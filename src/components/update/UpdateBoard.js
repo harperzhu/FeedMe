@@ -3,7 +3,7 @@ import React from 'react';
 
 
 function PetCard(props) {
-    var pet = props.pet;
+    var pet = pro.pet;
 
     return (
       <div class="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
