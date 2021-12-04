@@ -24,12 +24,18 @@ function PetList(props) {
     return(
         <div id="petList">
           <div className='profile-cards'>
-            {Object.values(props.pets).map((pet) => {
-              return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
-            })}
+          {  Object.values(props.pets).map((pet) => {
+    return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
+  })}
           </div>
         </div>
     );
+}
+
+function PetClick(props){
+  Object.values(props.pets).map((pet) => {
+    return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
+  })
 }
 
 function MyPetToggle(props) {
