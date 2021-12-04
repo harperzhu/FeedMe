@@ -38,14 +38,15 @@ function App(props) {
         <div>
           <Header />
           {/* <AboutUs /> */}
-          <Cover />
-          <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
+          {/* <Cover /> */}
+          
+          {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
            <DonationForm pet={petsMap[currentPet]}/>
           {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList /> */}
-          <AboutUs />
-          <Footer /> 
+          {/* <AboutUs /> */}
+            
 
 
           <div>
@@ -53,7 +54,7 @@ function App(props) {
           <Switch>
                 <Route  exact path="/">
                   <Cover />
-                  <PetList pets={props.pets}/>
+                  <AboutUs/>
                 </Route>
                 
 
@@ -61,16 +62,16 @@ function App(props) {
                   <PetList pets={props.pets} />
                 </Route>
 
-                <Route  path="/adopt/:id" element={<id />}>
+                {/* <Route  path="/adopt/:id" element={<id />}>
                   <Profile />
                   <DonationForm/>
-                </Route>
+                </Route> */}
 
 
 
-                <Route  path="/update">
-                  <UpdateBoard />
-                </Route>
+                {/* <Route  path="/update">
+                  <UpdateBoard pets={props.pets}/>
+                </Route> */}
 
 
                 <Route  path="/about">
@@ -78,9 +79,11 @@ function App(props) {
                 </Route>
 
 
-                <Redirect to="/"> </Redirect>
+                {/* <Redirect to="/"> </Redirect> */}
 
           </Switch>
+
+          <Footer />
 
           </div>
         </div>
