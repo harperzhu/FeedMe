@@ -36,11 +36,4 @@ const analytics = getAnalytics(app);
 
 
 // our app
-<<<<<<< HEAD
-ReactDOM.render(
-<BrowserRouter>
-  <App pets={SAMPLE_PETS} />
-</BrowserRouter>, document.getElementById('root'));
-=======
 ReactDOM.render(<BrowserRouter> <App pets={SAMPLE_PETS} /> </BrowserRouter>, document.getElementById('root'));
->>>>>>> 15fdb127b1dd3b37325c8dfecae727fdbd1115e7
