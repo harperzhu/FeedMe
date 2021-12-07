@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AboutUs, Intro, Process } from "./components/Description";
+import { AboutUs, Intro, Process, Subscription } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
@@ -78,6 +78,7 @@ function App(props) {
               <Profile pet={currentPet}/>
               <DonationForm handleCurrentBalanceCallback={handleCurrentBalance}/>
             </Route>
+
           </Switch>
 
           <Footer />
