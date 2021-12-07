@@ -8,9 +8,25 @@ import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
+import SignInPage from "./components/SignInPage";
 
 
 function App(props) {
+    // =======
+    // auth stuff
+    const [currentUser, setCurrentUser] = useState(null);
+
+    const loginUser = (userId, userName) => {
+      if(!userId){
+        console.log("logging out");
+        setCurrentUser(null);
+      } else {
+        console.log("logging in", userName);
+        setCurrentUser({uid:userId, userName: userName});
+      }
+    }
+    // =======
+
     // let [pets, setPets] = useState(props.pets);
 
     // key for petsMap state
@@ -52,35 +68,31 @@ function App(props) {
           <div>
 
           <Switch>
-                <Route  exact path="/">
-                  <Cover />
-                  <AboutUs/>
-                </Route>
-                
+            <Route  exact path="/">
+              <Cover />
+              <AboutUs/>
+            </Route>
+            <Route path="/signin">
+              <SignInPage user={currentUser} loginFunction={loginUser} />
+            </Route>
+            <Route path="/petList">
+              <PetList pets={props.pets} />
+            </Route>
+            
+            {/* <Route  path="/adopt/:id" element={<id />}>
+              <Profile />
+              <DonationForm/>
+            </Route> */}
 
-                <Route path="/petList">
-                  <PetList pets={props.pets} />
-                </Route>
+            {/* <Route  path="/update">
+              <UpdateBoard pets={props.pets}/>
+            </Route> */}
 
-                {/* <Route  path="/adopt/:id" element={<id />}>
-                  <Profile />
-                  <DonationForm/>
-                </Route> */}
+            <Route  path="/about">
+              <AboutUs />
+            </Route>
 
-
-
-                {/* <Route  path="/update">
-                  <UpdateBoard pets={props.pets}/>
-                </Route> */}
-
-
-                <Route  path="/about">
-                  <AboutUs />
-                </Route>
-
-
-                {/* <Redirect to="/"> </Redirect> */}
-
+            {/* <Redirect to="/"> </Redirect> */}
           </Switch>
 
           <Footer />
