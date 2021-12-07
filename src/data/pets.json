@@ -63,7 +63,49 @@
         "meals": 3,
         "fed": true,
         "age": 3,
-        "health": "healthy"
+        "health": "healthy",
+        "updates": [
+            {
+                "img": "img/update_pics/pochi-1.jpg",
+                "caption": "I'm 4 weeks old now!",
+                "date": "7-24-2018"
+            },
+            {
+                "img": "img/update_pics/pochi-2.jpg",
+                "caption": "Getting taller!",
+                "date": "9-30-2018"
+            },
+            {
+                "img": "img/update_pics/pochi-3.jpg",
+                "caption": "My new toy!",
+                "date": "12-13-2018"
+            },
+            {
+                "img": "img/update_pics/pochi-4.jpg",
+                "caption": "Playing with visitor.",
+                "date": "4-20-2019"
+            },
+            {
+                "img": "img/update_pics/pochi-5.jpg",
+                "caption": "Having a walk with my best friend!",
+                "date": "4-20-2019"
+            },
+            {
+                "img": "img/update_pics/pochi-6.jpg",
+                "caption": "Taking a snooze!",
+                "date": "4-20-2019"
+            },
+            {
+                "img": "img/update_pics/pochi-7.jpg",
+                "caption": "Making new friend!",
+                "date": "4-20-2019"
+            },
+            {
+                "img": "img/update_pics/pochi-8.jpg",
+                "caption": "Walking with my buddy!",
+                "date": "4-20-2019"
+            }
+        ]
     },
     "Rusty": {
         "name": "Rusty",
