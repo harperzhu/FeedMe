@@ -1,5 +1,4 @@
 import React from "react";
-import { AboutUs } from "../AboutUs";
 import { Profile } from "./Profile"
 
 var siteWidth = 1280;

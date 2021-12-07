@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AboutUs } from "./components/AboutUs";
+import { AboutUs, Intro, Process } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
@@ -52,9 +52,10 @@ function App(props) {
           <div>
 
           <Switch>
-                <Route  exact path="/">
+                <Route exact path="/">
                   <Cover />
-                  <AboutUs/>
+                  <Intro />
+                  <Process />
                 </Route>
                 
 
