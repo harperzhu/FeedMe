@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AboutUs } from "./components/AboutUs";
+import { AboutUs, Intro, Process } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
@@ -43,7 +43,6 @@ function App(props) {
           
           {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/> */}
            <DonationForm pet={petsMap[currentPet]}/>
-          {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList />
           {/* <AboutUs /> */}
@@ -53,16 +52,17 @@ function App(props) {
           <div>
 
           <Switch>
-                <Route  exact path="/">
+                <Route exact path="/">
                   <Cover />
-                  <AboutUs/>
+                  <Intro />
+                  <Process />
                 </Route>
-                
 
                 <Route exact path="/petList">
                   <PetList handleCurrentPetCallback={handleCurrentPet} pets={props.pets}/>
                 </Route>
 
+<<<<<<< HEAD
 
                 <Route  exact path="/donation">
 
@@ -82,6 +82,17 @@ function App(props) {
 
                 {/* <Route  exact path="/update">
                   <UpdateBoard pets={props.pets}/>
+=======
+                {/* <Route  path="/adopt/:name">
+                  <Profile user={prop.users}/>
+                  <DonationForm pet={currentPet}/>
+                </Route> */}
+
+
+
+                {/* <Route  path="/myPets">
+                  <UpdateBoard pets={props.user}/>
+>>>>>>> 4747f56ede671beb3756f3b4d401c18853fe9554
                 </Route> */}
 
 

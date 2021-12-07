@@ -1,5 +1,4 @@
 import React from "react";
-import { AboutUs } from "../AboutUs";
 import { Profile } from "./Profile"
 import { useParams } from 'react-router-dom';
 import _ from 'lodash';

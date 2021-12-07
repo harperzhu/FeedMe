@@ -1,31 +1,27 @@
 import {React} from 'react';
+import { NavLink } from 'react-router-dom';
 
 export function Header(){
     return (        
     <nav className="navbar navbar-default">
         <div className="container-fluid">
             <div className="navbar-header">
-                <a href="#" className="navbar-brand"><img src="../img/icon-dark.jfif"></img></a>
+                <NavLink exact={true} className="navbar-brand" to="/"><img src="../img/icon-dark.jfif"></img></NavLink>
             </div>            
         
             <ul className="nav navbar-nav">
-                <li class="active"><a href="index.html">Feed a Pet</a></li>
-                <li><a href="about.html">About Us</a></li> 
-                <li><a href="#">My Pets</a></li>
+                <li><NavLink to="/petList">Feed a Pet</NavLink></li>
+                <li><NavLink to="/about">About Us</NavLink></li> 
+                <li><NavLink to="/">My Pets</NavLink></li>
             </ul>
 
             <ul className="nav navbar-nav navbar-right">                 
                 <div className="btn btn-outline-dark" href="#" role="button" id="sign-in-btn">
                     <div className="login">
-                        <a href="#">Log In</a>
+                        <NavLink to="/">Log In</NavLink>
                     </div>
                 </div> 
 
-                <div className="btn btn-danger" href="#" role="button" id="sign-in-btn">
-                    <div className="login">
-                        <a href="#">Sign Up</a>
-                    </div>
-                </div> 
             </ul>
         </div>
     </nav> 

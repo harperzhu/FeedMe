@@ -1,4 +1,5 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
 
 function PetCard(props) {
     return(
@@ -21,11 +22,15 @@ function PetCard(props) {
 }
 
 function PetList(props) {
+  
+  const {name} = useParams();
+  let petName = name;
+
     return(
         <div id="petList">
           <div className='profile-cards'>
           {  Object.values(props.pets).map((pet) => {
-    return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
+    return <PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
   })}
           </div>
         </div>

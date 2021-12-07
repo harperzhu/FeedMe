@@ -66,6 +66,7 @@ a:visited {
   margin-bottom: 0;
 }
 
+
 .header-update h1{
     font-size: 20vh;
     margin-top: 10vh;
@@ -86,10 +87,6 @@ a:visited {
 
 #petList {
   background-color: #e3dad0;
-}
-
-.pet-name {
-
 }
 
 .item {
@@ -144,7 +141,6 @@ a:visited {
 
 
 .navbar {
-    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -482,8 +478,4 @@ main {
     }
 
 
-}
-
-.container {
-    display: flex;
 }
