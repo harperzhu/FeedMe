@@ -1,6 +1,8 @@
 import React from "react";
-import { AboutUs } from "../AboutUs";
 import { Profile } from "./Profile"
+import { useParams } from 'react-router-dom';
+import _ from 'lodash';
+
 
 var siteWidth = 1280;
 // TODO: YOU DONT HAVE SCREEN DEFINED
@@ -20,6 +22,33 @@ export function DonationForm(props) {
     <DonationAmount amount={amount} />
   );
 
+
+  const {name} = useParams();
+  let petName = name; //REPLACE THIS WITH CORRECT VALUE
+
+  //pretend we loaded external data    
+  let pets =  _.find(props.pets, {name: petName}); //find pet in data
+
+   //if unspecified
+  if(!pets) {
+    return <h2>No pet specified</h2>
+  }
+  
+
+  // //make a bootstrap carousel (because its fun)
+  // let carouselItems = pets.images.map(function(img){
+  //   let obj = { src: '../'+img, altText: pets.name, caption: '' };
+  //   return obj;
+  // })
+
+//IMPLEMENTED HOW TO KNOW IF USER HAS DONATED FOR A CERTAIN  PET
+
+
+// const HandleDonateBalance(props){
+  
+
+
+// }
 
   return (
     <div class="container">
@@ -72,18 +101,15 @@ export function DonationForm(props) {
           </div>
             {/* CUSTOM DONATION AMOUNT END*/}
 
-            <div>your balance: </div>
+            <div>your balance:  </div>
+
+
           </div>
         </div>
 
         <div className="progress-buttons">
           <a href="updates.html" className="donate"> Donate </a>
         </div>
-
-
-
-
-
       </div>
 
     </div>

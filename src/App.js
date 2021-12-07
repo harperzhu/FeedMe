@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AboutUs } from "./components/AboutUs";
+import { AboutUs, Intro, Process } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
@@ -8,9 +8,26 @@ import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
+import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
+import SignInPage from "./components/SignInPage";
 
 
 function App(props) {
+    // =======
+    // auth stuff
+    const [currentUser, setCurrentUser] = useState(null);
+
+    const loginUser = (userId, userName) => {
+      if(!userId){
+        console.log("logging out");
+        setCurrentUser(null);
+      } else {
+        console.log("logging in", userName);
+        setCurrentUser({uid:userId, userName: userName});
+      }
+    }
+    // =======
+
     // let [pets, setPets] = useState(props.pets);
 
     // key for petsMap state
@@ -37,56 +54,37 @@ function App(props) {
     return(
         <div>
           <Header />
-          {/* <AboutUs /> */}
-          {/* <Cover /> */}
-          
-          {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
-           <DonationForm pet={petsMap[currentPet]}/>
-          <UpdateBoard />
-          <MyPetList /> */}
-          {/* <AboutUs /> */}
-            
-
-
-          <div>
-
           <Switch>
-                <Route  exact path="/">
-                  <Cover />
-                  <AboutUs/>
-                </Route>
+            <Route  exact path="/">
+              <Cover />
+              <AboutUs/>
+            </Route>
+            <Route path="/signin">
+              <SignInPage user={currentUser} loginFunction={loginUser} />
+            </Route>
+            <Route path="/petList">
+              <PetList pets={props.pets} />
+            </Route>
 
-                <Route path="/petList">
-                  <PetList pets={props.pets} />
-                </Route>
+            <Route  path="/about">
+              <AboutUs />
+            </Route>
 
-                {/* <Route  path="/adopt/:name">
-                  <Profile user={prop.users}/>
-                  <DonationForm pet={currentPet}/>
-                </Route> */}
+            <Route  exact path="/donation">
+              <DonationWithoutSpecifiedPet/>
+            </Route>
 
-
-
-                {/* <Route  path="/myPets">
-                  <UpdateBoard pets={props.user}/>
-                </Route> */}
-
-
-                <Route  path="/about">
-                  <AboutUs />
-                </Route>
-
-
-                {/* <Redirect to="/"> </Redirect> */}
-
+            <Route  exact path="/donation/:id" element={<id />}>
+              <Profile pet={currentPet}/>
+              <DonationForm handleCurrentBalanceCallback={handleCurrentBalance}/>
+            </Route>
           </Switch>
 
           <Footer />
 
           </div>
-        </div>
     )
 }
- 
+
 
 export default App;
