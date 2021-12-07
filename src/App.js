@@ -54,14 +54,19 @@ function App(props) {
     return(
         <div>
           <Header />
+          
           <Switch>
             <Route  exact path="/">
               <Cover />
-              <AboutUs/>
+              <Intro />
+              <Process />
+              <Subscription />
             </Route>
+
             <Route path="/signin">
               <SignInPage user={currentUser} loginFunction={loginUser} />
             </Route>
+
             <Route path="/petList">
               <PetList pets={props.pets} />
             </Route>
@@ -83,7 +88,7 @@ function App(props) {
 
           <Footer />
 
-          </div>
+        </div>
     )
 }
 

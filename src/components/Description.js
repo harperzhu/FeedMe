@@ -72,7 +72,7 @@ export function Process() {
           </div>
         </div>
       </div>
-      <div className="row justify-content-center">
+      <div className="row">
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-thumbs-up h3"></span>
           <h4><Link to="/petList">Pet Selection</Link></h4>
