@@ -9,11 +9,8 @@ import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
-<<<<<<< HEAD
 import { useParams } from 'react-router-dom';
-=======
 import SignInPage from "./components/SignInPage";
->>>>>>> f136ea7f8b971b748c972fb24d77befb8a6b3171
 
 
 function App(props) {
@@ -65,19 +62,21 @@ function App(props) {
     return(
         <div>
           <Header />
-<<<<<<< HEAD
 
           <div>
           <Switch>
-                <Route exact path="/">
-                  <Cover />
-                  <Intro />
-                  <Process />
-                </Route>
+          <Route  exact path="/">
+              <Cover />
+              <AboutUs/>
+            </Route>
 
-                <Route exact path="/petList">
-                  <PetList handleCurrentPetCallback={handleCurrentPet} pets={props.pets}/>
-                </Route>
+            <Route path="/signin">
+              <SignInPage user={currentUser} loginFunction={loginUser} />
+            </Route>
+
+            <Route path="/petList">
+              <PetList pets={props.pets} />
+            </Route>
 
 
                 <Route  exact path="/donation">
@@ -89,51 +88,19 @@ function App(props) {
                   <DonationForm pets={props.pets}/>
                 </Route>
 
-                {/* <Route  exact path="/update">
-                  <UpdateBoard pets={props.pets}/>
-                </Route> */}
-
                 <Route exact path="/about">
                   <AboutUs />
                 </Route>
 
-                {/* <Redirect exact to="/"> </Redirect> */}
-=======
-          <Switch>
-            <Route  exact path="/">
-              <Cover />
-              <AboutUs/>
-            </Route>
-            <Route path="/signin">
-              <SignInPage user={currentUser} loginFunction={loginUser} />
-            </Route>
-            <Route path="/petList">
-              <PetList pets={props.pets} />
-            </Route>
 
-            <Route  path="/about">
-              <AboutUs />
-            </Route>
 
-            <Route  exact path="/donation">
-              <DonationWithoutSpecifiedPet/>
-            </Route>
 
-            <Route  exact path="/donation/:id" element={<id />}>
-              <Profile pet={currentPet}/>
-              <DonationForm handleCurrentBalanceCallback={handleCurrentBalance}/>
-            </Route>
 
->>>>>>> f136ea7f8b971b748c972fb24d77befb8a6b3171
           </Switch>
           </div>
           <Footer />
 
-<<<<<<< HEAD
         </div>
-=======
-          </div>
->>>>>>> f136ea7f8b971b748c972fb24d77befb8a6b3171
     )
 }
 
