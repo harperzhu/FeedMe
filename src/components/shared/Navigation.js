@@ -16,7 +16,7 @@ export function Header(){
                     </Nav>
                     <Nav>
                         <NavDropdown title="My Profile" id="collasible-nav-dropdown">
-                            <NavDropdown.Item><Link to="#action/3.1">Sign in</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/signin">Sign in</Link></NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             <NavDropdown.Divider />

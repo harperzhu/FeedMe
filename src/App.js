@@ -59,14 +59,16 @@ function App(props) {
 
 
     return(
-        <div>
-          <Header />
+      <div>
+        <Header />
 
-          <div>
+        <div>
           <Switch>
           <Route  exact path="/">
               <Cover />
-              <AboutUs/>
+              <Intro />
+              <Process />
+              <Subscription />
             </Route>
 
             <Route path="/signin">
@@ -77,29 +79,25 @@ function App(props) {
               <PetList pets={props.pets} handleCurrentPetCallback={handleCurrentPet}/>
             </Route>
 
+            <Route  exact path="/donation">
+            <DonationWithoutSpecifiedPet/>
+            </Route>
 
-                <Route  exact path="/donation">
-                <DonationWithoutSpecifiedPet/>
-                </Route>
+            <Route  exact path="/donation/:name" >
+              <Profile pets={props.pets}/>
+              <DonationForm pets={props.pets}/>
+            </Route>
 
-                <Route  exact path="/donation/:name" >
-                  <Profile pets={props.pets}/>
-                  <DonationForm pets={props.pets}/>
-                </Route>
-
-                <Route exact path="/about">
-                  <AboutUs />
-                </Route>
-
-
-
-
+            <Route exact path="/about">
+              <AboutUs />
+            </Route>
 
           </Switch>
-          </div>
-          <Footer />
-
         </div>
+
+        <Footer />
+
+      </div>
     )
 }
 
