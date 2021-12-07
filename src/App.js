@@ -53,6 +53,7 @@ function App(props) {
 
     return(
         <div>
+          <Header />
           <Switch>
             <Route  exact path="/">
               <Cover />
@@ -64,7 +65,7 @@ function App(props) {
             <Route path="/petList">
               <PetList pets={props.pets} />
             </Route>
-            
+
             <Route  path="/about">
               <AboutUs />
             </Route>
@@ -84,6 +85,6 @@ function App(props) {
           </div>
     )
 }
- 
+
 
 export default App;
