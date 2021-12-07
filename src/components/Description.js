@@ -50,11 +50,11 @@ export function Intro() {
 								Get Connected
 								With Your Pets
 							</h1>
-							<h5>We are here to listen from you deliver exellence</h5>
+							<h5>We are here to help you with your first donation</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
 							</p>
-							<Link to="/petList" className="lg-btn text-uppercase">get details</Link>
+							<Link to="/petList" className="lg-btn text-uppercase">Donate a meal today</Link>
 				</div>
       </div>
     </div>

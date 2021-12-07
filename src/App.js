@@ -41,11 +41,10 @@ function App(props) {
     //NOTE: PLEASE CONSIDER IF WE NEED TO SAVE THE PROPS.PETS AS STATE SINCE IT NEVER CHANGED
     let [petsMap, setPetsMap] = useState(props.pets);
 
-
-
     const handleCurrentPet = (id) => {
+      console.log(id);
       setCurrentPet(id);
-      
+      // setTimeout(() => console.log(currentPet), 1000);
     }
 
     // const handlePetsMap = (data) =>{
@@ -75,7 +74,7 @@ function App(props) {
             </Route>
 
             <Route path="/petList">
-              <PetList pets={props.pets} />
+              <PetList pets={props.pets} handleCurrentPetCallback={handleCurrentPet}/>
             </Route>
 
 
