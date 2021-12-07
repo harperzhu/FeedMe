@@ -4,16 +4,16 @@ import { useParams } from 'react-router-dom';
 import _ from 'lodash';
 
 
-var siteWidth = 1280;
+
 // TODO: YOU DONT HAVE SCREEN DEFINED
 // var scale = screen.width / siteWidth;
-var scale = 0;
+// let scale = 0;
 
-document.querySelector('meta[name="viewport"]')
-  .setAttribute(
-    'content',
-    'width=' + siteWidth + ', initial-scale=' + scale
-  );
+// document.querySelector('meta[name="viewport"]')
+//   .setAttribute(
+//     'content',
+//     'width=' + siteWidth + ', initial-scale=' + scale
+//   );
 
 export function DonationForm(props) {
 
@@ -24,13 +24,13 @@ export function DonationForm(props) {
 
 
   const {name} = useParams();
-  let petName = name; //REPLACE THIS WITH CORRECT VALUE
+  let petName = name;
+  let currentPetObj = props.pets[petName];
 
-  //pretend we loaded external data    
-  let pets =  _.find(props.pets, {name: petName}); //find pet in data
 
-   //if unspecified
-  if(!pets) {
+
+  //if unspecified
+  if(!currentPetObj) {
     return <h2>No pet specified</h2>
   }
   
@@ -51,11 +51,8 @@ export function DonationForm(props) {
 // }
 
   return (
-    <div class="container">
-      <Profile pet={props.pet} />
-
-
-      <div class="donation-window">
+    <div className="container">
+      <div className="donation-window">
         <div>
           <h1> You can help save animals today.
             <br />
@@ -65,8 +62,8 @@ export function DonationForm(props) {
           </h1>
         </div>
 
-        <div class="mobile-container">
-          <div class="payment-amount">
+        <div className="mobile-container">
+          <div className="payment-amount">
 
             {createButton}
 
@@ -76,27 +73,27 @@ export function DonationForm(props) {
             </div> */}
 
           {/* <div className="form-item form-type-radio">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">$</span>
               </div>
               <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$" />
-              <div class ="input-group-append">
-              <span class ="input-group-text">.00</span>
+              <div className ="input-group-append">
+              <span className ="input-group-text">.00</span>
               </div>
             </div>
             </div> */}
 
             {/* CUSTOM DONATION AMOUNT START*/}
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">$</span>
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text">$</span>
             </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="(Custom Amount)"/>
+            <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" placeholder="(Custom Amount)"/>
 
 
-            {/* <div class="input-group-append">
-              <span class="input-group-text">.00</span>
+            {/* <div className="input-group-append">
+              <span className="input-group-text">.00</span>
             </div> */}
           </div>
             {/* CUSTOM DONATION AMOUNT END*/}
