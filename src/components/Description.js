@@ -47,13 +47,17 @@ export function Intro() {
         </div>
         <div className="col-lg-6 home-about-right no-padding">
 							<h1>
-								Get Connected
-								With Your Pets
+							  Connect With
+                <br></br>
+								Shelter Pets
 							</h1>
-							<h5>We are here to help you with your first donation</h5>
+							<h5>How can we help shelter animals?</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+            Every year, millions of animals end up in shelters all across the globe. These animals are either rescued from the streets or dropped off at the shelter. Though a lot of these shelters provide outstanding care and attention, there are still limitations to what they can do.
 							</p>
+              <p>
+              Our mission is to support shelters to provide the best resource for stray animals. 
+              </p>
 							<Link to="/petList" className="lg-btn text-uppercase">Donate a meal today</Link>
 				</div>
       </div>
@@ -67,7 +71,7 @@ export function Process() {
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="title text-center">
-            <h2 className="mb-10">Process to feed a pet</h2>
+            <h2 className="mb-10">How this works</h2>
             <p className="text-muted">Food and love, all in one meal.</p>
           </div>
         </div>
@@ -75,18 +79,18 @@ export function Process() {
       <div className="row">
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-thumbs-up h3"></span>
-          <h4><Link to="/petList">Pet Selection</Link></h4>
-          <p>Description</p>
+          <h4><Link to="/petList">Select A Pet</Link></h4>
+          <p>Select a pet from our list of available pets</p>
         </div>
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-license h3"></span>
-          <h4>Donation Making</h4>
-          <p>Description</p>
+          <h4>Donate A Meal</h4>
+          <p>Make a custom amount of donation as pet meals</p>
         </div>
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-magic-wand h3"></span>
-          <h4>Coonect!</h4>
-          <p>Description</p>
+          <h4>Connect With Pet</h4>
+          <p>Follow up with all the pets you fed in MyPets</p>
         </div>
       </div>
     </div>
