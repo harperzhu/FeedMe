@@ -1,19 +1,25 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 export function Profile(props) {
+  const {name} = useParams();
+  let petName = name;
+  console.log("========");
+  console.log(props.pets[petName]);
+  let currentPetObj = props.pets[petName];
+
   return (
     <div className="donation-page">
-      console.log(props.pet);
       <div className="individual-profile">
         <div className="profile-background-wrapper">
         <div className="picture">
-      <img src={props.pet.img} alt="dog image" width="460" height="372" />
+      <img src={"/" + currentPetObj.img} alt="dog image" width="460" height="372" />
     </div>
 
           <div className="mobile-container">
             <div className="pet-info">
-              <CardTitle pet={props.pet}/>
-              <CardText pet={props.pet}/>
+              <CardTitle pet={currentPetObj}/>
+              <CardText pet={currentPetObj}/>
             </div>
           </div>
         </div>
@@ -27,8 +33,8 @@ export function CardText(props) {
   return (
     <div className="card-text">
       {/* TODO: REMOVE ALL THE BOLD TAGS AND REPLACE WITH CSS */}
-      <div className="name">
-        <b>Name: {props.pet.name}</b>
+      <div className="PetName">
+        <b>Name: {props.pet.PetName}</b>
       </div>
       <div className="Age">
         <b>Age: {props.pet.age}</b>
@@ -54,7 +60,7 @@ export function CardText(props) {
 
 export function CardTitle(props) {
   return (
-    <h2 className="card-title">{props.pet.name}</h2>
+    <h2 className="card-title">{props.pet.PetName}</h2>
   );
 }
 

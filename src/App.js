@@ -9,48 +9,45 @@ import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
+import { useParams } from 'react-router-dom';
 
 
 function App(props) {
     // let [pets, setPets] = useState(props.pets);
 
     // key for petsMap state
-    let [currentPet, setCurrentPet] = useState("Pochi");
+
+    let [currentPet, setCurrentPet] = useState(null);
 
     let [currentBalance, setCurrentBalance] = useState("100");
 
 
+    //NOTE: PLEASE CONSIDER IF WE NEED TO SAVE THE PROPS.PETS AS STATE SINCE IT NEVER CHANGED
     let [petsMap, setPetsMap] = useState(props.pets);
 
 
 
     const handleCurrentPet = (id) => {
       setCurrentPet(id);
-      console.log(currentPet);
+      
     }
+
+    // const handlePetsMap = (data) =>{
+    //   setPetsMap(data);
+    // }
+
 
     const handleCurrentBalance = (balance) => {
       setCurrentBalance(balance);
-      console.log(currentBalance);
     }
+
 
 
     return(
         <div>
           <Header />
-          {/* <AboutUs /> */}
-          {/* <Cover /> */}
-          
-          {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/> */}
-           <DonationForm pet={petsMap[currentPet]}/>
-          <UpdateBoard />
-          <MyPetList />
-          {/* <AboutUs /> */}
-            
-
 
           <div>
-
           <Switch>
                 <Route exact path="/">
                   <Cover />
@@ -62,52 +59,29 @@ function App(props) {
                   <PetList handleCurrentPetCallback={handleCurrentPet} pets={props.pets}/>
                 </Route>
 
-<<<<<<< HEAD
 
                 <Route  exact path="/donation">
-
-              <DonationWithoutSpecifiedPet/>
-                {/* <Redirect exact to="/petList"> </Redirect> */}
+                <DonationWithoutSpecifiedPet/>
                 </Route>
 
-
-                <Route  exact path="/donation/:id" element={<id />}>
-                  <Profile pet={currentPet}/>
-                  <DonationForm handleCurrentBalanceCallback={handleCurrentBalance}/>
+                <Route  exact path="/donation/:name" >
+                  <Profile pets={props.pets}/>
+                  <DonationForm pets={props.pets}/>
                 </Route>
-
-                
-
-
 
                 {/* <Route  exact path="/update">
                   <UpdateBoard pets={props.pets}/>
-=======
-                {/* <Route  path="/adopt/:name">
-                  <Profile user={prop.users}/>
-                  <DonationForm pet={currentPet}/>
                 </Route> */}
-
-
-
-                {/* <Route  path="/myPets">
-                  <UpdateBoard pets={props.user}/>
->>>>>>> 4747f56ede671beb3756f3b4d401c18853fe9554
-                </Route> */}
-
 
                 <Route exact path="/about">
                   <AboutUs />
                 </Route>
 
-
                 {/* <Redirect exact to="/"> </Redirect> */}
-
           </Switch>
-
+          </div>
           <Footer />
 
-          </div>
         </div>
     )
 }

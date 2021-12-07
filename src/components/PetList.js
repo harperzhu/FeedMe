@@ -11,7 +11,7 @@ function PetCard(props) {
           <button className="feed-me"
             id={props.pet.name} 
             onClick={
-              (event) => {props.handleCurrentPetCallback(event.currentTarget.id)}
+              (event) => {props.handleCurrentPetCallback(event.currentTarget.id);}
             }
           >
               Feed Me
