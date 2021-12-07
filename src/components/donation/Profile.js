@@ -3,7 +3,7 @@ import React from "react";
 export function Profile(props) {
   return (
     <div className="donation-page">
-
+      console.log(props.pet);
       <div className="individual-profile">
         <div className="profile-background-wrapper">
         <div className="picture">
@@ -63,6 +63,9 @@ export function CardPicture(props) {
   return (
     <div className="picture">
       <img src={props.pet.img} alt="dog image" width="460" height="372" />
+
     </div>
   );
+
+
 }

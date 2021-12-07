@@ -8,6 +8,7 @@ import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { MyPetList } from "./components/mypets/MyPetList";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
+import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
 
 
 function App(props) {
@@ -40,11 +41,11 @@ function App(props) {
           {/* <AboutUs /> */}
           {/* <Cover /> */}
           
-          {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
+          {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/> */}
            <DonationForm pet={petsMap[currentPet]}/>
           {/* <UpdateBanner />
           <UpdateBoard />
-          <MyPetList /> */}
+          <MyPetList />
           {/* <AboutUs /> */}
             
 
@@ -58,28 +59,38 @@ function App(props) {
                 </Route>
                 
 
-                <Route path="/petList">
-                  <PetList pets={props.pets} />
+                <Route exact path="/petList">
+                  <PetList handleCurrentPetCallback={handleCurrentPet} pets={props.pets}/>
                 </Route>
 
-                {/* <Route  path="/adopt/:id" element={<id />}>
-                  <Profile />
-                  <DonationForm/>
-                </Route> */}
+
+                <Route  exact path="/donation">
+
+              <DonationWithoutSpecifiedPet/>
+                {/* <Redirect exact to="/petList"> </Redirect> */}
+                </Route>
+
+
+                <Route  exact path="/donation/:id" element={<id />}>
+                  <Profile pet={currentPet}/>
+                  <DonationForm handleCurrentBalanceCallback={handleCurrentBalance}/>
+                </Route>
+
+                
 
 
 
-                {/* <Route  path="/update">
+                {/* <Route  exact path="/update">
                   <UpdateBoard pets={props.pets}/>
                 </Route> */}
 
 
-                <Route  path="/about">
+                <Route exact path="/about">
                   <AboutUs />
                 </Route>
 
 
-                {/* <Redirect to="/"> </Redirect> */}
+                {/* <Redirect exact to="/"> </Redirect> */}
 
           </Switch>
 

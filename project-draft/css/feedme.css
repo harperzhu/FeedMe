@@ -197,10 +197,6 @@
   } 
   
   
-  
-  
-  
-  
   .donation-page{
       display: flex;
       flex:1;
@@ -463,3 +459,7 @@
       
   }
   
+  #errorImage{
+     width: 20px;
+
+  }
