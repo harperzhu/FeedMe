@@ -42,7 +42,6 @@ function App(props) {
           
           {/* <PetList handleCurrentPetCallback={handleCurrentPet} pets={petsMap}/>
            <DonationForm pet={petsMap[currentPet]}/>
-          {/* <UpdateBanner />
           <UpdateBoard />
           <MyPetList /> */}
           {/* <AboutUs /> */}
@@ -57,21 +56,20 @@ function App(props) {
                   <Intro />
                   <Process />
                 </Route>
-                
 
                 <Route path="/petList">
                   <PetList pets={props.pets} />
                 </Route>
 
-                {/* <Route  path="/adopt/:id" element={<id />}>
-                  <Profile />
-                  <DonationForm/>
+                {/* <Route  path="/adopt/:name">
+                  <Profile user={prop.users}/>
+                  <DonationForm pet={currentPet}/>
                 </Route> */}
 
 
 
-                {/* <Route  path="/update">
-                  <UpdateBoard pets={props.pets}/>
+                {/* <Route  path="/myPets">
+                  <UpdateBoard pets={props.user}/>
                 </Route> */}
 
 
