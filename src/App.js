@@ -12,7 +12,6 @@ import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithout
 import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
 
-
 function App(props) {
     // =======
     // auth stuff
@@ -37,8 +36,6 @@ function App(props) {
 
     let [CurrentPetMeal, setCurrentPetMeal] = useState("10");
 
-
-
     //NOTE: PLEASE CONSIDER IF WE NEED TO SAVE THE PROPS.PETS AS STATE SINCE IT NEVER CHANGED
     let [petsMap, setPetsMap] = useState(props.pets);
 
@@ -48,19 +45,9 @@ function App(props) {
       // setTimeout(() => console.log(currentPet), 1000);
     }
 
-
-
-
-    // const handlePetsMap = (data) =>{
-    //   setPetsMap(data);
-    // }
-
-
     const handleCurrentPetMeal = (id, meal) => {
       setCurrentPetMeal(id,meal);
     }
-
-
 
     return(
       <div>
@@ -81,7 +68,7 @@ function App(props) {
 
             <Route path="/petList">
               <PetList pets={props.pets} handleCurrentPetCallback={handleCurrentPet}/>
-              
+
             </Route>
 
             <Route  exact path="/donation">

@@ -2,9 +2,6 @@ import React from 'react';
 import {useParams, Redirect} from 'react-router-dom';
 import {useState} from 'react';
 
-
-
-
 function PetCard(props) {
   const [redirectTo, setredirectTo] = useState();
 
@@ -18,12 +15,11 @@ function PetCard(props) {
           <h3 className="pet-name">{props.pet.name}</h3>
           <p className="meals-left">{props.pet.meals} meals left</p>
           <button className="feed-me"
-            id={props.pet.name} 
+            id={props.pet.name}
             onClick={
               (event) => {props.handleCurrentPetCallback(event.currentTarget.id);
                 setredirectTo(props.pet.name);
               }
-            
             }
           >
               Feed Me
@@ -35,7 +31,7 @@ function PetCard(props) {
 }
 
 function PetList(props) {
-  
+
   const {name} = useParams();
   let petName = name;
 
