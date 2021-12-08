@@ -105,6 +105,14 @@ export function DonationForm(props) {
         </div>
 
         <div className="progress-buttons">
+        <button className="donation-button"
+            id={props.pets.meals} 
+            onClick={
+              (event) => {props.handleCurrentPetMealCallback(event.currentTarget.id +1);}
+            }
+          >
+              Feed Me
+          </button>
           <a href="updates.html" className="donate"> Donate </a>
         </div>
       </div>

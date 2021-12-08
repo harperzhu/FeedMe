@@ -35,7 +35,8 @@ function App(props) {
 
     let [currentPet, setCurrentPet] = useState(null);
 
-    let [currentBalance, setCurrentBalance] = useState("100");
+    let [CurrentPetMeal, setCurrentPetMeal] = useState("10");
+
 
 
     //NOTE: PLEASE CONSIDER IF WE NEED TO SAVE THE PROPS.PETS AS STATE SINCE IT NEVER CHANGED
@@ -47,13 +48,16 @@ function App(props) {
       // setTimeout(() => console.log(currentPet), 1000);
     }
 
+
+
+
     // const handlePetsMap = (data) =>{
     //   setPetsMap(data);
     // }
 
 
-    const handleCurrentBalance = (balance) => {
-      setCurrentBalance(balance);
+    const handleCurrentPetMeal = (id, meal) => {
+      setCurrentPetMeal(id,meal);
     }
 
 
@@ -77,6 +81,7 @@ function App(props) {
 
             <Route path="/petList">
               <PetList pets={props.pets} handleCurrentPetCallback={handleCurrentPet}/>
+              
             </Route>
 
             <Route  exact path="/donation">
@@ -85,7 +90,7 @@ function App(props) {
 
             <Route  exact path="/donation/:name" >
               <Profile pets={props.pets}/>
-              <DonationForm pets={props.pets}/>
+              <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/>
             </Route>
 
             <Route exact path="/about">
