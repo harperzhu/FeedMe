@@ -60,11 +60,7 @@ function PetList(props) {
     );
 }
 
-function PetClick(props){
-  Object.values(props.pets).map((pet) => {
-    return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
-  })
-}
+
 
 function MyPetToggle(props) {
     return(
