@@ -7,6 +7,7 @@ import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { FilterControl } from "./components/PetList";
 import { MyPetList } from "./components/mypets/MyPetList";
+import { MyPets } from "./components/mypets/MyPets";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
 import { useParams } from 'react-router-dom';
@@ -31,6 +32,8 @@ function App(props) {
     // let [pets, setPets] = useState(props.pets);
 
     // key for petsMap state
+
+    let [CurrentPet, setCurrentPet] = useState("null");
 
 
     let [CurrentPetMeal, setCurrentPetMeal] = useState("10");
@@ -102,6 +105,10 @@ function App(props) {
             <Route  exact path="/donation/:name" >
               <Profile pets={props.pets}/>
               <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/>
+            </Route>
+
+            <Route  exact path="/liked" >
+              <MyPets pets={props.pets}/>
             </Route>
 
             <Route exact path="/about">

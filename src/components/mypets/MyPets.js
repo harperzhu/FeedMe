@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Redirect, useParams} from 'react-router-dom';
 
-function PetCard(props) {
+function MyLikedPetCard(props) {
   const [redirectTo, setredirectTo] = useState();
 
   if (redirectTo !== undefined) {
-    return <Redirect to={`/donation/${redirectTo}`} push/>
+    return <Redirect to={`/liked/${redirectTo}`} push/>
   } else {
     return(
       <div className="pet-card">
@@ -29,7 +29,7 @@ function PetCard(props) {
           }
 }
 
-function PetList(props) {
+function MyPets(props) {
   
   const {name} = useParams();
   let petName = name;
@@ -38,8 +38,12 @@ function PetList(props) {
         <div id="petList">
           <div className='profile-cards'>
           {  Object.values(props.pets).map((pet) => {
-    return <PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
-  })}
+            if(pet.fed == true){
+              return <MyLikedPetCard key={petName} pet={pet} />
+            }
+          }
+        )
+      }
           </div>
         </div>
     );
@@ -48,7 +52,7 @@ function PetList(props) {
 function PetClick(props){
   Object.values(props.pets).map((pet) => {
     if(pet.fed == true){
-      return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
+      return <MyLikedPetCard key={pet.name} pet={pet}  />
     }
   })
 }
@@ -59,4 +63,4 @@ function MyPetToggle(props) {
     )
 }
 
-export {PetCard, PetList, MyPetToggle};
+export {MyLikedPetCard, MyPets, MyPetToggle};
