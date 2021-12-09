@@ -1,5 +1,3 @@
-
-   
 [
     {"name":"Bear", "gender":"Male", "type": "Dog", "breed":"Samoyed", "img":"./img/profile_pics/bear.jpeg", "meals": 0, "fed": false, "age": 1, "health":"special needs"},
     {"name":"Blot", "gender":"Male", "type": "Cat", "breed":"Tuxedo", "img":"img/profile_pics/blot.jpeg", "meals": 5, "fed": false, "age": 2, "health":"special needs"},

@@ -1,7 +1,12 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
+import { Redirect, useParams} from 'react-router-dom';
 
 function PetCard(props) {
+  const [redirectTo, setredirectTo] = useState();
+
+  if (redirectTo !== undefined) {
+    return <Redirect to={`/donation/${redirectTo}`} push/>
+  } else {
     return(
       <div className="pet-card">
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
@@ -11,7 +16,9 @@ function PetCard(props) {
           <button className="feed-me"
             id={props.pet.name} 
             onClick={
-              (event) => {props.handleCurrentPetCallback(event.currentTarget.id)}
+              (event) => {props.handleCurrentPetCallback(event.currentTarget.id);
+                setredirectTo(props.pet.name);
+              }
             }
           >
               Feed Me
@@ -19,6 +26,7 @@ function PetCard(props) {
         </div>
       </div>
     );
+          }
 }
 
 function PetList(props) {
@@ -39,7 +47,9 @@ function PetList(props) {
 
 function PetClick(props){
   Object.values(props.pets).map((pet) => {
-    return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
+    if(pet.fed == true){
+      return <PetCard key={pet.name} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
+    }
   })
 }
 

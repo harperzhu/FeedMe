@@ -8,7 +8,24 @@
         "meals": 0,
         "fed": false,
         "age": 1,
-        "health": "special needs"
+        "health": "special needs",
+        "updates": [
+            {
+                "img": "img/update_pics/bear/bear-1.jpg",
+                "caption": "sleeping with a sock",
+                "date": "6-26-2020"
+            },
+            {
+                "img": "img/update_pics/bear/bear-2.jpg",
+                "caption": "running nose",
+                "date": "10-18-2020"
+            },
+            {
+                "img": "img/update_pics/bear/bear-3.jpg",
+                "caption": "Say Cheese!",
+                "date": "6-14-2021"
+            }
+        ]
     },
     "Blot": {
         "name": "Blot",
@@ -19,18 +36,57 @@
         "meals": 5,
         "fed": false,
         "age": 2,
-        "health": "special needs"
+        "health": "special needs",
+        "updates": [
+            {
+                "img": "img/update_pics/blot/blot-1.jpg",
+                "caption": "your Amazon delivery",
+                "date": "8-26-2019"
+            },
+            {
+                "img": "img/update_pics/blot/blot-2.jpg",
+                "caption": "look at my paws",
+                "date": "2-18-2020"
+            },
+            {
+                "img": "img/update_pics/blot/blot-3.jpg",
+                "caption": "cat ball",
+                "date": "10-14-2021"
+            }
+        ]
     },
     "Coffee": {
         "name": "Coffee",
         "gender": "Female",
-        "type": "Cat",
+        "type": "Dog",
         "breed": "Golden Retriever",
         "img": "img/profile_pics/coffee.jpeg",
         "meals": 7,
         "fed": false,
         "age": 1,
-        "health": "healthy"
+        "health": "healthy",
+        "updates": [
+            {
+                "img": "img/update_pics/coffee/coffee-1.jpg",
+                "caption": "nap time",
+                "date": "7-16-2021"
+            },
+            {
+                "img": "img/update_pics/coffee/coffee-2.jpg",
+                "caption": "More yogurt, please!",
+                "date": "7-18-2021"
+            },
+            {
+                "img": "img/update_pics/coffee/coffee-3.jpg",
+                "caption": "vet visit",
+                "date": "8-14-2021"
+            },
+            {
+                "img": "img/update_pics/coffee/coffee-4.jpg",
+                "caption": "I'm a branch manager!",
+                "date": "10-24-2021"
+            }
+        ]
     },
     "Logan": {
         "name": "Logan",
@@ -41,7 +97,24 @@
         "meals": 2,
         "fed": false,
         "age": 1,
-        "health": "special needs"
+        "health": "special needs",
+        "updates": [
+            {
+                "img": "img/update_pics/logon/logan-1.jpg",
+                "caption": "mood",
+                "date": "4-16-2021"
+            },
+            {
+                "img": "img/update_pics/logon/logan-2.jpg",
+                "caption": "cute tongue",
+                "date": "4-22-2021"
+            },
+            {
+                "img": "img/update_pics/logon/logan-3.jpg",
+                "caption": "digging a hole to the other side of the world",
+                "date": "11-16-2021"
+            }
+        ]
     },
     "Periwinkle": {
         "name": "Periwinkle",
@@ -52,7 +125,24 @@
         "meals": 1,
         "fed": false,
         "age": 5,
-        "health": "healthy"
+        "health": "healthy",
+        "updates": [
+            {
+                "img": "img/update_pics/periwinkle/periwinkle-1.jpg",
+                "caption": "peekaboo",
+                "date": "12-26-2017"
+            },
+            {
+                "img": "img/update_pics/periwinkle/periwinkle-2.jpg",
+                "caption": "running nose",
+                "date": "1-18-2018"
+            },
+            {
+                "img": "img/update_pics/periwinkle/periwinkle-3.jpg",
+                "caption": "Say Cheese!",
+                "date": "7-6-2021"
+            }
+        ]
     },
     "Pochi": {
         "name": "Pochi",
@@ -66,42 +156,42 @@
         "health": "healthy",
         "updates": [
             {
-                "img": "img/update_pics/pochi-1.jpg",
+                "img": "img/update_pics/pochi/pochi-1.jpg",
                 "caption": "I'm 4 weeks old now!",
                 "date": "7-24-2018"
             },
             {
-                "img": "img/update_pics/pochi-2.jpg",
+                "img": "img/update_pics/pochi/pochi-2.jpg",
                 "caption": "Getting taller!",
                 "date": "9-30-2018"
             },
             {
-                "img": "img/update_pics/pochi-3.jpg",
+                "img": "img/update_pics/pochi/pochi-3.jpg",
                 "caption": "My new toy!",
                 "date": "12-13-2018"
             },
             {
-                "img": "img/update_pics/pochi-4.jpg",
+                "img": "img/update_pics/pochi/pochi-4.jpg",
                 "caption": "Playing with visitor.",
                 "date": "4-20-2019"
             },
             {
-                "img": "img/update_pics/pochi-5.jpg",
+                "img": "img/update_pics/pochi/pochi-5.jpg",
                 "caption": "Having a walk with my best friend!",
                 "date": "4-20-2019"
             },
             {
-                "img": "img/update_pics/pochi-6.jpg",
+                "img": "img/update_pics/pochi/pochi-6.jpg",
                 "caption": "Taking a snooze!",
                 "date": "4-20-2019"
             },
             {
-                "img": "img/update_pics/pochi-7.jpg",
+                "img": "img/update_pics/pochi/pochi-7.jpg",
                 "caption": "Making new friend!",
                 "date": "4-20-2019"
             },
             {
-                "img": "img/update_pics/pochi-8.jpg",
+                "img": "img/update_pics/pochi/pochi-8.jpg",
                 "caption": "Walking with my buddy!",
                 "date": "4-20-2019"
             }
@@ -111,12 +201,29 @@
         "name": "Rusty",
         "gender": "Male",
         "type": "Cat",
-        "breed": "Hound",
+        "breed": "Tabby",
         "img": "img/profile_pics/rusty.jpeg",
         "meals": 9,
         "fed": false,
-        "age": 1,
-        "health": "special needs"
+        "age": 6,
+        "health": "special needs",
+        "updates": [
+            {
+                "img": "img/update_pics/rusty/rusty-1.jpg",
+                "caption": "Am I cute?",
+                "date": "3-26-2015"
+            },
+            {
+                "img": "img/update_pics/rusty/rusty-2.jpg",
+                "caption": "waiting for Friday",
+                "date": "5-18-2018"
+            },
+            {
+                "img": "img/update_pics/rusty/rusty-3.jpg",
+                "caption": "hiii",
+                "date": "10-6-2021"
+            }
+        ]
     },
     "Sammy": {
         "name": "Sammy",
@@ -127,6 +234,23 @@
         "meals": 1,
         "fed": false,
         "age": 4,
-        "health": "special needs"
+        "health": "special needs",
+        "updates": [
+            {
+                "img": "img/update_pics/sammy/sammy-1.jpg",
+                "caption": "I'm tall!",
+                "date": "3-26-2017"
+            },
+            {
+                "img": "img/update_pics/sammy/sammy-2.jpg",
+                "caption": "playing with water",
+                "date": "5-18-2018"
+            },
+            {
+                "img": "img/update_pics/sammy/sammy-3.jpg",
+                "caption": "flowers",
+                "date": "10-6-2021"
+            }
+        ]
     }
 }
