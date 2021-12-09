@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 
 export function AboutUs() {
   return(
-    <div>
-      <h1 className="text-center mt-5">About Us</h1>
+    <div className="mt-5 pt-5">
+      <h1 className="text-center">About Us</h1>
       <main id="about-main">
         <section className="introduction">
             <h2>Who we are</h2>
@@ -64,7 +64,7 @@ export function Intro() {
 export function Process() {
   return (
     <div className="container pt-5 my-5 bg-light">
-      <div className="row d-flex justify-content-center">
+      <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="title text-center">
             <h2 className="mb-10">Process to feed a pet</h2>
@@ -72,7 +72,7 @@ export function Process() {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-thumbs-up h3"></span>
           <h4><Link to="/petList">Pet Selection</Link></h4>
@@ -90,5 +90,34 @@ export function Process() {
         </div>
       </div>
     </div>
+  )
+}
+
+export function Subscription(){
+  return (
+    <div className="container p-4 pb-0">
+      <form action="">
+          <div className="row justify-content-center">
+              <div className="col-auto mb-4 mb-md-0">
+              <p className="pt-2">
+                  <strong>Sign up for our newsletter</strong>
+              </p>
+              </div>
+
+              <div className="col-md-4 col-12 mb-4 mb-md-0">
+                  <div className="form-outline mb-4">
+                      <input type="email" id="form5Example25" className="form-control" placeholder="feedme@gmail.com" />
+                      <label className="form-label" for="form5Example25">Email address</label>
+                  </div>
+              </div>
+
+              <div className="col-auto mb-4 mb-md-0">
+                  <button type="submit" className="btn btn-primary mb-4">
+                      Subscribe
+                  </button>
+              </div>
+          </div>
+      </form>
+  </div> 
   )
 }

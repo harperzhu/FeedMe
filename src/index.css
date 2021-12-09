@@ -139,7 +139,6 @@ a:visited {
   margin-bottom: 0rem;
 }
 
-
 .navbar {
     position: fixed;
     top: 0;
@@ -155,16 +154,15 @@ a:visited {
     display: inline;
 }
 
-.navbar ul li {
-    display: inline;
-    margin: 0 1rem;
-    padding: 0;
-}
 
 .navbar a {
     font-size: 1.2rem;
     color: #344960;
-    text-decoration: none;
+    padding: 0 0.7rem;
+}
+
+.navbar a:hover{
+    color: #32485f;
 }
 
 .navbar img {
@@ -173,25 +171,12 @@ a:visited {
     margin: 0;
 }
 
-.navbar-right .btn {
-    margin: 0 0.5rem;
-}
-
 #sign-in-btn a{
     color: white;
 }
 
-#sign-in-btn {
-    background-color: #344960;
-}
-
-#sign-in-btn:hover {
-    border-color: #877c71;
-}
-
-.nav li a:hover {
-    color:  #877c71 ;
-    border-bottom: #877c71 .2rem solid;
+.navbar button {
+    border: 1.3px #344960;
 }
 
 
@@ -251,8 +236,6 @@ main {
     flex:1;
     flex-direction: column;
 }
-
-
 
 
 .donation-window {
