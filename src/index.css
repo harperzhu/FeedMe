@@ -468,11 +468,18 @@ main {
     margin-top: 10vh;
     background-color: #344960;
     border-width: 0;
-    align-items: center;
 }
 
 #petList .dropdown {
-    padding-top: 1vh;
+    padding-top: 3vh;
+}
+
+#clear {
+    /* margin-top: 10vh; */
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
 }
 
 }
