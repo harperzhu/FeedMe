@@ -37,7 +37,12 @@ function PetList(props) {
   let petName = name;
     return(
         <div id="petList">
-          <FilterControl pets={props.pets} filterBreedCallback={props.filterBreedCallback} filterSpeciesCallback={props.filterSpeciesCallback}/>
+          <FilterControl
+            pets={props.pets}
+            filterBreedCallback={props.filterBreedCallback}
+            filterSpeciesCallback={props.filterSpeciesCallback}
+            clearFilterCallback={props.clearFilterCallback}
+          />
           <div className='profile-cards'>
           { Object.values(props.pets).map((pet) => {
             console.log(props.filterSpecies);
@@ -92,7 +97,17 @@ function FilterControl(props) {
   })
 
   return(
-    <div id="filters">
+    <div id="filters" className="d-flex flex-row">
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic" size="lg">
+          Species
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          {speciesMenu}
+        </Dropdown.Menu>
+      </Dropdown>
+
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic" size="lg">
           Breed
@@ -103,15 +118,7 @@ function FilterControl(props) {
         </Dropdown.Menu>
       </Dropdown>
 
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic" size="lg">
-          Species
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          {speciesMenu}
-        </Dropdown.Menu>
-      </Dropdown>
+      <button id="clear" onClick={() => {props.clearFilterCallback()}}>Clear</button>
     </div>
   )
 }

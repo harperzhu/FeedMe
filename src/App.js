@@ -53,6 +53,11 @@ function App(props) {
       setCurrentSpecies(null);
     }
 
+    const clearFilter = () => {
+      setCurrentBreed(null);
+      setCurrentSpecies(null);
+    }
+
     const handleCurrentPet = (id) => {
       console.log(id);
       setCurrentPet(id);
@@ -88,6 +93,7 @@ function App(props) {
                 filterSpecies={currentSpecies}
                 filterBreedCallback={handleCurrentBreed}
                 filterSpeciesCallback={handleCurrentSpecies}
+                clearFilterCallback={clearFilter}
               />
             </Route>
 
