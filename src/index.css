@@ -463,5 +463,16 @@ main {
         cursor: pointer;
     }
 
+#filters button{
+    margin-left: 15vw;
+    margin-top: 10vh;
+    background-color: #344960;
+    border-width: 0;
+    align-items: center;
+}
+
+#petList .dropdown {
+    padding-top: 1vh;
+}
 
 }

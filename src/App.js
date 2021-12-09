@@ -6,6 +6,7 @@ import { Header, Footer } from "./components/shared/Navigation";
 import { UpdateBoard } from "./components/update/UpdateBoard";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
+import { FilterControl } from "./components/PetList";
 import { MyPetList } from "./components/mypets/MyPetList";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
@@ -39,6 +40,19 @@ function App(props) {
     //NOTE: PLEASE CONSIDER IF WE NEED TO SAVE THE PROPS.PETS AS STATE SINCE IT NEVER CHANGED
     let [petsMap, setPetsMap] = useState(props.pets);
 
+    let [currentSpecies, setCurrentSpecies] = useState(null);
+    let [currentBreed, setCurrentBreed] = useState(null);
+
+    const handleCurrentSpecies = (species) => {
+      setCurrentSpecies(species);
+      setCurrentBreed(null);
+    }
+
+    const handleCurrentBreed = (breed) => {
+      setCurrentBreed(breed);
+      setCurrentSpecies(null);
+    }
+
     const handleCurrentPet = (id) => {
       console.log(id);
       setCurrentPet(id);
@@ -67,8 +81,14 @@ function App(props) {
             </Route>
 
             <Route path="/petList">
-              <PetList pets={props.pets} handleCurrentPetCallback={handleCurrentPet}/>
-
+              <PetList
+                pets={props.pets}
+                handleCurrentPetCallback={handleCurrentPet}
+                filterBreed={currentBreed}
+                filterSpecies={currentSpecies}
+                filterBreedCallback={handleCurrentBreed}
+                filterSpeciesCallback={handleCurrentSpecies}
+              />
             </Route>
 
             <Route  exact path="/donation">

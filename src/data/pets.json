@@ -58,7 +58,7 @@
     "Coffee": {
         "name": "Coffee",
         "gender": "Female",
-        "type": "Cat",
+        "type": "Dog",
         "breed": "Golden Retriever",
         "img": "img/profile_pics/coffee.jpeg",
         "meals": 7,
