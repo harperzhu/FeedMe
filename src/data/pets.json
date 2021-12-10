@@ -6,7 +6,7 @@
         "breed": "Samoyed",
         "img": "./img/profile_pics/bear.jpeg",
         "meals": 0,
-        "fed": false,
+        "liked": false,
         "age": 1,
         "health": "special needs",
         "updates": [
@@ -34,7 +34,7 @@
         "breed": "Tuxedo",
         "img": "img/profile_pics/blot.jpeg",
         "meals": 5,
-        "fed": false,
+        "liked": false,
         "age": 2,
         "health": "special needs",
         "updates": [
@@ -62,7 +62,7 @@
         "breed": "Golden Retriever",
         "img": "img/profile_pics/coffee.jpeg",
         "meals": 7,
-        "fed": false,
+        "liked": true,
         "age": 1,
         "health": "healthy",
         "updates": [
@@ -95,7 +95,7 @@
         "breed": "Husky",
         "img": "img/profile_pics/logan.jpeg",
         "meals": 2,
-        "fed": false,
+        "liked": false,
         "age": 1,
         "health": "special needs",
         "updates": [
@@ -123,7 +123,7 @@
         "breed": "Hound",
         "img": "img/profile_pics/periwinkle.jpeg",
         "meals": 1,
-        "fed": false,
+        "liked": false,
         "age": 5,
         "health": "healthy",
         "updates": [
@@ -151,7 +151,7 @@
         "breed": "Shiba",
         "img": "img/profile_pics/pochi.jpeg",
         "meals": 3,
-        "fed": true,
+        "liked": true,
         "age": 3,
         "health": "healthy",
         "updates": [
@@ -204,7 +204,7 @@
         "breed": "Tabby",
         "img": "img/profile_pics/rusty.jpeg",
         "meals": 9,
-        "fed": false,
+        "liked": false,
         "age": 6,
         "health": "special needs",
         "updates": [
@@ -232,7 +232,7 @@
         "breed": "Mix",
         "img": "img/profile_pics/sammy.jpeg",
         "meals": 1,
-        "fed": false,
+        "liked": false,
         "age": 4,
         "health": "special needs",
         "updates": [
