@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
 import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
+import { ScoreBoard } from "./components/scoreboard/ScoreBoard";
 
 function App(props) {
     // =======
@@ -105,6 +106,7 @@ function App(props) {
             <Route  exact path="/donation/:name" >
               <Profile pets={props.pets}/>
               {/* <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
+              
             </Route>
 
             <Route  exact path="/liked" >
@@ -114,6 +116,12 @@ function App(props) {
             <Route exact path="/about">
               <AboutUs />
             </Route>
+
+{/* 
+            <Route exact path="/scoreboard">
+              <Cover />
+              <ScoreBoard pets={props.pets}/>
+            </Route> */}
 
           </Switch>
         </div>
