@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import SAMPLE_PETS from './data/pets.json';
+import SAMPLE_BREEDS from './data/breeds.json';
 
 import firebase from 'firebase/app';
 
@@ -36,4 +37,4 @@ const analytics = getAnalytics(app);
 
 
 // our app
-ReactDOM.render(<BrowserRouter> <App pets={SAMPLE_PETS} /> </BrowserRouter>, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter> <App pets={SAMPLE_PETS} breeds={SAMPLE_BREEDS} /> </BrowserRouter>, document.getElementById('root'));
