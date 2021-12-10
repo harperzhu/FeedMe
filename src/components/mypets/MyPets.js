@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Redirect, useParams} from 'react-router-dom';
 
+
 function MyLikedPetCard(props) {
   const [redirectTo, setredirectTo] = useState();
+  // let [CurrentPet, setCurrentPet] = useState("null");
+  // const handleCurrentPet = (id) => {
+  //   console.log(id);
+  //   setCurrentPet(id);
+  //   // setTimeout(() => console.log(currentPet), 1000);
+  // }
 
   if (redirectTo !== undefined) {
     return <Redirect to={`/liked/${redirectTo}`} push/>
   } else {
+    console.log(props);
     return(
       <div className="pet-card">
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
@@ -16,8 +24,8 @@ function MyLikedPetCard(props) {
           <button className="feed-me"
             id={props.pet.name} 
             onClick={
-              (event) => {props.handleCurrentPetCallback(event.currentTarget.id);
-                setredirectTo(props.pet.name);
+              (event) => {props.handleCurrentUpdatedPetCallback(event.currentTarget.id);
+                setredirectTo(props.pet.name);                
               }
             }
           >
@@ -26,7 +34,7 @@ function MyLikedPetCard(props) {
         </div>
       </div>
     );
-          }
+    }
 }
 
 function MyPets(props) {
@@ -38,8 +46,8 @@ function MyPets(props) {
         <div id="petList">
           <div className='profile-cards'>
           {  Object.values(props.pets).map((pet) => {
-            if(pet.fed == true){
-              return <MyLikedPetCard key={petName} pet={pet} />
+            if(pet.liked === true){
+              return <MyLikedPetCard key={pet.name} pet={pet} handleCurrentUpdatedPetCallback={props.handleCurrentUpdatedPetCallback}/>
             }
           }
         )
@@ -51,7 +59,7 @@ function MyPets(props) {
 
 function PetClick(props){
   Object.values(props.pets).map((pet) => {
-    if(pet.fed == true){
+    if(pet.liked === true){
       return <MyLikedPetCard key={pet.name} pet={pet}  />
     }
   })

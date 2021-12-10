@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {Dropdown} from 'react-bootstrap';
 
 function PetCard(props) {
-  const [redirectTo, setredirectTo] = useState();
+  const [redirectTo, setredirectTo] = useState(undefined);
 
   if (redirectTo !== undefined) {
     return <Redirect to={`/donation/${redirectTo}`} push/>

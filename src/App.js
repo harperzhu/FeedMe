@@ -6,7 +6,7 @@ import { Header, Footer } from "./components/shared/Navigation";
 import { Profile } from "./components/donation/Profile";
 import { DonationForm } from "./components/donation/DonationForm";
 import { FilterControl } from "./components/PetList";
-import { MyPetList } from "./components/mypets/MyPetList";
+import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
@@ -44,6 +44,8 @@ function App(props) {
 
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
+    let [currentUpdatedPet, setCurrentUpdatedPet] = useState(null);
+
 
     const handleCurrentSpecies = (species) => {
       setCurrentSpecies(species);
@@ -69,6 +71,13 @@ function App(props) {
     const handleCurrentPetMeal = (id, meal) => {
       setCurrentPetMeal(id,meal);
     }
+
+
+    const handleCurrentUpdatedPet = (id) => {
+      console.log(id);
+      setCurrentUpdatedPet(id);
+    }
+
 
     return(
       <div>
@@ -110,7 +119,11 @@ function App(props) {
             </Route>
 
             <Route  exact path="/liked" >
-              <MyPets pets={props.pets}/>
+              <MyPets pets={props.pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet}/>
+            </Route>
+
+            <Route  exact path="/liked/:name" >
+              <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
             </Route>
 
             <Route exact path="/about">
@@ -129,7 +142,7 @@ function App(props) {
         <Footer />
 
       </div>
-    )
+    );
 }
 
 
