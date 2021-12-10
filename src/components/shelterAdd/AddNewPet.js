@@ -28,6 +28,7 @@ export function AddNewPet(props) {
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Age</label>
                             <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected="selected">Select an option</option>
                                 <option> Young (younger than 2 years old)</option>
                                 <option> Adult ((younger than 5 years old) </option>
                                 <option> Senior (older than 5 years old) </option>
@@ -37,9 +38,11 @@ export function AddNewPet(props) {
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Health</label>
                             <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Female</option>
+                            <option selected="selected">Select an option</option>
+                                <option >Female</option>
                                 <option>Male</option>
                             </select>
+
                         </div>
 
                         <div class="form-group">
@@ -52,7 +55,7 @@ export function AddNewPet(props) {
                                         setCurrentAddedPetKind(selectedValue);
                                   }
                                 }>
-
+                            <option selected="selected">Select an option</option>
                                 <option>Cat</option>
                                 <option>Dog</option>
                                 <option>Rabbit</option>
@@ -71,6 +74,7 @@ export function AddNewPet(props) {
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Health</label>
                             <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected="selected">Select an option</option>
                                 <option>Special Needs</option>
                                 <option>Healthy</option>
                             </select>
@@ -130,6 +134,8 @@ export function AddNewPet(props) {
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Pet Breed</label>
                 <select class="form-control" id="pet-breed">
+                <option selected="selected">Select an option</option>
+
                     {options}
                 </select>
             </div>
@@ -153,7 +159,7 @@ export function AddNewPet(props) {
 function AddNewPetCover() {
     return (
         <div id="cover-img">
-            <h1>Add New Pet</h1>
+            <h1>Add A New Pet</h1>
             <p className="sub-head">Food and love, all in one meal.</p>
         </div>
     );

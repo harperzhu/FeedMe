@@ -208,9 +208,7 @@
         "Ukrainian Levkoy"
       ],
       "Rabbit":
-      {
-        "description": "A list of rabbit breeds.",
-        "rabbits":
+
           [
             "American",
             "American Chinchilla",
@@ -261,8 +259,7 @@
             "Standard Chinchilla",
             "Tan",
             "Thrianta"
-          ]
-      },
+          ],
       "Bird":
       ["American Goldfinch",
         "Mourning Dove",
