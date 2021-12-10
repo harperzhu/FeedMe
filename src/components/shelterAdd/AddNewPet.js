@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 
 export function AddNewPet(props) {
 
@@ -56,9 +56,8 @@ export function AddNewPet(props) {
                                 <option>Cat</option>
                                 <option>Dog</option>
                                 <option>Rabbit</option>
-                                <option>Birds</option>
+                                <option>Bird</option>
                                 <option>Reptile</option>
-                                <option>Pig</option>
                                 <option>Others(please specify below)</option>
                             </select>
                         </div>
@@ -106,13 +105,13 @@ export function AddNewPet(props) {
 
                 </div>
 
-
-
-
+                <Link to="/petList" className="btn btn-lg text-uppercase">
+                <button>Submit</button>
+                </Link>
 
             </main>
 
-
+                    
         </body>
     );
 }
