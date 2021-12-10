@@ -8,7 +8,7 @@ function MyLikedPetCard(props) {
   return (
     <div className="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
       
-    <div className="card mb-4">
+    <div className="card mb-4 mt-5 pt-5">
       <div className="card-body">
         <div className="row">
           {/*<!--wrap the image-->*/}

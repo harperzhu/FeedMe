@@ -34,7 +34,7 @@
         "breed": "Tuxedo",
         "img": "img/profile_pics/blot.jpeg",
         "meals": 5,
-        "liked": false,
+        "liked": true,
         "age": 2,
         "health": "special needs",
         "updates": [
