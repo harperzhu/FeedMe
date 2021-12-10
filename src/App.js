@@ -12,7 +12,7 @@ import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
 import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
-import { ScoreBoard } from "./components/scoreboard/ScoreBoard";
+import { AddNewPet, ScoreBoard } from "./components/scoreboard/AddNewPet";
 
 function App(props) {
     // =======
@@ -132,11 +132,11 @@ function App(props) {
               <AboutUs />
             </Route>
 
-{/* 
-            <Route exact path="/scoreboard">
+
+            <Route exact path="/addapet">
               <Cover />
-              <ScoreBoard pets={props.pets}/>
-            </Route> */}
+              <AddNewPet pets={props.pets}/>
+            </Route>
 
           </Switch>
         </div>

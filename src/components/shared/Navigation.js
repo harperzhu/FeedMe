@@ -12,7 +12,7 @@ export function Header(){
                     <Nav className="me-auto">
                         <Nav><Link to="/petList">Feed a Pet</Link></Nav>
                         <Nav><Link to="/about">About Us</Link></Nav>
-                        <Nav><Link to="/">My Pets</Link></Nav>
+                        <Nav><Link to="/liked">My Pets</Link></Nav>
                     </Nav>
                     <Nav>
                         <NavDropdown title="My Profile" id="collasible-nav-dropdown">
