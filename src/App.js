@@ -108,13 +108,14 @@ function App(props) {
               />
             </Route>
 
-            <Route  exact path="/donation">
+            <Route  exact path="/moreinfo">
             <DonationWithoutSpecifiedPet/>
             </Route>
 
-            <Route  exact path="/donation/:name" >
+            <Route  exact path="/moreinfo/:name" >
               <Profile pets={props.pets}/>
-              {/* <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
+              <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
+                            {/* <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
               
             </Route>
 
@@ -123,6 +124,7 @@ function App(props) {
             </Route>
 
             <Route  exact path="/liked/:name" >
+            <Profile pets={props.pets}/>
               <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
             </Route>
 

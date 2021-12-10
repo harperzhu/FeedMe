@@ -7,7 +7,7 @@ function PetCard(props) {
   const [redirectTo, setredirectTo] = useState(undefined);
 
   if (redirectTo !== undefined) {
-    return <Redirect to={`/donation/${redirectTo}`} push/>
+    return <Redirect to={`/moreinfo/${redirectTo}`} push/>
   } else {
     return(
       <div className="pet-card">
