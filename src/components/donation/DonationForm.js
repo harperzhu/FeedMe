@@ -17,10 +17,10 @@ import _ from 'lodash';
 
 export function DonationForm(props) {
 
-  const donationAmountArray = ["$1", "$2", "$3", "$4","$5","$6","$7","$8"];
-  let createButton = donationAmountArray.map((amount) =>
-    <DonationAmount amount={amount} />
-  );
+  // const donationAmountArray = ["$1", "$2", "$3", "$4","$5","$6","$7","$8"];
+  // let createButton = donationAmountArray.map((amount) =>
+  //   <DonationAmount amount={amount} />
+  // );
 
 
   const {name} = useParams();
@@ -65,7 +65,7 @@ export function DonationForm(props) {
         <div className="mobile-container">
           <div className="payment-amount">
 
-            {createButton}
+            {/* {createButton} */}
 
             {/* <div className="form-item form-type-radio">
               <input type="number" id="edit-submitted-donation-amount-7" name="submitted[donation][amount]" value="$" />
@@ -85,20 +85,17 @@ export function DonationForm(props) {
             </div> */}
 
             {/* CUSTOM DONATION AMOUNT START*/}
-          <div className="input-group mb-3">
+          {/* <div className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text">$</span>
             </div>
             <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" placeholder="(Custom Amount)"/>
 
 
-            {/* <div className="input-group-append">
-              <span className="input-group-text">.00</span>
-            </div> */}
-          </div>
+          </div> */}
             {/* CUSTOM DONATION AMOUNT END*/}
 
-            <div>your balance:  </div>
+            {/* <div>your balance:  </div> */}
 
 
           </div>
@@ -111,9 +108,9 @@ export function DonationForm(props) {
               (event) => {props.handleCurrentPetMealCallback(event.currentTarget.id +1);}
             }
           >
-              Feed Me
+              Donate
           </button>
-          <a href="updates.html" className="donate"> Donate </a>
+          {/* <a href="updates.html" className="donate"> Donate </a> */}
         </div>
       </div>
 
@@ -124,10 +121,10 @@ export function DonationForm(props) {
 }
 
 
-export function DonationAmount(props) {
-  return (
-    <div className="form-item form-type-radio">
-      <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value={props.amount} />
-    </div>
-  );
-}
+// export function DonationAmount(props) {
+//   return (
+//     <div className="form-item form-type-radio">
+//       <input type="button" id="edit-submitted-donation-amount-2" name="submitted[donation][amount]" value={props.amount} />
+//     </div>
+//   );
+// }

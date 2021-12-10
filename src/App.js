@@ -113,7 +113,7 @@ function App(props) {
 
             <Route  exact path="/donation/:name" >
               <Profile pets={props.pets}/>
-              <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/>
+              {/* <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
             </Route>
 
             <Route  exact path="/liked" >
