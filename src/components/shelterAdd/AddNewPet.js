@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { useParams, Link} from "react-router-dom";
+import { getDatabase, ref, set as firebaseSet } from "firebase/database"
 
 export function AddNewPet(props) {
 
@@ -8,6 +9,23 @@ export function AddNewPet(props) {
 
     const handleCurrentAddedPetKind = (kind) => {
         setCurrentAddedPetKind(kind);
+    }
+
+    const db = getDatabase();
+    const addPet = (petAge, petBreed, petGender, petHealth, petImg, petName, petMeals, petType) => {
+        const petRef = ref(db, "pets/"+petName);
+        const newPetObj = {
+            age: petAge,
+            breed: petBreed,
+            gender: petGender,
+            health: petHealth,
+            img: petImg,
+            name: petName,
+            meals: petMeals,
+            type: petType
+        }
+
+        firebaseSet(petRef, newPetObj);
     }
 
 
@@ -36,7 +54,7 @@ export function AddNewPet(props) {
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Pet Health</label>
+                            <label for="exampleFormControlSelect1">Pet Gender</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                             <option selected="selected">Select an option</option>
                                 <option >Female</option>
