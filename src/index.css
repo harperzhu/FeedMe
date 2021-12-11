@@ -392,9 +392,6 @@ main {
 
   }
 
-  .card-title{
-      display: flex;
-  }
   .card-text b{
       display: flex;
   }
