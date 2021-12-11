@@ -48,33 +48,33 @@ export function CardText(props) {
   }
   return (
     <div>
-      <div className="card-text">
+      <div className="card-text h3 lead">
         {/* TODO: REMOVE ALL THE BOLD TAGS AND REPLACE WITH CSS */}
 
         <button className="btn like-button" onClick={handleClick}>
-        <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
-      </button>
+          <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
+        </button>
 
-        <div className="PetName">
+        <div className="PetName pb-1">
           <b>Name: {props.pet.name}</b>
         </div>
-        <div className="Age">
+        <div className="Age pb-1">
           <b>Age: {props.pet.age}</b>
         </div>
-        <div className="Health">
+        <div className="Health pb-1">
           <b>Heath: {props.pet.health}</b>
         </div>
-        <div className="Type">
+        <div className="Type pb-1">
           <b>Type: {props.pet.type}</b>
         </div>
-        <div className="Breed">
+        <div className="Breed pb-1">
           <b>Breed: {props.pet.breed}</b>
         </div>
-        <div className="Gender">
+        <div className="Gender pb-1">
           <b>Gender: {props.pet.gender}</b>
         </div>
-        <div className="X meals left">
-          <b>Number of meals left: {props.pet.meals} Meal</b>
+        <div className="likes pb-1">
+          <b>Total Likes: {props.pet.likes} Meal</b>
         </div>
       </div>
     </div>
