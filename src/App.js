@@ -13,6 +13,7 @@ import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithout
 import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
 import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
+import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
 
 function App(props) {
     // =======
@@ -133,10 +134,17 @@ function App(props) {
             </Route>
 
 
+
             <Route exact path="/addnewpet">
               {/* <Cover /> */}
               <AddNewPet pets={props.pets} breeds={props.breeds}/>
             </Route>
+
+            <Route exact path="/addnewpet/success">
+              <ConfirmPetAddition/>
+            </Route>
+
+
 
           </Switch>
         </div>

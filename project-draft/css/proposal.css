@@ -41,3 +41,19 @@ img {
 a {
     color: #44BBA4;
 }
+
+#formSubmitButton{
+  
+    font-family: 'Ubuntu', sans-serif;
+    align-self: center;
+    width: 10rem;
+    font-size: 1rem;
+    padding: 0.46em 1.6em;
+    border: 0.1em solid #cc8561;
+    margin: 0 0.2em 2em 0rem;
+    border-radius: 0.5em;
+    background-color: white;
+    color: #cc8561;
+    transition: all 0.15s;
+  }
+  

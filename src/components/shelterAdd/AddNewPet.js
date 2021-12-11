@@ -143,14 +143,21 @@ export function AddNewPet(props) {
                             </div>
                         </form>
 
-                        <input type="submit" value="submit" />
+                        <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light">
+                            <div className="btn btn-lg text-uppercase" >
+                                <input type="submit" value="submit" id="formSubmitButton"/>
+                            </div>
+                        </Link>
 
                     </form>
 
+                    
+
                 </div>
 
-                {/* <div className="btn btn-lg text-uppercase">
-                        <input type="submit" value="submit" onclick={() => {}}> Submit</button>
+{/* 
+                <div className="btn btn-lg text-uppercase">
+                        <button type="submit" value="submit" onclick={() => {}}> Submit</button>
                         </div> */}
 
 
