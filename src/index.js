@@ -11,7 +11,7 @@ import firebase from 'firebase/app';
 
 // NEEDED LATER, PLEASE DONT DELETE
 // import 'firebase/auth';
-// import 'firebase/database';
+import 'firebase/database';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";

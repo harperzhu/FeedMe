@@ -5,16 +5,22 @@ import {Dropdown} from 'react-bootstrap';
 
 function PetCard(props) {
   const [redirectTo, setredirectTo] = useState(undefined);
+  let heartIcon = "favorite";
+  let heartColor = "#cc8561"
 
   if (redirectTo !== undefined) {
     return <Redirect to={`/moreinfo/${redirectTo}`} push/>
+    
   } else {
     return(
       <div className="pet-card">
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">{props.pet.likes} likes</p>
+          <p className="meals-left">
+            <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
+            
+            {props.pet.likes} likes</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
@@ -56,9 +62,9 @@ function PetList(props) {
           <div className='container-fluid text-center pt-4'>
             <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
             <h1>——Feed a Pet——</h1>
-            <div>
+          <div>
               <h3>Not every pet is lucky enough to shine in a contest</h3>
-              <p className='text-secondary'>For every vote you purchase, we support by buying meals and medicine for dogs who need it the most</p>
+              <p className='text-secondary'>For every vote you casted, we support by buying meals and medicine for dogs who need it the most</p>
             </div>
           </div>
           <FilterControl

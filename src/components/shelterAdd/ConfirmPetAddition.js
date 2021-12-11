@@ -14,6 +14,10 @@ export function ConfirmPetAddition() {
         <button >View Your Pet</button>
     </a>
 
+    <a href="http://localhost:3000/addnewpet">
+        <button >Add More Pet</button>
+    </a>
+
 
     {/* <Redirect exact to="/petList"> </Redirect> */}
     <h6> if your browser doesn't automatically redirect, click <a href="http://localhost:3000/petList">here</a> </h6>

@@ -4,25 +4,25 @@ import { useParams } from "react-router-dom";
 export function Profile(props) {
   const { name } = useParams();
   let petName = name;
-  console.log("========");
-  console.log(props.pets[petName]);
   let currentPetObj = props.pets[petName];
-
-
-
 
   return (
     <div className="donation-page">
       <div className="individual-profile">
-        <div className="profile-background-wrapper">
-          <div className="picture">
-            <img src={"/" + currentPetObj.img} alt="dog image"/>
-          </div>
+        <div className="profile-background-wrapper container-fluid pt-4">
+          <div className="row">
+            <div className="picture col-lg-6 col-md-12">
+              <img className="img-thumbnail" src={"/" + currentPetObj.img} alt="dog image"/>
+            </div>
 
-          <div className="mobile-container">
-            <div className="pet-info">
-              <CardTitle pet={currentPetObj} />
-              <CardText pet={currentPetObj} />
+            <div className="col-lg-6 col-md-12">
+              <div className="pet-info container mt-5">
+                <div className='container-fluid text-center'>
+                  <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
+                </div>
+                <CardTitle pet={currentPetObj} />
+                <CardText pet={currentPetObj} />
+              </div>
             </div>
           </div>
         </div>
@@ -81,16 +81,14 @@ export function CardText(props) {
   );
 }
 
-export function CardTitle(props) {
+function CardTitle(props) {
   return (
-    <h2 className="card-title">{props.pet.PetName}</h2>
+    <h1 className="card-title">——{props.pet.name}——</h1>
   );
 }
 
 
 export function CardPicture(props) {
-
-
 
   return (
     <div className="picture">

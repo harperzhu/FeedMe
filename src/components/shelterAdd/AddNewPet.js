@@ -1,23 +1,27 @@
 import { React, useState } from "react";
 import { useParams, Link, Redirect, Switch } from "react-router-dom";
-import { getDatabase, ref, set as firebaseSet } from "firebase/database"
+import { getDatabase, ref, set as firebaseSet } from "firebase/database";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export function AddNewPet(props) {
 
     let [CurrentAddedPetKind, setCurrentAddedPetKind] = useState(null);
     let [shouldRedirect, setShouldRedirect] = useState(false);
 
-    let [currentData, setCurrentData] = useState({
-    });
+    let [currentData, setCurrentData] = useState({});
 
 
-
-
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         
-
         let name = event.target[0].value;
+        let imageFile = event.target[6].files[0];
+        const storage = getStorage();
+        let sRef = storageRef(storage,  "/img/profile_pics/" + name + ".png");
+
+        await uploadBytes(sRef, imageFile);
+        let imgUrl = await getDownloadURL(sRef);
+
         let data = {};
         data[name] = {};
         
@@ -31,7 +35,10 @@ export function AddNewPet(props) {
             for (let i = 1; i < 6; i++) {
                 data[name][event.target[i].id] = event.target[i].value;
             }
-            setCurrentData(data);
+            data[name]["img_path"] = "/img/profile_pics/" + name + ".png";
+            data[name]["img_url"] = imgUrl;
+            await setCurrentData(data);
+            await uploadToDatabase(data);
             setShouldRedirect(true);
         } else {
             //error message
@@ -45,21 +52,14 @@ export function AddNewPet(props) {
         setCurrentAddedPetKind(kind);
     }
 
-    // const db = getDatabase();
+    function uploadToDatabase(data){
+        const db = getDatabase();
+        const name = Object.keys(data)[0];
 
-    // const addPet = (age, breed, gender, health, name, type) => {
-    //     let handleFormSubmit = handleFormSubmit();
-    //     const petRef = ref(db, "pets/"+name);
-    //     const newPetObj = {
-    //         age: data[age],
-    //         breed: data[breed],
-    //         gender: data[gender],
-    //         health: data[health],
-    //         type: data[type]
-    //     }
+        const petRef = ref(db, "pets/"+name);
 
-    //     firebaseSet(petRef, newPetObj);
-    // }
+        firebaseSet(petRef, data[name]);
+    }
 
 
     return (
@@ -155,15 +155,10 @@ export function AddNewPet(props) {
                         </div>
 
                         <br />
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Upload Pet Pictures</label>
-                                <br />
-                                <input type="file" class="form-control-file" />
 
-
-                            </div>
-                        </form>
+                        <label for="exampleFormControlFile1">Upload Pet Pictures</label>
+                        <br />
+                        <input type="file" class="form-control-file" id="imagePath"/>
                         
                         
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
@@ -172,9 +167,7 @@ export function AddNewPet(props) {
                             </div>
                         {/* </Link> */}
 
-                    </form>
-
-                    
+                    </form>                    
 
                 </div>
 
