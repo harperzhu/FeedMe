@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AboutUs, Intro, Process, Subscription } from "./components/Description";
+import { AboutUs, Description, Intro, Process, Subscription } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
@@ -38,7 +38,7 @@ function App(props) {
     useEffect(() => {
       const auth = getAuth();
       reloadPet();
-  
+
       //addEventListener("loginEvent", () => {})
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){ //have a user
@@ -49,7 +49,7 @@ function App(props) {
              console.log(firebaseUser.uid);
              firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser)).catch((err) => {console.log(err)}).then((err) => {console.log()})//handle errors in firebase
             }
-           
+
           })
           // const dbRef = ref(db, "user");
 
@@ -64,14 +64,14 @@ function App(props) {
 
     //   setMessageArray(postsArray);
     // })
-          
+
 
         } else {
           console.log("logging out");
           setCurrentUser(null);
         }
       })
-  
+
       return () => { //cleanup
         unregisterAuthListener();
       }
@@ -129,9 +129,6 @@ function App(props) {
       setCurrentUpdatedPet(id);
     }
 
-    
-
-
     return(
       <div>
         <Header user={currentUser}/>
@@ -140,9 +137,7 @@ function App(props) {
           <Switch>
           <Route exact path="/">
               <Cover />
-              <Intro />
-              <Process />
-              <Subscription />
+              <Description />
             </Route>
 
             <Route path="/signin">
@@ -170,7 +165,7 @@ function App(props) {
               <Profile pets={pets}/>
               <PetUpdate pets={pets} currentPet={currentUpdatedPet}/>
                             {/* <DonationForm pets={pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
-              
+
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUser}>
