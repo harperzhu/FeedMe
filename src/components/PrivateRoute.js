@@ -10,6 +10,7 @@ export default function PrivateRoute(props) {
     return null;
   }
   else {
-    return <Redirect to="/"/>
+    alert("Please Sign In to View the Page")
+    return <Redirect to="/signin"/>
   }
 }
