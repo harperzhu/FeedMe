@@ -28,7 +28,7 @@ export function AddNewPet(props) {
         if (invalidNameList.indexOf(name.toLowerCase()) === -1) {
             // DO NOT CHANGE THIS TO A FOREACH OR MAP
             // THE KEYS ARE STRING NUMBERS
-            for (let i = 1; i < 6; i++) {
+            for (let i = 1; i < 7; i++) {
                 data[name][event.target[i].id] = event.target[i].value;
             }
             setCurrentData(data);
@@ -54,8 +54,10 @@ export function AddNewPet(props) {
 
         firebaseSet(petRef, data[name]);
     }
-
-    
+    const handleImagePath = (path) => {
+        console.log("yes")
+        console.log(path);
+    }
 
 
     return (
@@ -155,8 +157,7 @@ export function AddNewPet(props) {
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload Pet Pictures</label>
                                 <br />
-                                <input type="file" class="form-control-file" />
-
+                                <input type="file" class="form-control-file" id="imagePath" onchange={handleImagePath}/>
 
                             </div>
                         </form>
