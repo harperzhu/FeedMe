@@ -94,7 +94,7 @@ export function CardPicture(props) {
 
   return (
     <div className="picture">
-      <img src={props.pet.img} alt="dog image" width="460" height="372" />
+      <img className="img-thumbnail"src={props.pet.img} alt= {props.pet.name + "'s picture"} />
 
     </div>
   );
