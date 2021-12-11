@@ -2,11 +2,13 @@ import React from 'react';
 import {useParams, Redirect} from 'react-router-dom';
 import {useState} from 'react';
 import {Dropdown} from 'react-bootstrap';
+import { get, child, getDatabase, ref, set as firebaseSet } from "firebase/database";
+
 
 function PetCard(props) {
   const [redirectTo, setredirectTo] = useState(undefined);
   let heartIcon = "favorite";
-  let heartColor = "#cc8561"
+  let heartColor = "#cc8561";
 
   if (redirectTo !== undefined) {
     return <Redirect to={`/moreinfo/${redirectTo}`} push/>
@@ -14,7 +16,7 @@ function PetCard(props) {
   } else {
     return(
       <div className="pet-card">
-        <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
+        <img className="pet-image" src={props.pet.img_url} alt={props.pet.name} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
           <p className="meals-left"> 
@@ -36,6 +38,9 @@ function PetCard(props) {
     );
           }
 }
+
+
+
 
 function PetList(props) {
   const {name} = useParams();

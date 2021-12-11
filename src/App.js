@@ -16,14 +16,29 @@ import SignInPage from "./components/SignInPage";
 import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
+import { get, child, getDatabase, ref, set } from "firebase/database";
+
 
 function App(props) {
     // =======
     // auth stuff
     const [currentUser, setCurrentUser] = useState(undefined);
+    const [pets, setPets] = useState(undefined);
+
+    const reloadPet = () => {
+      // Get a database reference to our posts
+      const dbRef = ref(getDatabase()); //all the object
+      get(child(dbRef, "pets")).then((snapshot) => {
+        let allThePets = snapshot.val();
+        setPets(allThePets);
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
 
     useEffect(() => {
       const auth = getAuth();
+      reloadPet();
   
       //addEventListener("loginEvent", () => {})
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
@@ -42,19 +57,9 @@ function App(props) {
       }
     }, [])
 
-    // =======
-
-    // let [pets, setPets] = useState(props.pets);
-
-    // key for petsMap state
-
     let [CurrentPet, setCurrentPet] = useState("null");
 
-
     let [CurrentPetMeal, setCurrentPetMeal] = useState("10");
-
-    //NOTE: PLEASE CONSIDER IF WE NEED TO SAVE THE PROPS.PETS AS STATE SINCE IT NEVER CHANGED
-    let [petsMap, setPetsMap] = useState(props.pets);
 
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
@@ -113,7 +118,7 @@ function App(props) {
             <PrivateRoute path="/petList" user={currentUser}>
               <PetList
                 user={currentUser}
-                pets={props.pets}
+                pets={pets}
                 handleCurrentPetCallback={handleCurrentPet}
                 filterBreed={currentBreed}
                 filterSpecies={currentSpecies}
@@ -128,19 +133,19 @@ function App(props) {
             </Route>
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
-              <Profile pets={props.pets}/>
-              <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
-                            {/* <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
+              <Profile pets={pets}/>
+              <PetUpdate pets={pets} currentPet={currentUpdatedPet}/>
+                            {/* <DonationForm pets={pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
               
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUser}>
-              <MyPets pets={props.pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet} user={currentUser}/>
+              <MyPets pets={pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet} user={currentUser}/>
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
-            <Profile pets={props.pets}/>
-              <PetUpdate pets={props.pets} currentPet={currentUpdatedPet} user={currentUser}/>
+            <Profile pets={pets}/>
+              <PetUpdate pets={pets} currentPet={currentUpdatedPet} user={currentUser}/>
             </PrivateRoute>
 
             <Route exact path="/about">
@@ -150,12 +155,12 @@ function App(props) {
 
             <PrivateRoute exact path="/addnewpet" user={currentUser}>
               {/* <Cover /> */}
-              <AddNewPet pets={props.pets} breeds={props.breeds} user={currentUser}/>
+              <AddNewPet pets={pets} breeds={props.breeds} user={currentUser} reloadPet={reloadPet}/>
             </PrivateRoute>
 
             {/* <Redirect to="/addnewpet/success"/> */}
             <Route exact path="/addnewpet/success">
-              <ConfirmPetAddition/>
+              <ConfirmPetAddition pets={pets}/>
             </Route>
 
 

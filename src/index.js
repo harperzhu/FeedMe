@@ -35,6 +35,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-
 // our app
 ReactDOM.render(<BrowserRouter> <App pets={SAMPLE_PETS} breeds={SAMPLE_BREEDS} /> </BrowserRouter>, document.getElementById('root'));

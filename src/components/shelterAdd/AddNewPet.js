@@ -37,8 +37,11 @@ export function AddNewPet(props) {
             }
             data[name]["img_path"] = "/img/profile_pics/" + name + ".png";
             data[name]["img_url"] = imgUrl;
+            data[name]['likes'] = 0;
+            data[name]["updates"] = [];
             await setCurrentData(data);
             await uploadToDatabase(data);
+            await props.reloadPet();
             setShouldRedirect(true);
         } else {
             //error message

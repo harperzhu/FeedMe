@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
 
-export function ConfirmPetAddition() {
+export function ConfirmPetAddition(props) {
   return(
     <div className="mt-5 pt-4 text-center h-100">
     <img src="/img/success.png" alt="cute pet image indicates successful request"></img>
@@ -10,9 +10,9 @@ export function ConfirmPetAddition() {
     <br></br>
     <h6>You can view your new added pet by clicking the button below 
     </h6>
-    <a href="http://localhost:3000/petList">
+    <Redirect to="http://localhost:3000/petList">
         <button >View Your Pet</button>
-    </a>
+    </Redirect>
 
     <a href="http://localhost:3000/addnewpet">
         <button >Add More Pet</button>
