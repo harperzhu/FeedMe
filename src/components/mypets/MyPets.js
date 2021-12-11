@@ -48,10 +48,8 @@ function MyPets(props) {
           {  Object.values(props.pets).map((pet) => {
             if(pet.liked === true){
               return <MyLikedPetCard key={pet.name} pet={pet} handleCurrentUpdatedPetCallback={props.handleCurrentUpdatedPetCallback}/>
-            }
+            }})
           }
-        )
-      }
           </div>
         </div>
     );

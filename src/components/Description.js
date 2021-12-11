@@ -53,7 +53,7 @@ export function Intro() {
 							</h1>
 							<h5>How can we help shelter animals?</h5>
 							<p>
-            Every year, millions of animals end up in shelters all across the globe. These animals are either rescued from the streets or dropped off at the shelter. Though a lot of these shelters provide outstanding care and attention, there are still limitations to what they can do.
+              Every year, millions of animals end up in shelters all across the globe. These animals are either rescued from the streets or dropped off at the shelter. Though a lot of these shelters provide outstanding care and attention, there are still limitations to what they can do.
 							</p>
               <p>
               Our mission is to support shelters to provide the best resource for stray animals. 
@@ -83,13 +83,13 @@ export function Process() {
         </div>
       </div>
       <div className="row text-center">
-        <div className="col-lg-4 col-md-6">
+        <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-thumbs-up h3"></span>
           <h4>Select A Pet</h4>
           <p>Select a pet from our list of available pets</p>
         </div>
-        <div className="col-lg-4 col-md-6">
-          <span className="lnr lnr-license h3"></span>
+        <div className="col-lg-3 col-md-6">
+          <span className="lnr lnr-heart h3"></span>
           <h4>Vote For Pet</h4>
           <p>Click 
             
@@ -98,10 +98,15 @@ export function Process() {
             
              symbol pets to cast votes</p>
         </div>
-        <div className="col-lg-4 col-md-6">
+        <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-magic-wand h3"></span>
           <h4>Connect With Pet</h4>
           <p>Follow up with all the pets you fed in MyPets</p>
+        </div>
+        <div className="col-lg-3 col-md-6">
+          <span className="lnr lnr-upload h3"></span>
+          <h4>Add A Pet</h4>
+          <p>Add a new pet to our website</p>
         </div>
       </div>
     </div>
@@ -122,7 +127,6 @@ export function Subscription(){
               <div className="col-md-4 col-12 mb-4 mb-md-0">
                   <div className="form-outline mb-4">
                       <input type="email" id="form5Example25" className="form-control" placeholder="feedme@gmail.com" />
-                      <label className="form-label" for="form5Example25">Email address</label>
                   </div>
               </div>
 

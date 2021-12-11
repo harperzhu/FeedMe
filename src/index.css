@@ -209,6 +209,12 @@ footer p:last-child {
     padding-top: 8px;
 }
 
+.material-icons {
+    display:inline-block;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
 .introduction h2, .description h2, .contact-info h2 {
     color: #344960;
     font-weight: 300;
