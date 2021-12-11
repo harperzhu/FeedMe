@@ -6,33 +6,32 @@ export function AddNewPet(props) {
 
     let [CurrentAddedPetKind, setCurrentAddedPetKind] = useState(null);
 
-    // let [currentData, setCurrentData] = useState({
-    //     "name" : "",
-    //     "age" : 0,
-    //     "gender" : "",
-    //     "kind" : "",
-    //     "breed" : "",
-    //     "health" : ""
-    // });
-
     let [currentData, setCurrentData] = useState({
     });
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
         
-        // for (let i = 0; i < 6; i++) {
-        //     console.log(event.target[i].id + " : " + event.target[i].value);
-        // }
+
+        let name = event.target[0].value;
         let data = {};
-        data[event.target[0].value] = {};
+        data[name] = {};
         
-        // DO NOT CHANGE THIS TO A FOREACH OR MAP
-        // THE KEYS ARE STRING NUMBERS
-        for (let i = 1; i < 6; i++) {
-            data[event.target[0].value][event.target[i].id] = event.target[i].value;
+        // lookup a list of all the names
+        let invalidNameList = Object.keys(props.pets).map((name) => name.toLowerCase());
+
+        //check if name is in the list
+        if (invalidNameList.indexOf(name.toLowerCase()) === -1) {
+            // DO NOT CHANGE THIS TO A FOREACH OR MAP
+            // THE KEYS ARE STRING NUMBERS
+            for (let i = 1; i < 6; i++) {
+                data[name][event.target[i].id] = event.target[i].value;
+            }
+            setCurrentData(data)
+        } else {
+            //error message
+            console.log("bad name")
         }
-        setCurrentData(data)
         console.log(currentData);
     }
 
