@@ -13,7 +13,7 @@ export function AddNewPet(props) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        
+
         let name = event.target[0].value;
         let imageFile = event.target[6].files[0];
         const storage = getStorage();
@@ -24,7 +24,7 @@ export function AddNewPet(props) {
 
         let data = {};
         data[name] = {};
-        
+
         // lookup a list of all the names
         let invalidNameList = Object.keys(props.pets).map((name) => name.toLowerCase());
 
@@ -41,7 +41,7 @@ export function AddNewPet(props) {
             data[name]['likes'] = 0;
             data[name]["updates"] = [];
 
-            
+
             await setCurrentData(data);
             await uploadToDatabase(data);
             await props.reloadPet();
@@ -129,7 +129,7 @@ export function AddNewPet(props) {
                             <label for="exampleFormControlSelect1">Pet Kind</label>
                             <select class="form-control" id="type" required
                                 // defaultValue={this.state.selectValue}
-                                onChange={        
+                                onChange={
                                     (event) => {
                                         let selectedValue = event.target.value;
                                         setCurrentAddedPetKind(selectedValue);
@@ -165,26 +165,26 @@ export function AddNewPet(props) {
                         <label for="exampleFormControlFile1">Upload Pet Pictures</label>
                         <br />
                         <input type="file" class="form-control-file" id="imagePath" required="required"/>
-                        
-                        
+
+
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
                             <div className="btn btn-lg text-uppercase" >
                                 <input type="submit" value="submit" id="formSubmitButton"/>
                             </div>
                         {/* </Link> */}
 
-                    </form>                    
+                    </form>
 
                 </div>
 
-{/* 
+{/*
                 <div className="btn btn-lg text-uppercase">
                         <button type="submit" value="submit" onclick={() => {}}> Submit</button>
                         </div> */}
 
 
-                        
-{/* 
+
+{/*
                 <Link to="/petList" className="btn btn-lg text-uppercase">
                     <button onSubmit={handleFormSubmit} >Submit</button>
                 </Link> */}

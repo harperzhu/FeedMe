@@ -51,20 +51,6 @@ function App(props) {
             }
 
           })
-          // const dbRef = ref(db, "user");
-
-          // //addEventListener('databaseValueChange', () => {})
-          // const offFunction = onValue(exampleRef, (snapshot) => {
-          // const allPosts = snapshot.val(); //extract the value from the snapshot
-          // const postKeyArray = Object.keys(allPosts); //[MpsA2, MpsA4, MpsA6, MpsBs]
-          // const postsArray = postKeyArray.map((postKey) => {
-          //   const thePostCopy = {...allPosts[postKey], firebaseKey: postKey};
-          //   return thePostCopy;
-    //   })
-
-    //   setMessageArray(postsArray);
-    // })
-
 
         } else {
           console.log("logging out");
@@ -93,7 +79,6 @@ function App(props) {
 
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
-    let [currentUpdatedPet, setCurrentUpdatedPet] = useState(null);
 
     const handleCurrentSpecies = (species) => {
       setCurrentSpecies(species);
@@ -108,12 +93,6 @@ function App(props) {
     const clearFilter = () => {
       setCurrentBreed(null);
       setCurrentSpecies(null);
-    }
-
-
-    const handleCurrentUpdatedPet = (id) => {
-      console.log(id);
-      setCurrentUpdatedPet(id);
     }
 
     return(
@@ -149,18 +128,17 @@ function App(props) {
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
               <Profile pets={pets}/>
-              <PetUpdate pets={pets} currentPet={currentUpdatedPet}/>
-                            {/* <DonationForm pets={pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
+              <PetUpdate pets={pets} />
 
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUser}>
-              <MyPets pets={pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet} user={currentUser}/>
+              <MyPets pets={pets} user={currentUser}/>
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
             <Profile pets={pets}/>
-              <PetUpdate pets={pets} currentPet={currentUpdatedPet} user={currentUser}/>
+              <PetUpdate pets={pets} user={currentUser}/>
             </PrivateRoute>
 
             <Route exact path="/about">
