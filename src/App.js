@@ -9,18 +9,19 @@ import { FilterControl } from "./components/PetList";
 import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
 import PrivateRoute from './components/PrivateRoute';
-import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
+import { Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
-import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
 import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
+import { getDatabase, ref, child, set as firebaseSet, push as firebasePush, onValue, get } from 'firebase/database'
 
 function App(props) {
     // =======
     // auth stuff
     const [currentUser, setCurrentUser] = useState(undefined);
+    const db = getDatabase();
 
     useEffect(() => {
       const auth = getAuth();
@@ -30,7 +31,28 @@ function App(props) {
         if(firebaseUser){ //have a user
           console.log("logging in", firebaseUser);
           setCurrentUser(firebaseUser);
-          console.log(currentUser);
+          get(child(ref(db), "user/" + firebaseUser.uid)).then((snapshot) => {
+            if(snapshot.val() === null){
+             console.log(firebaseUser.uid);
+             firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser)).catch((err) => {console.log(err)}).then((err) => {console.log()})//handle errors in firebase
+            }
+           
+          })
+          // const dbRef = ref(db, "user");
+
+          // //addEventListener('databaseValueChange', () => {})
+          // const offFunction = onValue(exampleRef, (snapshot) => {
+          // const allPosts = snapshot.val(); //extract the value from the snapshot
+          // const postKeyArray = Object.keys(allPosts); //[MpsA2, MpsA4, MpsA6, MpsBs]
+          // const postsArray = postKeyArray.map((postKey) => {
+          //   const thePostCopy = {...allPosts[postKey], firebaseKey: postKey};
+          //   return thePostCopy;
+    //   })
+
+    //   setMessageArray(postsArray);
+    // })
+          
+
         } else {
           console.log("logging out");
           setCurrentUser(null);
@@ -41,6 +63,14 @@ function App(props) {
         unregisterAuthListener();
       }
     }, [])
+
+    const addNewUser = (user) => {
+      return {
+        name: user.displayName,
+        PetLikes: [""]
+      }
+    }
+
 
     // =======
 
