@@ -7,13 +7,13 @@ function MyLikedPetCard(props) {
 
   return (
     <div className="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
-      
-    <div className="pet-card mb-4 mt-5 pt-5">
+
+    <div className="pet-card mb-4 mt-5 pt-4">
       <div className="card-body">
         <div className="row">
           {/*<!--wrap the image-->*/}
           <div className="col-sm-auto col-md-auto col-lg-auto col-xl-12">
-            <img src={"/" + update.img} alt={update.caption} className="col-sm-auto col-xl-12 pb-3"></img>
+            <img src={"/" + update.img} alt={update.caption} className="col-sm-auto col-xl-12 pb-3 pet-image"></img>
           </div>
 
           {/*<!--wrap the content-->*/}
@@ -26,7 +26,7 @@ function MyLikedPetCard(props) {
     </div>
   </div>
 
-  
+
   )
 }
 
@@ -36,30 +36,24 @@ function PetUpdate(props) {
   let currentPetObj = props.pets[petName];
 
 
-  let createCard = currentPetObj.updates.map((update) => 
+  let createCard = currentPetObj.updates.map((update) =>
   <MyLikedPetCard update={update} key={update.img}/>);
 
 
 return (
 
 <div className="profile-cards">
-<header className="header-update jumbotron jumbotron-fluid">
-
-</header>
-
-<main>
-  <div className="container">
-    <div className="row">
-      {/* card list */}
-      {createCard}
+  <main>
+    <div className="container">
+      <div className="row">
+        {/* card list */}
+        {createCard}
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 </div>
-
-
 );
-} 
+}
 
 function MyPetToggle(props) {
     return(
