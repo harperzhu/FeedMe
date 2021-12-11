@@ -30,7 +30,8 @@ export function AddNewPet(props) {
             setCurrentData(data)
         } else {
             //error message
-            console.log("bad name")
+            alert("Invalid Name for Pet: Please Rename The Pet");
+
         }
         console.log(currentData);
     }
@@ -137,6 +138,8 @@ export function AddNewPet(props) {
                                 <label for="exampleFormControlFile1">Upload Pet Pictures</label>
                                 <br />
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+
+
                             </div>
                         </form>
 
@@ -146,8 +149,15 @@ export function AddNewPet(props) {
 
                 </div>
 
-                {/* <Link to="/petList" className="btn btn-lg text-uppercase">
-                    <button onSubmit={handleFormSubmit}>Submit</button>
+                {/* <div className="btn btn-lg text-uppercase">
+                        <input type="submit" value="submit" onclick={() => {}}> Submit</button>
+                        </div> */}
+
+
+                        
+{/* 
+                <Link to="/petList" className="btn btn-lg text-uppercase">
+                    <button onSubmit={handleFormSubmit} >Submit</button>
                 </Link> */}
 
             </main>
