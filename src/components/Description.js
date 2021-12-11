@@ -1,6 +1,16 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+export function Description() {
+  return(
+    <div>
+      <Intro />
+      <Process />
+      <Subscription />
+    </div>
+  )
+}
+
 export function AboutUs() {
   return(
     <div className="mt-5 pt-5">
@@ -8,7 +18,7 @@ export function AboutUs() {
       <main id="about-main">
         <section className="introduction">
             <h2>Who we are</h2>
-            <p>We are a group of students at Unirversity of Washington in Seattle who are animal lovers. We seek ways to utilizing information technology to help build bonds between animal loving people and the animals they are helping.</p>            
+            <p>We are a group of students at Unirversity of Washington in Seattle who are animal lovers. We seek ways to utilizing information technology to help build bonds between animal loving people and the animals they are helping.</p>
         </section>
 
         <section className="description">
@@ -28,9 +38,9 @@ export function AboutUs() {
         </section>
 
         <section className="contact-info">
-            <h2>Contact us</h2> 
+            <h2>Contact us</h2>
             <p>Email: <a href="mailto:feedme@gmail.com">feedme@gmail.com</a></p>
-            <p>Tel: <a href="tel:123-456-789">(123)-456-789</a></p>             
+            <p>Tel: <a href="tel:123-456-789">(123)-456-789</a></p>
         </section>
 
       </main>
@@ -41,7 +51,7 @@ export function AboutUs() {
 export function Intro() {
   return (
     <div className="container mt-5">
-      <div className="row align-items-center"> 
+      <div className="row align-items-center">
         <div className="col-lg-6 no-padding right-align">
           <img className="img-thumbnail" src="./img/puppy.jpg" alt="A cute puppy" />
         </div>
@@ -56,7 +66,7 @@ export function Intro() {
               Every year, millions of animals end up in shelters all across the globe. These animals are either rescued from the streets or dropped off at the shelter. Though a lot of these shelters provide outstanding care and attention, there are still limitations to what they can do.
 							</p>
               <p>
-              Our mission is to support shelters to provide the best resource for stray animals. 
+              Our mission is to support shelters to provide the best resource for stray animals.
               </p>
 							<Link to="/petlist" className="lg-btn text-uppercase">Vote For Pets Today</Link>
 				</div>
@@ -67,11 +77,9 @@ export function Intro() {
 
 export function Process() {
 
-
   // let heartIcon = "favorite";
   // let heartColor = "#cc8561";
 
-  
   return (
     <div className="container pt-5 my-5 bg-light">
       <div className="row justify-content-center">
@@ -91,11 +99,11 @@ export function Process() {
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-heart h3"></span>
           <h4>Vote For Pet</h4>
-          <p>Click 
-            
-            
+          <p>Click
+
+
           {/* <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>  */}
-            
+
              symbol pets to cast votes</p>
         </div>
         <div className="col-lg-3 col-md-6">
@@ -137,6 +145,6 @@ export function Subscription(){
               </div>
           </div>
       </form>
-  </div> 
+  </div>
   )
 }
