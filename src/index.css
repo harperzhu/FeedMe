@@ -291,9 +291,9 @@ main {
     padding:10px 250px;
 }
 
-  
+
 #formSubmitButton{
-  
+
     font-family: 'Ubuntu', sans-serif;
     align-self: center;
     width: 10rem;
@@ -318,6 +318,7 @@ main {
     display: flex;
     justify-content: center;
     padding: 2%;
+    height: 35rem;
 }
 
 .card-text{

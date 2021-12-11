@@ -16,7 +16,7 @@ export function Profile(props) {
       <div className="individual-profile">
         <div className="profile-background-wrapper">
           <div className="picture">
-            <img src={"/" + currentPetObj.img} alt="dog image" width="460" height="372" />
+            <img src={"/" + currentPetObj.img} alt="dog image"/>
           </div>
 
           <div className="mobile-container">
