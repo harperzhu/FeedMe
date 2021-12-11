@@ -138,8 +138,12 @@ a:visited {
   font-size: 1.1rem;
 }
 
+#petList .pet-image {
+    height: 20rem;
+}
+
 .pet-image {
-  height: 20rem;
+  height: 18rem;
   border-radius: 10px 10px 0 0;
   margin-bottom: 0rem;
 }
@@ -292,6 +296,20 @@ main {
 }
 
 
+#formSubmitButton{
+
+    font-family: 'Ubuntu', sans-serif;
+    align-self: center;
+    width: 10rem;
+    font-size: 1rem;
+    padding: 0.46em 1.6em;
+    border: 0.1em solid #cc8561;
+    margin: 0 0.2em 2em 0rem;
+    border-radius: 0.5em;
+    background-color: white;
+    color: #cc8561;
+    transition: all 0.15s;
+  }
 
 
 
@@ -304,6 +322,7 @@ main {
     display: flex;
     justify-content: center;
     padding: 2%;
+    height: 35rem;
 }
 
 .card-text{
@@ -373,9 +392,6 @@ main {
 
   }
 
-  .card-title{
-      display: flex;
-  }
   .card-text b{
       display: flex;
   }

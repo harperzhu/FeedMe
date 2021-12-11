@@ -1,13 +1,17 @@
 import { React, useState } from "react";
-import { useParams, Link} from "react-router-dom";
+import { useParams, Link, Redirect, Switch } from "react-router-dom";
 import { getDatabase, ref, set as firebaseSet } from "firebase/database"
 
 export function AddNewPet(props) {
 
     let [CurrentAddedPetKind, setCurrentAddedPetKind] = useState(null);
+    let [shouldRedirect, setShouldRedirect] = useState(false);
 
     let [currentData, setCurrentData] = useState({
     });
+
+
+
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -27,13 +31,13 @@ export function AddNewPet(props) {
             for (let i = 1; i < 6; i++) {
                 data[name][event.target[i].id] = event.target[i].value;
             }
-            setCurrentData(data)
+            setCurrentData(data);
+            setShouldRedirect(true);
         } else {
             //error message
             alert("Invalid Name for Pet: Please Rename The Pet");
 
         }
-        console.log(currentData);
     }
 
 
@@ -60,9 +64,9 @@ export function AddNewPet(props) {
 
 
     return (
-
-        <body>
-
+        <div>
+            {!shouldRedirect ?
+            <div>
             <AddNewPetCover />
             <main id="about-main">
 
@@ -142,15 +146,23 @@ export function AddNewPet(props) {
 
                             </div>
                         </form>
-
-                        <input type="submit" value="submit" />
+                        
+                        
+                        {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
+                            <div className="btn btn-lg text-uppercase" >
+                                <input type="submit" value="submit" id="formSubmitButton"/>
+                            </div>
+                        {/* </Link> */}
 
                     </form>
 
+                    
+
                 </div>
 
-                {/* <div className="btn btn-lg text-uppercase">
-                        <input type="submit" value="submit" onclick={() => {}}> Submit</button>
+{/* 
+                <div className="btn btn-lg text-uppercase">
+                        <button type="submit" value="submit" onclick={() => {}}> Submit</button>
                         </div> */}
 
 
@@ -161,9 +173,10 @@ export function AddNewPet(props) {
                 </Link> */}
 
             </main>
-
-                    
-        </body>
+            </div>
+            : <Redirect to="/addnewpet/success" formData={currentData}/>
+            }
+        </div>
     );
 }
 

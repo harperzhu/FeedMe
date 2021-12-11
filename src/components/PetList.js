@@ -14,7 +14,7 @@ function PetCard(props) {
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">{props.pet.meals} likes</p>
+          <p className="meals-left">{props.pet.likes} likes</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
@@ -53,8 +53,14 @@ function PetList(props) {
   let petName = name;
     return(
         <div id="petList">
-          <h1>Not every pet is lucky enough to shine in a contest</h1>
-          <h2>For every vote you purchase, we support by buying meals and medicine for dogs who need it the most</h2>
+          <div className='container-fluid text-center pt-4'>
+            <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
+            <h1>——Feed a Pet——</h1>
+            <div>
+              <h3>Not every pet is lucky enough to shine in a contest</h3>
+              <p className='text-secondary'>For every vote you purchase, we support by buying meals and medicine for dogs who need it the most</p>
+            </div>
+          </div>
           <FilterControl
             pets={props.pets}
             filterBreedCallback={props.filterBreedCallback}
