@@ -76,10 +76,10 @@ export function Process() {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row text-center">
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-thumbs-up h3"></span>
-          <h4><Link to="/petList">Select A Pet</Link></h4>
+          <h4>Select A Pet</h4>
           <p>Select a pet from our list of available pets</p>
         </div>
         <div className="col-lg-4 col-md-6">
