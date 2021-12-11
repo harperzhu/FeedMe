@@ -58,7 +58,7 @@ export function Intro() {
               <p>
               Our mission is to support shelters to provide the best resource for stray animals. 
               </p>
-							<Link to="/petList" className="lg-btn text-uppercase">Donate a meal today</Link>
+							<Link to="/petList" className="lg-btn text-uppercase">Vote For Pets Today</Link>
 				</div>
       </div>
     </div>
@@ -66,6 +66,12 @@ export function Intro() {
 }
 
 export function Process() {
+
+
+  // let heartIcon = "favorite";
+  // let heartColor = "#cc8561";
+
+  
   return (
     <div className="container pt-5 my-5 bg-light">
       <div className="row justify-content-center">
@@ -84,8 +90,13 @@ export function Process() {
         </div>
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-license h3"></span>
-          <h4>Donate A Meal</h4>
-          <p>Make a custom amount of donation as pet meals</p>
+          <h4>Vote For Pet</h4>
+          <p>Click 
+            
+            
+          {/* <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>  */}
+            
+             symbol pets to cast votes</p>
         </div>
         <div className="col-lg-4 col-md-6">
           <span className="lnr lnr-magic-wand h3"></span>
