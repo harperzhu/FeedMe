@@ -14,7 +14,7 @@ function PetCard(props) {
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">{props.pet.meals} likes</p>
+          <p className="meals-left">{props.pet.likes} likes</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
