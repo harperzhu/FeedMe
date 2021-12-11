@@ -35,10 +35,13 @@ export function AddNewPet(props) {
             for (let i = 1; i < 6; i++) {
                 data[name][event.target[i].id] = event.target[i].value;
             }
+            data[name]["name"] = name;
             data[name]["img_path"] = "/img/profile_pics/" + name + ".png";
             data[name]["img_url"] = imgUrl;
             data[name]['likes'] = 0;
             data[name]["updates"] = [];
+
+            
             await setCurrentData(data);
             await uploadToDatabase(data);
             await props.reloadPet();
@@ -47,6 +50,7 @@ export function AddNewPet(props) {
             //error message
             alert("Invalid Name for Pet: Please Rename The Pet");
         }
+        console.log(data)
         return data;
     }
 
@@ -58,9 +62,7 @@ export function AddNewPet(props) {
     function uploadToDatabase(data){
         const db = getDatabase();
         const name = Object.keys(data)[0];
-
         const petRef = ref(db, "pets/"+name);
-
         firebaseSet(petRef, data[name]);
     }
 

@@ -10,7 +10,7 @@ export function ConfirmPetAddition(props) {
     <br></br>
     <h6>You can view your new added pet by clicking the button below 
     </h6>
-    <Redirect to="http://localhost:3000/petList">
+    <Redirect to="/petList/">
         <button >View Your Pet</button>
     </Redirect>
 
