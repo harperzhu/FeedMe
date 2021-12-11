@@ -470,10 +470,6 @@ main {
     border-width: 0;
 }
 
-#petList .dropdown {
-    padding-top: 3vh;
-}
-
 #clear {
     /* margin-top: 10vh; */
     color: white;
