@@ -91,10 +91,6 @@ function App(props) {
 
     // key for petsMap state
 
-    let [CurrentPet, setCurrentPet] = useState("null");
-
-    let [CurrentPetMeal, setCurrentPetMeal] = useState("10");
-
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
     let [currentUpdatedPet, setCurrentUpdatedPet] = useState(null);
@@ -112,15 +108,6 @@ function App(props) {
     const clearFilter = () => {
       setCurrentBreed(null);
       setCurrentSpecies(null);
-    }
-
-    const handleCurrentPet = (id) => {
-      console.log(id);
-      setCurrentPet(id);
-    }
-
-    const handleCurrentPetMeal = (id, meal) => {
-      setCurrentPetMeal(id,meal);
     }
 
 
@@ -148,7 +135,6 @@ function App(props) {
               <PetList
                 user={currentUser}
                 pets={pets}
-                handleCurrentPetCallback={handleCurrentPet}
                 filterBreed={currentBreed}
                 filterSpecies={currentSpecies}
                 filterBreedCallback={handleCurrentBreed}

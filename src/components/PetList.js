@@ -12,7 +12,7 @@ function PetCard(props) {
 
   if (redirectTo !== undefined) {
     return <Redirect to={`/moreinfo/${redirectTo}`} push/>
-    
+
   } else {
     return(
       <div className="pet-card">
@@ -21,12 +21,12 @@ function PetCard(props) {
           <h3 className="pet-name">{props.pet.name}</h3>
           <p className="meals-left">
             <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
-            
+
             {props.pet.likes} likes</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
-              (event) => {props.handleCurrentPetCallback(event.currentTarget.id);
+              (event) => {
                 setredirectTo(props.pet.name);
               }
             }
@@ -51,11 +51,11 @@ function PetList(props) {
       console.log(props.filterSpecies);
       console.log(pet);
       if (props.filterBreed === null && props.filterSpecies === null) {
-        listOfPets.push(<PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />);
+        listOfPets.push(<PetCard key={petName} pet={pet} />);
       } else if (props.filterBreed !== null && props.filterBreed === pet.breed) {
-        listOfPets.push(<PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />);
+        listOfPets.push(<PetCard key={petName} pet={pet} />);
       } else if (props.filterSpecies !== null && props.filterSpecies === pet.type) {
-        listOfPets.push(<PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />);
+        listOfPets.push(<PetCard key={petName} pet={pet} />);
       }
     });
     return listOfPets;
