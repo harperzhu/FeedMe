@@ -14,7 +14,7 @@ function PetCard(props) {
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">{props.pet.meals} meals left</p>
+          <p className="meals-left">{props.pet.meals} likes</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
@@ -23,7 +23,7 @@ function PetCard(props) {
               }
             }
           >
-              Feed Me
+              Support Me
           </button>
         </div>
       </div>
@@ -32,29 +32,38 @@ function PetCard(props) {
 }
 
 function PetList(props) {
-
   const {name} = useParams();
+
+  const renderPets = (pets) => {
+    let listOfPets = [];
+    Object.values(pets).map((pet) => {
+      console.log(props.filterSpecies);
+      console.log(pet);
+      if (props.filterBreed === null && props.filterSpecies === null) {
+        listOfPets.push(<PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />);
+      } else if (props.filterBreed !== null && props.filterBreed === pet.breed) {
+        listOfPets.push(<PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />);
+      } else if (props.filterSpecies !== null && props.filterSpecies === pet.type) {
+        listOfPets.push(<PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />);
+      }
+    });
+    return listOfPets;
+  }
+
   let petName = name;
     return(
         <div id="petList">
+          <h1>Not every pet is lucky enough to shine in a contest</h1>
+          <h2>For every vote you purchase, we support by buying meals and medicine for dogs who need it the most</h2>
           <FilterControl
             pets={props.pets}
             filterBreedCallback={props.filterBreedCallback}
             filterSpeciesCallback={props.filterSpeciesCallback}
             clearFilterCallback={props.clearFilterCallback}
           />
+
           <div className='profile-cards'>
-          { Object.values(props.pets).map((pet) => {
-            console.log(props.filterSpecies);
-            console.log(pet);
-            if (props.filterBreed === null && props.filterSpecies === null) {
-              return <PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
-            } else if (props.filterBreed !== null && props.filterBreed === pet.breed) {
-              return <PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
-            } else if (props.filterSpecies !== null && props.filterSpecies === pet.type) {
-              return <PetCard key={petName} pet={pet} handleCurrentPetCallback={props.handleCurrentPetCallback} />
-            }
-          })}
+            {renderPets(props.pets)}
           </div>
         </div>
     );
