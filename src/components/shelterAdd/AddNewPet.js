@@ -40,7 +40,7 @@ export function AddNewPet(props) {
                     <form>
                         <div >
                             <label for="exampleFormControlInput1">Pet Name</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Example: Coffee" onChange={handleFormNameChange}/>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Example: Coffee"/>
                         </div>
 
                         <div class="form-group">
@@ -128,7 +128,7 @@ export function AddNewPet(props) {
                 </div>
 
                 <Link to="/petList" className="btn btn-lg text-uppercase">
-                <button onClick={handleFormSubmit}>Submit</button>
+                <button>Submit</button>
                 </Link>
 
             </main>
@@ -139,40 +139,40 @@ export function AddNewPet(props) {
 }
 
 
-const [queryInputName, setQueryInputName] = useState('');
+// const [queryInputName, setQueryInputName] = useState('');
 
 
-const handleFormSubmit = (event) => {
-    event.preventDefault();
-  }
+// const handleFormSubmit = (event) => {
+//     event.preventDefault();
+//   }
 
-  const handleFormNameChange = (event) => {
-    setQueryInputName(event.target.value);
-  }
+//   const handleFormNameChange = (event) => {
+//     setQueryInputName(event.target.value);
+//   }
 
-  const db = getDatabase();
+//   const db = getDatabase();
 
-  const UpdateDatabase = () => {
+//   const UpdateDatabase = () => {
 
-    const newPetRef = ref(db, "message"); 
-    firebaseSet(newPetRef)
+//     const newPetRef = ref(db, "message"); 
+//     firebaseSet(newPetRef)
 
 
     
-    const newMessageObj = {
-      userId: msgUser.uid,
-      userName: msgUser.username,
-      userImg: "/img/"+msgUser.userName+".png", //hacky
-      text: msgText,
-      timestamp: Date.now(), //posted now
-      channel: msgChannel
-    }
-    const newMessageArray = [...messageArray, newMessageObj]; //spread to copy!
-    setMessageArray(newMessageArray);
-  }
+//     const newMessageObj = {
+//       userId: msgUser.uid,
+//       userName: msgUser.username,
+//       userImg: "/img/"+msgUser.userName+".png", //hacky
+//       text: msgText,
+//       timestamp: Date.now(), //posted now
+//       channel: msgChannel
+//     }
+//     const newMessageArray = [...messageArray, newMessageObj]; //spread to copy!
+//     setMessageArray(newMessageArray);
+//   }
 
 
-    export function PetBreeds(props) {
+ export function PetBreeds(props) {
     console.log(props)
     if (props.CurrentAddedPetKind) {
         let options = [];
@@ -215,13 +215,4 @@ function AddNewPetCover() {
             <p className="sub-head">Food and love, all in one meal.</p>
         </div>
     );
-}
-
-
-
-// function PetKind(props) {
-
-
-//     return (
-//     )
-// }
+    }
