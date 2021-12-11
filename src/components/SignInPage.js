@@ -5,7 +5,9 @@ import { Redirect } from 'react-router-dom';
 import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
-const USERS = [null, "Penguin", "Parrot", "Zebra"]
+
+
+
 
 //sign in options
 const fireabseUIConfig = {
@@ -27,7 +29,7 @@ const fireabseUIConfig = {
 
 export default function SignInPage(props) {
   const auth = getAuth();
-  
+
   if(props.user === undefined) {
     return null;
   }
