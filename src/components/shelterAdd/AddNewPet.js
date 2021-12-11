@@ -32,6 +32,7 @@ export function AddNewPet(props) {
                 data[name][event.target[i].id] = event.target[i].value;
             }
             setCurrentData(data);
+            uploadToDatabase(data);
             setShouldRedirect(true);
         } else {
             //error message
@@ -45,21 +46,15 @@ export function AddNewPet(props) {
         setCurrentAddedPetKind(kind);
     }
 
-    // const db = getDatabase();
+    function uploadToDatabase(data){
+        const db = getDatabase();
 
-    // const addPet = (age, breed, gender, health, name, type) => {
-    //     let handleFormSubmit = handleFormSubmit();
-    //     const petRef = ref(db, "pets/"+name);
-    //     const newPetObj = {
-    //         age: data[age],
-    //         breed: data[breed],
-    //         gender: data[gender],
-    //         health: data[health],
-    //         type: data[type]
-    //     }
+        const petRef = ref(db, "pets/"+Object.keys(data)[0]);
 
-    //     firebaseSet(petRef, newPetObj);
-    // }
+        firebaseSet(petRef, data);
+    }
+
+    
 
 
     return (
