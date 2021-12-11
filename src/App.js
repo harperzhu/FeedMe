@@ -14,11 +14,8 @@ import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithout
 import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
 import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
-<<<<<<< HEAD
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-=======
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
->>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
 
 function App(props) {
     // =======
@@ -100,11 +97,7 @@ function App(props) {
 
         <div>
           <Switch>
-<<<<<<< HEAD
           <Route exact path="/">
-=======
-            <Route  exact path="/">
->>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
               <Cover />
               <Intro />
               <Process />
@@ -143,36 +136,20 @@ function App(props) {
               <MyPets pets={props.pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet} user={currentUser}/>
             </PrivateRoute>
 
-<<<<<<< HEAD
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
             <Profile pets={props.pets}/>
               <PetUpdate pets={props.pets} currentPet={currentUpdatedPet} user={currentUser}/>
             </PrivateRoute>
-=======
-            <Route  exact path="/liked/:name" >
-              <Profile pets={props.pets}/>
-              <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
-            </Route>
->>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
 
             <Route exact path="/about">
               <AboutUs />
             </Route>
 
 
-<<<<<<< HEAD
             <PrivateRoute exact path="/addnewpet" user={currentUser}>
               {/* <Cover /> */}
               <AddNewPet pets={props.pets} breeds={props.breeds} user={currentUser}/>
             </PrivateRoute>
-=======
-
-            <Route exact path="/addnewpet">
-              {/* <Cover /> */}
-              <AddNewPet pets={props.pets} breeds={props.breeds}/>
-              
-            </Route>
->>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
 
             {/* <Redirect to="/addnewpet/success"/> */}
             <Route exact path="/addnewpet/success">
