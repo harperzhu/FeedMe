@@ -17,10 +17,10 @@ function PetCard(props) {
         <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left"> 
-          <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span> 
+          <p className="meals-left">
+            <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
             
-             {props.pet.likes} likes</p>
+            {props.pet.likes} likes</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
@@ -62,7 +62,7 @@ function PetList(props) {
           <div className='container-fluid text-center pt-4'>
             <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
             <h1>——Feed a Pet——</h1>
-            <div>
+          <div>
               <h3>Not every pet is lucky enough to shine in a contest</h3>
               <p className='text-secondary'>For every vote you casted, we support by buying meals and medicine for dogs who need it the most</p>
             </div>
