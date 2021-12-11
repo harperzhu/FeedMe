@@ -48,10 +48,11 @@ export function AddNewPet(props) {
 
     function uploadToDatabase(data){
         const db = getDatabase();
+        const name = Object.keys(data)[0];
 
-        const petRef = ref(db, "pets/"+Object.keys(data)[0]);
+        const petRef = ref(db, "pets/"+name);
 
-        firebaseSet(petRef, data);
+        firebaseSet(petRef, data[name]);
     }
 
     
