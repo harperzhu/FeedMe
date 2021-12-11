@@ -21,7 +21,7 @@ export function AddNewPet(props) {
         let invalidNameList = Object.keys(props.pets).map((name) => name.toLowerCase());
 
         //check if name is in the list
-        if (invalidNameList.indexOf(.toLowerCase()) === -1) {
+        if (invalidNameList.indexOf(name.toLowerCase()) === -1) {
             // DO NOT CHANGE THIS TO A FOREACH OR MAP
             // THE KEYS ARE STRING NUMBERS
             for (let i = 1; i < 6; i++) {
