@@ -84,7 +84,7 @@ function App(props) {
 
         <div>
           <Switch>
-          <Route  exact path="/">
+            <Route  exact path="/">
               <Cover />
               <Intro />
               <Process />
@@ -108,7 +108,7 @@ function App(props) {
             </Route>
 
             <Route  exact path="/moreinfo">
-            <DonationWithoutSpecifiedPet/>
+              <DonationWithoutSpecifiedPet/>
             </Route>
 
             <Route  exact path="/moreinfo/:name" >
@@ -123,7 +123,7 @@ function App(props) {
             </Route>
 
             <Route  exact path="/liked/:name" >
-            <Profile pets={props.pets}/>
+              <Profile pets={props.pets}/>
               <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
             </Route>
 
