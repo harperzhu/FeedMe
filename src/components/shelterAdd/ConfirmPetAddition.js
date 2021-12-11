@@ -11,7 +11,7 @@ export function ConfirmPetAddition() {
     <h6>You can view your new added pet by clicking the button below 
     </h6>
     <a href="http://localhost:3000/petList">
-        <button >View your pet</button>
+        <button >View Your Pet</button>
     </a>
 
 
