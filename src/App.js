@@ -149,7 +149,7 @@ function App(props) {
               <SignInPage user={currentUser} />
             </Route>
 
-            <PrivateRoute path="/petList" user={currentUser}>
+            <PrivateRoute path="/petlist" user={currentUser}>
               <PetList
                 user={currentUser}
                 pets={pets}

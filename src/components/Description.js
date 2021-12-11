@@ -58,7 +58,7 @@ export function Intro() {
               <p>
               Our mission is to support shelters to provide the best resource for stray animals. 
               </p>
-							<Link to="/petList" className="lg-btn text-uppercase">Vote For Pets Today</Link>
+							<Link to="/petlist" className="lg-btn text-uppercase">Vote For Pets Today</Link>
 				</div>
       </div>
     </div>
