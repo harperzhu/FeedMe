@@ -27,7 +27,10 @@ const fireabseUIConfig = {
 
 export default function SignInPage(props) {
   const auth = getAuth();
-
+  
+  if(props.user === undefined) {
+    return null;
+  }
   if(props.user) {
     return <Redirect to="/"/>
   }  
