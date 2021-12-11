@@ -47,7 +47,6 @@ function App(props) {
     let [currentBreed, setCurrentBreed] = useState(null);
     let [currentUpdatedPet, setCurrentUpdatedPet] = useState(null);
 
-
     const handleCurrentSpecies = (species) => {
       setCurrentSpecies(species);
       setCurrentBreed(null);
@@ -66,7 +65,6 @@ function App(props) {
     const handleCurrentPet = (id) => {
       console.log(id);
       setCurrentPet(id);
-      // setTimeout(() => console.log(currentPet), 1000);
     }
 
     const handleCurrentPetMeal = (id, meal) => {
@@ -138,8 +136,10 @@ function App(props) {
             <Route exact path="/addnewpet">
               {/* <Cover /> */}
               <AddNewPet pets={props.pets} breeds={props.breeds}/>
+              
             </Route>
 
+            {/* <Redirect to="/addnewpet/success"/> */}
             <Route exact path="/addnewpet/success">
               <ConfirmPetAddition/>
             </Route>
