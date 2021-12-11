@@ -22,7 +22,7 @@ export function AddNewPet(props) {
                     <form>
                         <div >
                             <label for="exampleFormControlInput1">Pet Name</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Example: Coffee" />
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Example: Coffee" onChange={handleFormNameChange}/>
                         </div>
 
                         <div class="form-group">
@@ -110,7 +110,7 @@ export function AddNewPet(props) {
                 </div>
 
                 <Link to="/petList" className="btn btn-lg text-uppercase">
-                <button>Submit</button>
+                <button onClick={handleFormSubmit}>Submit</button>
                 </Link>
 
             </main>
@@ -119,6 +119,40 @@ export function AddNewPet(props) {
         </body>
     );
 }
+
+
+const [queryInputName, setQueryInputName] = useState('');
+
+
+const handleFormSubmit = (event) => {
+    event.preventDefault();
+  }
+
+  const handleFormNameChange = (event) => {
+    setQueryInputName(event.target.value);
+  }
+
+  const db = getDatabase();
+
+  const UpdateDatabase = () => {
+
+    const newPetRef = ref(db, "message"); 
+    firebaseSet(newPetRef)
+
+
+    
+    const newMessageObj = {
+      userId: msgUser.uid,
+      userName: msgUser.username,
+      userImg: "/img/"+msgUser.userName+".png", //hacky
+      text: msgText,
+      timestamp: Date.now(), //posted now
+      channel: msgChannel
+    }
+    const newMessageArray = [...messageArray, newMessageObj]; //spread to copy!
+    setMessageArray(newMessageArray);
+  }
+
 
     export function PetBreeds(props) {
     console.log(props)
@@ -164,6 +198,8 @@ function AddNewPetCover() {
         </div>
     );
 }
+
+
 
 // function PetKind(props) {
 
