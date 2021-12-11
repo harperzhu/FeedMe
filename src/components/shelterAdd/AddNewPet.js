@@ -82,13 +82,14 @@ export function AddNewPet(props) {
                                     class="form-control"
                                     id="name"
                                     placeholder="Example: Coffee"
+                                    required="required"
                             />
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Age  (in years old)</label>
-                            <select class="form-control" id="age">
-                                <option selected="selected">Select an option</option>
+                            <select class="form-control" id="age" required>
+                                <option selected="selected" value="">Select an option</option>
                                 <option> under 1</option>
                                 <option> 1</option>
                                 <option> 2</option>
@@ -116,8 +117,8 @@ export function AddNewPet(props) {
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Gender</label>
-                            <select class="form-control" id="gender">
-                            <option selected="selected">Select an option</option>
+                            <select class="form-control" id="gender" required>
+                            <option selected="selected" value="">Select an option</option>
                                 <option >Female</option>
                                 <option>Male</option>
                             </select>
@@ -126,7 +127,7 @@ export function AddNewPet(props) {
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Kind</label>
-                            <select class="form-control" id="type"
+                            <select class="form-control" id="type" required
                                 // defaultValue={this.state.selectValue}
                                 onChange={        
                                     (event) => {
@@ -134,7 +135,7 @@ export function AddNewPet(props) {
                                         setCurrentAddedPetKind(selectedValue);
                                   }
                                 }>
-                            <option selected="selected">Select an option</option>
+                            <option selected="selected" value="">Select an option</option>
                                 <option>Cat</option>
                                 <option>Dog</option>
                                 <option>Rabbit</option>
@@ -152,8 +153,8 @@ export function AddNewPet(props) {
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Health</label>
-                            <select class="form-control" id="health">
-                            <option selected="selected">Select an option</option>
+                            <select class="form-control" id="health" required>
+                            <option selected="selected" value="">Select an option</option>
                                 <option>Special Needs</option>
                                 <option>Healthy</option>
                             </select>
@@ -163,7 +164,7 @@ export function AddNewPet(props) {
 
                         <label for="exampleFormControlFile1">Upload Pet Pictures</label>
                         <br />
-                        <input type="file" class="form-control-file" id="imagePath"/>
+                        <input type="file" class="form-control-file" id="imagePath" required="required"/>
                         
                         
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
@@ -220,8 +221,8 @@ export function AddNewPet(props) {
         return (
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Pet Breed</label>
-                <select class="form-control" id="breed">
-                <option selected="selected">Select an option</option>
+                <select class="form-control" id="breed" required>
+                <option selected="selected" value="">Select an option</option>
 
                     {options}
                 </select>
