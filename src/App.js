@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AboutUs, Intro, Process, Subscription } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
@@ -8,27 +8,43 @@ import { DonationForm } from "./components/donation/DonationForm";
 import { FilterControl } from "./components/PetList";
 import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
+import PrivateRoute from './components/PrivateRoute';
 import { BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
 import { useParams } from 'react-router-dom';
 import SignInPage from "./components/SignInPage";
 import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
+<<<<<<< HEAD
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+=======
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
+>>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
 
 function App(props) {
     // =======
     // auth stuff
-    const [currentUser, setCurrentUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState(undefined);
 
-    const loginUser = (userId, userName) => {
-      if(!userId){
-        console.log("logging out");
-        setCurrentUser(null);
-      } else {
-        console.log("logging in", userName);
-        setCurrentUser({uid:userId, userName: userName});
+    useEffect(() => {
+      const auth = getAuth();
+  
+      //addEventListener("loginEvent", () => {})
+      const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
+        if(firebaseUser){ //have a user
+          console.log("logging in", firebaseUser);
+          setCurrentUser(firebaseUser);
+          console.log(currentUser);
+        } else {
+          console.log("logging out");
+          setCurrentUser(null);
+        }
+      })
+  
+      return () => { //cleanup
+        unregisterAuthListener();
       }
-    }
+    }, [])
+
     // =======
 
     // let [pets, setPets] = useState(props.pets);
@@ -80,11 +96,15 @@ function App(props) {
 
     return(
       <div>
-        <Header />
+        <Header user={currentUser}/>
 
         <div>
           <Switch>
-          <Route  exact path="/">
+<<<<<<< HEAD
+          <Route exact path="/">
+=======
+            <Route  exact path="/">
+>>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
               <Cover />
               <Intro />
               <Process />
@@ -92,11 +112,12 @@ function App(props) {
             </Route>
 
             <Route path="/signin">
-              <SignInPage user={currentUser} loginFunction={loginUser} />
+              <SignInPage user={currentUser} />
             </Route>
 
-            <Route path="/petList">
+            <PrivateRoute path="/petList" user={currentUser}>
               <PetList
+                user={currentUser}
                 pets={props.pets}
                 handleCurrentPetCallback={handleCurrentPet}
                 filterBreed={currentBreed}
@@ -105,39 +126,53 @@ function App(props) {
                 filterSpeciesCallback={handleCurrentSpecies}
                 clearFilterCallback={clearFilter}
               />
-            </Route>
+            </PrivateRoute>
 
             <Route  exact path="/moreinfo">
-            <DonationWithoutSpecifiedPet/>
+              <DonationWithoutSpecifiedPet/>
             </Route>
 
-            <Route  exact path="/moreinfo/:name" >
+            <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
               <Profile pets={props.pets}/>
               <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
                             {/* <DonationForm pets={props.pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
               
-            </Route>
+            </PrivateRoute>
 
-            <Route  exact path="/liked" >
-              <MyPets pets={props.pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet}/>
-            </Route>
+            <PrivateRoute  exact path="/liked" user={currentUser}>
+              <MyPets pets={props.pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet} user={currentUser}/>
+            </PrivateRoute>
 
-            <Route  exact path="/liked/:name" >
+<<<<<<< HEAD
+            <PrivateRoute  exact path="/liked/:name" user={currentUser}>
             <Profile pets={props.pets}/>
+              <PetUpdate pets={props.pets} currentPet={currentUpdatedPet} user={currentUser}/>
+            </PrivateRoute>
+=======
+            <Route  exact path="/liked/:name" >
+              <Profile pets={props.pets}/>
               <PetUpdate pets={props.pets} currentPet={currentUpdatedPet}/>
             </Route>
+>>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
 
             <Route exact path="/about">
               <AboutUs />
             </Route>
 
 
+<<<<<<< HEAD
+            <PrivateRoute exact path="/addnewpet" user={currentUser}>
+              {/* <Cover /> */}
+              <AddNewPet pets={props.pets} breeds={props.breeds} user={currentUser}/>
+            </PrivateRoute>
+=======
 
             <Route exact path="/addnewpet">
               {/* <Cover /> */}
               <AddNewPet pets={props.pets} breeds={props.breeds}/>
               
             </Route>
+>>>>>>> acccc36fc7724521306d3f6c83453bcbf15b2b2b
 
             {/* <Redirect to="/addnewpet/success"/> */}
             <Route exact path="/addnewpet/success">

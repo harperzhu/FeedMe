@@ -1,13 +1,17 @@
 import {React} from 'react';
 import { Link } from 'react-router-dom';
 import {Navbar, Container, NavDropdown, Nav} from 'react-bootstrap';
+import { getAuth, signOut } from 'firebase/auth';
 import { useState } from 'react';
 
-export function Header(){
+export function Header(props){
     const [isShelter, setIsShelter] = useState(false);
     const handleClick = (event) => {
         setIsShelter(true);
     }
+    const handleSignOut = (event) => {
+        signOut(getAuth());
+      }
     return (        
         <Navbar collapseOnSelect expand="lg" variant="dark">
             <Container>
@@ -20,12 +24,18 @@ export function Header(){
                         <Nav><Link to="/liked">My Pets</Link></Nav>
                     </Nav>
                     <Nav>
+                    {!props.user &&
                         <NavDropdown title="Sign In" id="collasible-nav-dropdown">
                             <NavDropdown.Item onClick={handleClick}><Link to="/signin">Sign In as Shelter</Link></NavDropdown.Item>
                             <NavDropdown.Item><Link to="/signin">Sign In as Individual</Link></NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            
                         </NavDropdown>
+                    }
+                    {props.user &&
+                            <NavDropdown title={"Hello, " + props.user.displayName} id="collasible-nav-dropdown">
+                            <NavDropdown.Item onClick={handleSignOut}>Sign out</NavDropdown.Item>
+                            </NavDropdown>
+                    }  
                     </Nav>
                 </Navbar.Collapse>
             </Container>
