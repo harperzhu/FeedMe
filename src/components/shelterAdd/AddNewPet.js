@@ -203,11 +203,25 @@ export function AddNewPet(props) {
                                 <input type="file" class="form-control-file" id="UpdateImagePath1" required="required" />
                                 <h1>UPDATE 2</h1>
 
-                                <hr />
-                                <div class="form-group">
-                                    <label class="control-label" for="date">Date</label>
-                                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                                </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Pet Kind</label>
+                            <select class="form-control" id="type" required
+                                // defaultValue={this.state.selectValue}
+                                onChange={
+                                    (event) => {
+                                        let selectedValue = event.target.value;
+                                        setCurrentAddedPetKind(selectedValue);
+                                  }
+                                }>
+                            <option selected="selected" value="">Select an option</option>
+                                <option>Cat</option>
+                                <option>Dog</option>
+                                <option>Rabbit</option>
+                                <option>Bird</option>
+                                <option>Reptile</option>
+                                <option>Others(please specify below)</option>
+                            </select>
+                        </div>
 
 
 
@@ -229,43 +243,28 @@ export function AddNewPet(props) {
 
 
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">caption</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-
-                                <label for="exampleFormControlFile1">Upload Upate Pictures 1</label>
-                                <br />
-                                <input type="file" class="form-control-file" id="UpdateImagePath1" required="required" />
+                        <label for="exampleFormControlFile1">Upload Pet Pictures</label>
+                        <br />
+                        <input type="file" class="form-control-file" id="imagePath" required="required"/>
 
 
+                        {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
+                            <div className="btn btn-lg text-uppercase" >
+                                <input type="submit" value="submit" id="formSubmitButton"/>
+                            </div>
+                        {/* </Link> */}
+
+                    </form>
 
 
-
-
-
-
-                                {/* upload update pictures*/}
-
-
-                                {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
-                                <div className="btn btn-lg text-uppercase" >
-                                    <input type="submit" value="submit" id="formSubmitButton" />
-                                </div>
-                                {/* </Link> */}
-
-                            </form>
-
-                        </div>
-
-                        {/* 
+{/*
                 <div className="btn btn-lg text-uppercase">
                         <button type="submit" value="submit" onclick={() => {}}> Submit</button>
                         </div> */}
 
 
 
-                        {/* 
+{/*
                 <Link to="/petList" className="btn btn-lg text-uppercase">
                     <button onSubmit={handleFormSubmit} >Submit</button>
                 </Link> */}
