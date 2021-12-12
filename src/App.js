@@ -192,6 +192,8 @@ function App(props) {
               <ConfirmPetAddition pets={pets}/>
             </Route>
 
+            <Redirect to="/"/>
+
 
 
           </Switch>
