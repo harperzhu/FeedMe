@@ -100,8 +100,8 @@ function FilterControl(props) {
 
   // breeds
   let breeds = new Set();
-  names.map((a) => {
-    breeds.add(props.pets[a].breed);
+  names.map((name) => {
+    breeds.add(props.pets[name].breed);
   })
   let breedsMenu = [];
   breeds.forEach((breed) => {
@@ -110,12 +110,12 @@ function FilterControl(props) {
 
   //species
   let species = new Set();
-  names.map((a) => {
-    species.add(props.pets[a].type);
+  names.map((name) => {
+    species.add(props.pets[name].type);
   })
   let speciesMenu = [];
-  species.forEach((s) => {
-    speciesMenu.push((<Dropdown.Item id={s} href="#" onClick={(event)=>{props.filterSpeciesCallback(event.currentTarget.id)}}> {s} </Dropdown.Item>))
+  species.forEach((oneSpecies) => {
+    speciesMenu.push((<Dropdown.Item id={oneSpecies} href="#" onClick={(event)=>{props.filterSpeciesCallback(event.currentTarget.id)}}> {oneSpecies} </Dropdown.Item>))
   })
 
   return(
