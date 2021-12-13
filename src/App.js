@@ -4,18 +4,16 @@ import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
 import { Profile } from "./components/donation/Profile";
-import { DonationForm } from "./components/donation/DonationForm";
-import { FilterControl } from "./components/PetList";
 import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
 import PrivateRoute from './components/PrivateRoute';
-import { Route, Switch, Link, Redirect} from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import {ErrorPage} from './components/donation/ErrorPage'
 import SignInPage from "./components/SignInPage";
-import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
+import { AddNewPet} from "./components/shelterAdd/AddNewPet";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
-import { getDatabase, ref, child, set as firebaseSet, push as firebasePush, onValue, get } from 'firebase/database'
+import { getDatabase, ref, child, set as firebaseSet, get } from 'firebase/database'
 
 function App(props) {
     // =======
