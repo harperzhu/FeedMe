@@ -99,12 +99,12 @@ export function Process() {
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-heart h3"></span>
           <h4>Vote For Pet</h4>
-          <p>Click
+          <p>View more pet info and cast votes</p>
 
 
           {/* <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>  */}
 
-             symbol pets to cast votes</p>
+  
         </div>
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-magic-wand h3"></span>

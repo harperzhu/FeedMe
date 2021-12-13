@@ -171,7 +171,7 @@ export function AddNewPet(props) {
                                 <br />
                                 <br />
 
-                                <div class="form-row align-items-center">
+                                {/* <div class="form-row align-items-center">
                                     <div class="col-auto my-1">
                                         <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label>
                                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -181,29 +181,29 @@ export function AddNewPet(props) {
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> */}
 
-
+{/* 
                                 <h1>UPDATE 1</h1>
-                                <hr />
-
+                                <hr /> */}
+{/* 
                                 <div class="form-group">
                                     <label class="control-label" for="date">Date</label>
                                     <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                                </div>
+                                </div> */}
 
-
+{/* 
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">caption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
+                                </div> */}
 
-                                <label for="exampleFormControlFile1">Upload Upate Pictures 1</label>
+                                {/* <label for="exampleFormControlFile1">Upload Upate Pictures 1</label>
                                 <br />
                                 <input type="file" class="form-control-file" id="UpdateImagePath1" required="required" />
-                                <h1>UPDATE 2</h1>
+                                <h1>UPDATE 2</h1> */}
 
-                        <div class="form-group">
+                        {/* <div class="form-group">
                             <label for="exampleFormControlSelect1">Pet Kind</label>
                             <select class="form-control" id="type" required
                                 // defaultValue={this.state.selectValue}
@@ -221,11 +221,11 @@ export function AddNewPet(props) {
                                 <option>Reptile</option>
                                 <option>Others(please specify below)</option>
                             </select>
-                        </div>
+                        </div> */}
 
 
 
-                                <div class="form-group">
+                                {/* <div class="form-group">
                                     <label for="exampleFormControlTextarea1">caption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
@@ -239,24 +239,24 @@ export function AddNewPet(props) {
                                 <div class="form-group">
                                     <label class="control-label" for="date">Date</label>
                                     <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                                </div>
+                                </div> */}
 
 
 
-                        <label for="exampleFormControlFile1">Upload Pet Pictures</label>
+                        {/* <label for="exampleFormControlFile1">Upload Pet Pictures</label>
                         <br />
-                        <input type="file" class="form-control-file" id="imagePath" required="required"/>
+                        <input type="file" class="form-control-file" id="imagePath" required="required"/> */}
 
 
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
-                            <div className="btn btn-lg text-uppercase" >
+                            {/* <div className="btn btn-lg text-uppercase" >
                                 <input type="submit" value="submit" id="formSubmitButton"/>
-                            </div>
+                            </div> */}
                         {/* </Link> */}
 
                     </form>
 
-
+                        </div>
 {/*
                 <div className="btn btn-lg text-uppercase">
                         <button type="submit" value="submit" onclick={() => {}}> Submit</button>
