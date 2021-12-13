@@ -22,7 +22,7 @@ function App(props) {
     // auth stuff
     const [currentUser, setCurrentUser] = useState(undefined);
     const [pets, setPets] = useState(undefined);
-    const [currentUserObj, setCurrentUserObj] = useState(undefined);
+    let currentUserObj = undefined;
     const db = getDatabase();
 
     const reloadPet = () => {
@@ -36,6 +36,8 @@ function App(props) {
       });
     }
 
+    
+
     useEffect(() => {
       const auth = getAuth();
       reloadPet();
@@ -48,12 +50,14 @@ function App(props) {
           
           console.log(currentUser);
           get(child(ref(db), "user/" + firebaseUser.uid)).then((snapshot) => {
+            
             if(snapshot.val() === null){
              console.log(firebaseUser.uid);
              firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser)).catch((err) => {console.log(err)}).then((err) => {console.log()})//handle errors in firebase
             }
-            setCurrentUserObj(snapshot.val());
-            console.log(currentUserObj);
+            console.log(snapshot.val());
+            currentUserObj = snapshot.val();
+            
           })
           
         } else {
@@ -137,11 +141,11 @@ function App(props) {
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUser}>
-              <MyPets pets={pets} user={currentUserObj}/>
+              <MyPets pets={pets} userObj={currentUserObj}/>
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
-            <Profile pets={pets} user={currentUserObj}/>
+            <Profile pets={pets} userObj={currentUserObj}/>
               <PetUpdate pets={pets} />
             </PrivateRoute>
 

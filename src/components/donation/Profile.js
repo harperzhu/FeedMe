@@ -5,8 +5,8 @@ export function Profile(props) {
   const { name } = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
-  let user = props.currentUserObj;
-  console.log(currentPetObj);
+  let userObj = props.userObj;
+  console.log(userObj);
 
   return (
     <div className="donation-page">
@@ -23,7 +23,7 @@ export function Profile(props) {
                   <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
                 </div>
                 <CardTitle pet={currentPetObj} />
-                <CardText pet={currentPetObj} user={user}/>
+                <CardText pet={currentPetObj} userObj={userObj}/>
               </div>
             </div>
           </div>
@@ -35,14 +35,15 @@ export function Profile(props) {
 }
 
 export function CardText(props) {
-  let like = props.user.PetLikes.filter(pet => pet === props.currentPetObj.name)[0] === props.currentPetObj.name;
-  console.log(like);
-  const [isLiked, setIsLiked] = useState(false);
+  const userObj = props.userObj;
+  const pet = props.currentPetObj;
+  console.log(userObj);
+  const [isLiked, setIsLiked] = useState(userObj.PetLikes.indexOf(pet.name) !== -1);
   
 
   const handleClick = (event) => {
     setIsLiked(!isLiked);
-    
+    console.log(isLiked);
   }
 
   let heartColor = "grey";
