@@ -44,12 +44,10 @@ function PetCard(props) {
 
 function PetList(props) {
   const {name} = useParams();
-
+  console.log(props);
   const renderPets = (pets) => {
     let listOfPets = [];
     Object.values(pets).map((pet) => {
-      console.log(props.filterSpecies);
-      console.log(pet);
       if (props.filterBreed === null && props.filterSpecies === null) {
         listOfPets.push(<PetCard key={petName} pet={pet} />);
       } else if (props.filterBreed !== null && props.filterBreed === pet.breed) {

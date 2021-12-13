@@ -18,9 +18,9 @@ import { getDatabase, ref, child, set as firebaseSet, get } from 'firebase/datab
 function App(props) {
     // =======
     // auth stuff
-    const [currentUser, setCurrentUser] = useState(undefined);
+    // const [currentUser, setCurrentUser] = useState(undefined);
     const [pets, setPets] = useState(undefined);
-    // const [currentUserObj, setCurrentUserObj] = useState(undefined);
+    const [currentUserObj, setCurrentUserObj] = useState(undefined);
     const db = getDatabase();
 
     const reloadPet = () => {
@@ -44,9 +44,7 @@ function App(props) {
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){ //have a user
           console.log("logging in", firebaseUser);
-          setCurrentUser(firebaseUser);
           
-          console.log(currentUser);
           get(child(ref(db), "user/" + firebaseUser.uid)).then((snapshot) => {
             
             if(snapshot.val() === null){
@@ -55,11 +53,14 @@ function App(props) {
             }
             // setCurrentUserObj(snapshot.val());
             // console.log(currentUserObj);
+            console.log(snapshot.val());
+            setCurrentUserObj(snapshot.val());
           })
+          
           
         } else {
           console.log("logging out");
-          setCurrentUser(null);
+          setCurrentUserObj(null);
         }
       })
 
@@ -103,7 +104,7 @@ function App(props) {
 
     return(
       <div>
-        <Header user={currentUser}/>
+        <Header user={currentUserObj}/>
 
         <div>
           <Switch>
@@ -113,12 +114,11 @@ function App(props) {
             </Route>
 
             <Route path="/signin">
-              <SignInPage user={currentUser} />
+              <SignInPage user={currentUserObj} />
             </Route>
 
-            <PrivateRoute path="/petlist" user={currentUser}>
+            <PrivateRoute path="/petlist" user={currentUserObj}>
               <PetList
-                user={currentUser}
                 pets={pets}
                 filterBreed={currentBreed}
                 filterSpecies={currentSpecies}
@@ -132,18 +132,18 @@ function App(props) {
               <ErrorPage/>
             </Route>
 
-            <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
-              <Profile pets={pets}/>
+            <PrivateRoute  exact path="/moreinfo/:name" user={currentUserObj}>
+              <Profile pets={pets} user={currentUserObj}/>
               <PetUpdate pets={pets} />
 
             </PrivateRoute>
 
-            <PrivateRoute  exact path="/liked" user={currentUser}>
-              <MyPets pets={pets} user={currentUser}/>
+            <PrivateRoute  exact path="/liked" user={currentUserObj}>
+              <MyPets pets={pets} user={currentUserObj}/>
             </PrivateRoute>
 
-            <PrivateRoute  exact path="/liked/:name" user={currentUser}>
-            <Profile pets={pets} user={currentUser}/>
+            <PrivateRoute  exact path="/liked/:name" user={currentUserObj}>
+              <Profile pets={pets} user={currentUserObj}/>
               <PetUpdate pets={pets}/>
             </PrivateRoute>
 
@@ -152,9 +152,9 @@ function App(props) {
             </Route>
 
 
-            <PrivateRoute exact path="/addnewpet" user={currentUser}>
+            <PrivateRoute exact path="/addnewpet" user={currentUserObj}>
               {/* <Cover /> */}
-              <AddNewPet pets={pets} breeds={props.breeds} user={currentUser} reloadPet={reloadPet}/>
+              <AddNewPet pets={pets} breeds={props.breeds} user={currentUserObj} reloadPet={reloadPet}/>
             </PrivateRoute>
 
             {/* <Redirect to="/addnewpet/success"/> */}
