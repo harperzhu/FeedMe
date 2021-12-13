@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AboutUs, Intro, Process, Subscription } from "./components/Description";
+import { AboutUs, Description, Intro, Process, Subscription } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
@@ -38,7 +38,7 @@ function App(props) {
     useEffect(() => {
       const auth = getAuth();
       reloadPet();
-  
+
       //addEventListener("loginEvent", () => {})
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){ //have a user
@@ -49,29 +49,15 @@ function App(props) {
              console.log(firebaseUser.uid);
              firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser)).catch((err) => {console.log(err)}).then((err) => {console.log()})//handle errors in firebase
             }
-           
+
           })
-          // const dbRef = ref(db, "user");
-
-          // //addEventListener('databaseValueChange', () => {})
-          // const offFunction = onValue(exampleRef, (snapshot) => {
-          // const allPosts = snapshot.val(); //extract the value from the snapshot
-          // const postKeyArray = Object.keys(allPosts); //[MpsA2, MpsA4, MpsA6, MpsBs]
-          // const postsArray = postKeyArray.map((postKey) => {
-          //   const thePostCopy = {...allPosts[postKey], firebaseKey: postKey};
-          //   return thePostCopy;
-    //   })
-
-    //   setMessageArray(postsArray);
-    // })
-          
 
         } else {
           console.log("logging out");
           setCurrentUser(null);
         }
       })
-  
+
       return () => { //cleanup
         unregisterAuthListener();
       }
@@ -91,10 +77,8 @@ function App(props) {
 
     // key for petsMap state
 
-
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
-    let [currentUpdatedPet, setCurrentUpdatedPet] = useState(null);
 
     const handleCurrentSpecies = (species) => {
       setCurrentSpecies(species);
@@ -111,15 +95,6 @@ function App(props) {
       setCurrentSpecies(null);
     }
 
-
-    const handleCurrentUpdatedPet = (id) => {
-      console.log(id);
-      setCurrentUpdatedPet(id);
-    }
-
-    
-
-
     return(
       <div>
         <Header user={currentUser}/>
@@ -128,9 +103,7 @@ function App(props) {
           <Switch>
           <Route exact path="/">
               <Cover />
-              <Intro />
-              <Process />
-              <Subscription />
+              <Description />
             </Route>
 
             <Route path="/signin">
@@ -155,13 +128,12 @@ function App(props) {
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
               <Profile pets={pets}/>
-              <PetUpdate pets={pets}/>
-                            {/* <DonationForm pets={pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
-              
+              <PetUpdate pets={pets} />
+
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUser}>
-              <MyPets pets={pets} handleCurrentUpdatedPetCallback={handleCurrentUpdatedPet} user={currentUser}/>
+              <MyPets pets={pets} user={currentUser}/>
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
@@ -183,6 +155,8 @@ function App(props) {
             <Route exact path="/addnewpet/success">
               <ConfirmPetAddition pets={pets}/>
             </Route>
+
+            <Redirect to="/"/>
 
 
 

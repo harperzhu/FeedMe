@@ -5,6 +5,7 @@ export function Profile(props) {
   const { name } = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
+  console.log(currentPetObj);
 
   return (
     <div className="donation-page">
@@ -12,7 +13,7 @@ export function Profile(props) {
         <div className="profile-background-wrapper container-fluid pt-4">
           <div className="row">
             <div className="picture col-lg-6 col-md-12">
-              <img className="img-thumbnail" src={"/" + currentPetObj.img} alt="dog image"/>
+              <img className="img-thumbnail" src={currentPetObj.img_url} alt="dog image"/>
             </div>
 
             <div className="col-lg-6 col-md-12">

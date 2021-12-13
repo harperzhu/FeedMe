@@ -36,9 +36,17 @@ function PetUpdate(props) {
   let currentPetObj = props.pets[petName];
   console.log(currentPetObj);
 
+  let createCard;
+  // this means its an empty entry created by addNewPet
+  if (currentPetObj.updates[0] === "") {
+    createCard = "";
+  } else {
+    // this means that updates is not in the default add state
+    createCard = currentPetObj.updates.map((update) =>
+    <MyLikedPetCard update={update} key={update.img}/>);
+  }
 
-  let createCard = currentPetObj.updates.map((update) => 
-    <MyLikedPetCard update={update}/> )
+
 
 return (
 
