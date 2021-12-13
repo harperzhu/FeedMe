@@ -1,11 +1,13 @@
 import { React, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
 
 export function Profile(props) {
   const { name } = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
-  console.log(currentPetObj);
+  let user = props.user;
+  console.log(user);
 
   return (
     <div className="donation-page">
@@ -22,7 +24,7 @@ export function Profile(props) {
                   <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
                 </div>
                 <CardTitle pet={currentPetObj} />
-                <CardText pet={currentPetObj} />
+                <CardText pet={currentPetObj} user={user}/>
               </div>
             </div>
           </div>
@@ -34,11 +36,34 @@ export function Profile(props) {
 }
 
 export function CardText(props) {
+  const user = props.user;
+  const pet = props.pet;
+  const [isLiked, setIsLiked] = useState(user.PetLikes[0].indexOf(pet.name) !== -1);
+  console.log(user.PetLikes[0]);
 
-  const [isLiked, setIsLiked] = useState(false);
+  const addNewPetLikes = (user, isLiked) => {
+    let PetLikes = user.PetLikes;
 
+    if(!isLiked){
+      PetLikes = PetLikes[0].push(pet.name);
+      console.log(PetLikes[0]);
+    } else {
+      const index = PetLikes[0].indexOf(pet.name);
+      if (index > -1) {
+        PetLikes[0].splice(index, 1);
+        console.log(PetLikes[0]);
+      }
+    }
+    return {
+      PetLikes: {PetLikes}
+    }
+  }
   const handleClick = (event) => {
+    firebaseSet(ref(getDatabase(), "user/" + Object.keys(user) + "/PetLikes"), addNewPetLikes(user, isLiked))
+    .catch((err) => {console.log(err)})
+    .then((err) => {console.log()})//handle errors in firebase
     setIsLiked(!isLiked);
+    
   }
 
   let heartColor = "grey";

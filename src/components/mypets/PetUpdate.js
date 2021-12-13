@@ -34,6 +34,8 @@ function PetUpdate(props) {
   const {name} = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
+  console.log(currentPetObj);
+
   // let currentUserID = props.user 
 
   let createCard;
@@ -45,7 +47,6 @@ function PetUpdate(props) {
     createCard = currentPetObj.updates.map((update) =>
     <MyLikedPetCard update={update} key={update.img}/>);
   }
-
 
 
 
