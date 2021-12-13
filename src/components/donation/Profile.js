@@ -5,6 +5,7 @@ export function Profile(props) {
   const { name } = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
+  let user = props.currentUserObj;
   console.log(currentPetObj);
 
   return (
@@ -22,7 +23,7 @@ export function Profile(props) {
                   <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
                 </div>
                 <CardTitle pet={currentPetObj} />
-                <CardText pet={currentPetObj} />
+                <CardText pet={currentPetObj} user={user}/>
               </div>
             </div>
           </div>
@@ -34,11 +35,14 @@ export function Profile(props) {
 }
 
 export function CardText(props) {
-
+  let like = props.user.PetLikes.filter(pet => pet === props.currentPetObj.name)[0] === props.currentPetObj.name;
+  console.log(like);
   const [isLiked, setIsLiked] = useState(false);
+  
 
   const handleClick = (event) => {
     setIsLiked(!isLiked);
+    
   }
 
   let heartColor = "grey";

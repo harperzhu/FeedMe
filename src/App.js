@@ -141,8 +141,8 @@ function App(props) {
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
-            <Profile pets={pets}/>
-              <PetUpdate pets={pets} user={currentUserObj}/>
+            <Profile pets={pets} user={currentUserObj}/>
+              <PetUpdate pets={pets} />
             </PrivateRoute>
 
             <Route exact path="/about">
