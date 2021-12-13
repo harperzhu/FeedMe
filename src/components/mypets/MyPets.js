@@ -15,7 +15,7 @@ function MyLikedPetCard(props) {
         <img className="pet-image" src={props.pet.img} alt={props.pet.name + "'s photo"} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">{props.pet.meals} meals left</p>
+          <p className="meals-left">{props.pet.meals} liked</p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={

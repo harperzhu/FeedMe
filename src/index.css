@@ -360,26 +360,6 @@ main {
     font-size: 100%;
 }
 
-.donation-step-button-green {
-    color: #fff!important;
-    background-color: #CC8561!important;
-}
-
-
-.donation-step-button-grey{
-    color: #fff!important;
-    background-color: grey!important;
-    width: 49%;
-}
-
-.donation-step-button{
-    border-radius: 60%;
-    padding:10%;
-}
-
-#edit-submitted-donation-amount-7{
-    width: 4em;
-}
 
 /*for mobile screen up to 575px*/
 @media screen and (max-width: 575px){
@@ -401,18 +381,7 @@ main {
   .card-text b{
       display: flex;
   }
-  .donation-window h1{
-      display: none;
-  }
 
-  .donation-steps{
-      display: none;
-  }
-
-  /* the button to donate*/
-  .progress-buttons .donate{
-      display: none;
-  }
 }
 
   /*for destop screen larger than 575px*/
