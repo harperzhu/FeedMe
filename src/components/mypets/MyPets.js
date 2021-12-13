@@ -35,6 +35,8 @@ function MyPets(props) {
   const {name} = useParams();
   let petName = name;
 
+
+  
     return(
         <div id="petList">
           <div className='profile-cards'>

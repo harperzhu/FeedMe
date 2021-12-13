@@ -3,7 +3,7 @@ import { useParams} from 'react-router-dom';
 
 function MyLikedPetCard(props) {
   let update = props.update;
-  console.log(update.img);
+  console.log(update);
 
   return (
     <div className="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
@@ -36,6 +36,8 @@ function PetUpdate(props) {
   let currentPetObj = props.pets[petName];
   console.log(currentPetObj);
 
+  // let currentUserID = props.user 
+
   let createCard;
   // this means its an empty entry created by addNewPet
   if (currentPetObj.updates[0] === "") {
@@ -62,6 +64,7 @@ return (
 </div>
 );
 }
+
 
 function MyPetToggle(props) {
     return(
