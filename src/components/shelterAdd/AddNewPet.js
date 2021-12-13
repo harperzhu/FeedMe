@@ -39,7 +39,7 @@ export function AddNewPet(props) {
             data[name]["img_path"] = "/img/profile_pics/" + name + ".png";
             data[name]["img_url"] = imgUrl;
             data[name]['likes'] = 0;
-            data[name]["updates"] = [];
+            data[name]["updates"] = [""];
 
             
             await setCurrentData(data);
@@ -168,9 +168,11 @@ export function AddNewPet(props) {
                         
                         
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
-                            <div className="btn btn-lg text-uppercase" >
-                                <input type="submit" value="submit" id="formSubmitButton"/>
-                            </div>
+                        <div className="container-fluid mt-4 px-0">
+
+                            <input className="btn-lg text-uppercase mb-0" type="submit" value="submit" id="formSubmitButton"/>
+
+                        </div>
                         {/* </Link> */}
 
                     </form>                    

@@ -34,7 +34,6 @@ function PetUpdate(props) {
   const {name} = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
-
   // let currentUserID = props.user 
 
   let createCard;
