@@ -7,7 +7,6 @@ import App from './App';
 import SAMPLE_PETS from './data/pets.json';
 import SAMPLE_BREEDS from './data/breeds.json';
 
-import firebase from 'firebase/app';
 
 // NEEDED LATER, PLEASE DONT DELETE
 // import 'firebase/auth';
