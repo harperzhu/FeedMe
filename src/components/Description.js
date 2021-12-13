@@ -39,8 +39,8 @@ export function AboutUs() {
 
         <section className="contact-info">
             <h2>Contact us</h2>
-            <p>Email: <a href="mailto:feedme@gmail.com">feedme@gmail.com</a></p>
-            <p>Tel: <a href="tel:123-456-789">(123)-456-789</a></p>
+            <p>Email: <Link to="mailto:feedme@gmail.com">feedme@gmail.com</Link></p>
+            <p>Tel: <Link to="tel:123-456-789">(123)-456-789</Link></p>
         </section>
 
       </main>
