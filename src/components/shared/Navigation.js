@@ -5,10 +5,7 @@ import { getAuth, signOut } from 'firebase/auth';
 import { useState } from 'react';
 
 export function Header(props){
-    const [isShelter, setIsShelter] = useState(false);
-    const handleClick = (event) => {
-        setIsShelter(true);
-    }
+
     const handleSignOut = (event) => {
         signOut(getAuth());
       }
@@ -25,15 +22,11 @@ export function Header(props){
                     </Nav>
                     <Nav>
                     {!props.user &&
-                        <NavDropdown title="Sign In" id="collasible-nav-dropdown">
-                            <NavDropdown.Item onClick={handleClick}><Link to="/signin">Sign In as Shelter</Link></NavDropdown.Item>
-                            <NavDropdown.Item><Link to="/signin">Sign In as Individual</Link></NavDropdown.Item>
-                            
-                        </NavDropdown>
+                        <Nav><Link to="/signin">Sign in</Link></Nav>
                     }
                     {props.user &&
                             <NavDropdown title={"Hello, " + props.user.displayName} id="collasible-nav-dropdown">
-                            <NavDropdown.Item onClick={handleSignOut}>Sign out</NavDropdown.Item>
+                                <NavDropdown.Item onClick={handleSignOut}>Sign out</NavDropdown.Item>
                             </NavDropdown>
                     }  
                     </Nav>
