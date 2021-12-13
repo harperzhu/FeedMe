@@ -34,14 +34,31 @@ function MyLikedPetCard(props) {
 function MyPets(props) {
   const {name} = useParams();
   let petName = name;
+  
+  let uid = Object.keys(props.user);
 
+  const dbRef = ref(getDatabase());
+  
+  get(child(dbRef, "user")).then((snapshot) => {
+    let allTheUsers = snapshot.val();
+    setPets(allTheUsers);
+  }).catch((error) => {
+    console.error(error);
+  });
+}
+
+for(oneUser in allTheUsers){
+  if(Object.keys(oneUser) === uid){//then it would mean we have matched the current user
+    let PetLikes = Object.keys(uid);
+  }
+}
 
   
     return(
         <div id="petList">
           <div className='profile-cards'>
           {  Object.values(props.pets).map((pet) => {
-            if(pet.liked === true){
+            for(pet in PetLikes){
               return <MyLikedPetCard key={pet.name} pet={pet} />
             }})
           }
@@ -50,13 +67,13 @@ function MyPets(props) {
     );
 }
 
-function PetClick(props){
-  Object.values(props.pets).map((pet) => {
-    if(pet.liked === true){
-      return <MyLikedPetCard key={pet.name} pet={pet}  />
-    }
-  })
-}
+// function PetClick(props){
+//   Object.values(props.pets).map((pet) => {
+//     if(pet.liked === true){
+//       return <MyLikedPetCard key={pet.name} pet={pet}  />
+//     }
+//   })
+// }
 
 function MyPetToggle(props) {
     return(
