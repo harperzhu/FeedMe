@@ -6,6 +6,8 @@ import { getDatabase, ref, child, set as firebaseSet, push as firebasePush, onVa
 function MyLikedPetCard(props) {
   const [redirectTo, setredirectTo] = useState();
 
+  let heartIcon = "favorite";
+  let heartColor = "#cc8561";
   if (redirectTo !== undefined) {
     return <Redirect to={`/liked/${redirectTo}`} push/>
   } else {
@@ -15,7 +17,12 @@ function MyLikedPetCard(props) {
         <img className="pet-image" src={props.pet.img} alt={props.pet.name + "'s photo"} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">{props.pet.meals} liked</p>
+          <p className="meals-left">
+
+          <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
+
+
+          </p>
           <button className="feed-me"
             id={props.pet.name}
             onClick={
@@ -24,7 +31,7 @@ function MyLikedPetCard(props) {
               }
             }
           >
-              Feed Me
+              More Info
           </button>
         </div>
       </div>
