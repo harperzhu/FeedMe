@@ -13,7 +13,7 @@ export function Profile(props) {
         <div className="profile-background-wrapper container-fluid pt-4">
           <div className="row">
             <div className="picture col-lg-6 col-md-12">
-              <img className="img-thumbnail" src={currentPetObj.img_url} alt="dog image"/>
+              <img className="img-thumbnail" src={currentPetObj.img_url} alt={Object.keys(currentPetObj) + "'s image"}/>
             </div>
 
             <div className="col-lg-6 col-md-12">

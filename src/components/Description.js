@@ -53,7 +53,7 @@ export function Intro() {
     <div className="container mt-5">
       <div className="row align-items-center">
         <div className="col-lg-6 no-padding right-align">
-          <img className="img-thumbnail" src="./img/puppy.jpg" alt="A cute puppy" />
+          <img className="img-thumbnail" src="./img/puppy.jpg" alt="A cute puppy's image" />
         </div>
         <div className="col-lg-6 home-about-right no-padding">
 							<h1>
@@ -134,10 +134,11 @@ export function Subscription(){
 
               <div className="col-md-4 col-12 mb-4 mb-md-0">
                   <div className="form-outline mb-4">
-                      <input type="email" id="form5Example25" className="form-control" placeholder="feedme@gmail.com" />
+                  <label for="emailInput">Enter your email:</label>
+                      <input type="email" id="emailInput" className="form-control" placeholder="feedme@gmail.com" />
                   </div>
               </div>
-
+    
               <div className="col-auto mb-4 mb-md-0">
                   <button type="submit" className="btn btn-primary mb-4">
                       Subscribe

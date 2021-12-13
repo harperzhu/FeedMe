@@ -10,7 +10,7 @@ import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
 import PrivateRoute from './components/PrivateRoute';
 import { Route, Switch, Link, Redirect} from 'react-router-dom';
-import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
+import {ErrorPage} from './components/donation/ErrorPage'
 import SignInPage from "./components/SignInPage";
 import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -74,6 +74,7 @@ function App(props) {
       }
     }
 
+  
 
     // =======
 
@@ -127,7 +128,7 @@ function App(props) {
             </PrivateRoute>
 
             <Route  exact path="/moreinfo">
-              <DonationWithoutSpecifiedPet/>
+              <ErrorPage/>
             </Route>
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
@@ -160,9 +161,11 @@ function App(props) {
               <ConfirmPetAddition pets={pets}/>
             </Route>
 
-            <Redirect to="/"/>
+            <Route exact path="/errorpage">
+              <ErrorPage/>
+            </Route>
 
-
+            <Redirect to="/errorpage"/>
 
           </Switch>
         </div>

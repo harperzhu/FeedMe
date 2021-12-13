@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Redirect, useParams} from 'react-router-dom';
+import { getDatabase, ref, child, set as firebaseSet, push as firebasePush, onValue, get } from 'firebase/database'
 
 
 function MyLikedPetCard(props) {
@@ -11,7 +12,7 @@ function MyLikedPetCard(props) {
     console.log(props);
     return(
       <div className="pet-card">
-        <img className="pet-image" src={props.pet.img} alt={props.pet.name} />
+        <img className="pet-image" src={props.pet.img} alt={props.pet.name + "'s photo"} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
           <p className="meals-left">{props.pet.meals} meals left</p>
@@ -32,33 +33,41 @@ function MyLikedPetCard(props) {
 }
 
 function MyPets(props) {
+  
+
+  const [allUsers, setAllUsers] = useState(undefined);
+
   const {name} = useParams();
   let petName = name;
-  
+
   let uid = Object.keys(props.user);
 
+
   const dbRef = ref(getDatabase());
+
   
   get(child(dbRef, "user")).then((snapshot) => {
     let allTheUsers = snapshot.val();
-    setPets(allTheUsers);
+    setAllUsers(allTheUsers);
   }).catch((error) => {
     console.error(error);
   });
-}
 
-for(oneUser in allTheUsers){
-  if(Object.keys(oneUser) === uid){//then it would mean we have matched the current user
-    let PetLikes = Object.keys(uid);
-  }
-}
+  console.log(setAllUsers)
+
+
+// for(let oneUser in allTheUsers){
+//   if(Object.keys(oneUser) === uid){//then it would mean we have matched the current user
+//     let PetLikes = Object.keys(uid);
+//   }
+// }
 
   
     return(
         <div id="petList">
           <div className='profile-cards'>
           {  Object.values(props.pets).map((pet) => {
-            for(pet in PetLikes){
+            if(pet.liked == true){
               return <MyLikedPetCard key={pet.name} pet={pet} />
             }})
           }
@@ -66,7 +75,6 @@ for(oneUser in allTheUsers){
         </div>
     );
 }
-
 // function PetClick(props){
 //   Object.values(props.pets).map((pet) => {
 //     if(pet.liked === true){
