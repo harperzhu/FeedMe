@@ -34,11 +34,11 @@ function PetUpdate(props) {
   const {name} = useParams();
   let petName = name;
   let currentPetObj = props.pets[petName];
+  console.log(currentPetObj);
 
 
-  let createCard = currentPetObj.updates.map((update) =>
-  <MyLikedPetCard update={update} key={update.img}/>);
-
+  let createCard = currentPetObj.updates.map((update) => 
+    <MyLikedPetCard update={update}/> )
 
 return (
 

@@ -91,9 +91,6 @@ function App(props) {
 
     // key for petsMap state
 
-    let [CurrentPet, setCurrentPet] = useState("null");
-
-    let [CurrentPetMeal, setCurrentPetMeal] = useState("10");
 
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
@@ -112,15 +109,6 @@ function App(props) {
     const clearFilter = () => {
       setCurrentBreed(null);
       setCurrentSpecies(null);
-    }
-
-    const handleCurrentPet = (id) => {
-      console.log(id);
-      setCurrentPet(id);
-    }
-
-    const handleCurrentPetMeal = (id, meal) => {
-      setCurrentPetMeal(id,meal);
     }
 
 
@@ -153,7 +141,6 @@ function App(props) {
               <PetList
                 user={currentUser}
                 pets={pets}
-                handleCurrentPetCallback={handleCurrentPet}
                 filterBreed={currentBreed}
                 filterSpecies={currentSpecies}
                 filterBreedCallback={handleCurrentBreed}
@@ -168,7 +155,7 @@ function App(props) {
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
               <Profile pets={pets}/>
-              <PetUpdate pets={pets} currentPet={currentUpdatedPet}/>
+              <PetUpdate pets={pets}/>
                             {/* <DonationForm pets={pets} handleCurrentPetMealCallback={handleCurrentPetMeal, handleCurrentPet}/> */}
               
             </PrivateRoute>
@@ -179,7 +166,7 @@ function App(props) {
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
             <Profile pets={pets}/>
-              <PetUpdate pets={pets} currentPet={currentUpdatedPet} user={currentUser}/>
+              <PetUpdate pets={pets} user={currentUser}/>
             </PrivateRoute>
 
             <Route exact path="/about">
