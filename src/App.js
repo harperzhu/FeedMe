@@ -4,25 +4,23 @@ import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
 import { Profile } from "./components/donation/Profile";
-import { DonationForm } from "./components/donation/DonationForm";
-import { FilterControl } from "./components/PetList";
 import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
 import PrivateRoute from './components/PrivateRoute';
-import { Route, Switch, Link, Redirect} from 'react-router-dom';
-import {DonationWithoutSpecifiedPet} from './components/donation/DonationWithoutSpecifiedPet'
+import { Route, Switch, Redirect} from 'react-router-dom';
+import {ErrorPage} from './components/donation/ErrorPage'
 import SignInPage from "./components/SignInPage";
-import { AddNewPet, ScoreBoard } from "./components/shelterAdd/AddNewPet";
+import { AddNewPet} from "./components/shelterAdd/AddNewPet";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
-import { getDatabase, ref, child, set as firebaseSet, push as firebasePush, onValue, get } from 'firebase/database'
+import { getDatabase, ref, child, set as firebaseSet, get } from 'firebase/database'
 
 function App(props) {
     // =======
     // auth stuff
     const [currentUser, setCurrentUser] = useState(undefined);
     const [pets, setPets] = useState(undefined);
-    let currentUserObj = undefined;
+    // const [currentUserObj, setCurrentUserObj] = useState(undefined);
     const db = getDatabase();
 
     const reloadPet = () => {
@@ -55,9 +53,8 @@ function App(props) {
              console.log(firebaseUser.uid);
              firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser)).catch((err) => {console.log(err)}).then((err) => {console.log()})//handle errors in firebase
             }
-            console.log(snapshot.val());
-            currentUserObj = snapshot.val();
-            
+            // setCurrentUserObj(snapshot.val());
+            // console.log(currentUserObj);
           })
           
         } else {
@@ -78,6 +75,7 @@ function App(props) {
       }
     }
 
+  
 
     // =======
 
@@ -131,7 +129,7 @@ function App(props) {
             </PrivateRoute>
 
             <Route  exact path="/moreinfo">
-              <DonationWithoutSpecifiedPet/>
+              <ErrorPage/>
             </Route>
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}>
@@ -141,12 +139,12 @@ function App(props) {
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUser}>
-              <MyPets pets={pets} userObj={currentUserObj}/>
+              <MyPets pets={pets} user={currentUser}/>
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUser}>
-            <Profile pets={pets} userObj={currentUserObj}/>
-              <PetUpdate pets={pets} />
+            <Profile pets={pets} user={currentUser}/>
+              <PetUpdate pets={pets}/>
             </PrivateRoute>
 
             <Route exact path="/about">
@@ -164,9 +162,11 @@ function App(props) {
               <ConfirmPetAddition pets={pets}/>
             </Route>
 
-            <Redirect to="/"/>
+            <Route exact path="/errorpage">
+              <ErrorPage/>
+            </Route>
 
-
+            <Redirect to="/errorpage"/>
 
           </Switch>
         </div>

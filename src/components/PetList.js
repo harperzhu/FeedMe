@@ -16,7 +16,7 @@ function PetCard(props) {
   } else {
     return(
       <div className="pet-card">
-        <img className="pet-image" src={props.pet.img_url} alt={props.pet.name} />
+        <img className="pet-image" src={props.pet.img_url} alt={props.pet.name + "'s image"} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
           <p className="meals-left">
@@ -68,7 +68,7 @@ function PetList(props) {
             <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
             <h1>——Feed a Pet——</h1>
           <div>
-              <h3>Not every pet is lucky enough to shine in a contest</h3>
+              <h2>Not every pet is lucky enough to shine in a contest</h2>
               <p className='text-secondary'>For every vote you casted, we support by buying meals and medicine for dogs who need it the most</p>
             </div>
           </div>
@@ -100,8 +100,8 @@ function FilterControl(props) {
 
   // breeds
   let breeds = new Set();
-  names.map((a) => {
-    breeds.add(props.pets[a].breed);
+  names.map((name) => {
+    breeds.add(props.pets[name].breed);
   })
   let breedsMenu = [];
   breeds.forEach((breed) => {
@@ -110,12 +110,12 @@ function FilterControl(props) {
 
   //species
   let species = new Set();
-  names.map((a) => {
-    species.add(props.pets[a].type);
+  names.map((name) => {
+    species.add(props.pets[name].type);
   })
   let speciesMenu = [];
-  species.forEach((s) => {
-    speciesMenu.push((<Dropdown.Item id={s} href="#" onClick={(event)=>{props.filterSpeciesCallback(event.currentTarget.id)}}> {s} </Dropdown.Item>))
+  species.forEach((oneSpecies) => {
+    speciesMenu.push((<Dropdown.Item id={oneSpecies} href="#" onClick={(event)=>{props.filterSpeciesCallback(event.currentTarget.id)}}> {oneSpecies} </Dropdown.Item>))
   })
 
   return(

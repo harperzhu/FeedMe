@@ -40,8 +40,8 @@ export function Footer() {
     return (
         <footer className="">
             <div id="contact-info">
-                <p><span className="material-icons"> email</span> <a href="mailto:feedme@gmail.com">feedme@gmail.com</a></p>
-                <p><span className="material-icons"> phone</span> <a href="tel:123-456-789">(123)-456-789</a></p>
+                <p><span className="material-icons"> email</span> <Link to="mailto:feedme@gmail.com">feedme@gmail.com</Link></p>
+                <p><span className="material-icons"> phone</span> <Link to="tel:123-456-789">(123)-456-789</Link></p>
                 <p>&copy; Info340 FeedMe Project 2021. All rights reserved.</p>             
             </div>
         </footer>

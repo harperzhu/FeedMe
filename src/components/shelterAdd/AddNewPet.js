@@ -39,7 +39,7 @@ export function AddNewPet(props) {
             data[name]["img_path"] = "/img/profile_pics/" + name + ".png";
             data[name]["img_url"] = imgUrl;
             data[name]['likes'] = 0;
-            data[name]["updates"] = [];
+            data[name]["updates"] = [""];
 
             
             await setCurrentData(data);
@@ -77,7 +77,7 @@ export function AddNewPet(props) {
                 <div class="form-group my-5 mx-5 px-5">
                     <form onSubmit={handleFormSubmit}>
                         <div >
-                            <label for="exampleFormControlInput1">Pet Name</label>
+                            <label for="name">Pet Name</label>
                             <input type="string"
                                     class="form-control"
                                     id="name"
@@ -87,7 +87,7 @@ export function AddNewPet(props) {
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Pet Age  (in years old)</label>
+                            <label for="age">Pet Age  (in years old)</label>
                             <select class="form-control" id="age" required>
                                 <option selected="selected" value="">Select an option</option>
                                 <option> under 1</option>
@@ -116,7 +116,7 @@ export function AddNewPet(props) {
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Pet Gender</label>
+                            <label for="gender">Pet Gender</label>
                             <select class="form-control" id="gender" required>
                             <option selected="selected" value="">Select an option</option>
                                 <option >Female</option>
@@ -126,7 +126,7 @@ export function AddNewPet(props) {
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Pet Kind</label>
+                            <label for="type">Pet Kind</label>
                             <select class="form-control" id="type" required
                                 // defaultValue={this.state.selectValue}
                                 onChange={        
@@ -152,7 +152,7 @@ export function AddNewPet(props) {
 
 
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Pet Health</label>
+                            <label for="health">Pet Health</label>
                             <select class="form-control" id="health" required>
                             <option selected="selected" value="">Select an option</option>
                                 <option>Special Needs</option>
@@ -162,13 +162,14 @@ export function AddNewPet(props) {
 
                         <br />
 
-                        <label for="exampleFormControlFile1">Upload Pet Pictures</label>
+                        <label for="imagePath">Upload Pet Pictures</label>
                         <br />
                         <input type="file" class="form-control-file" id="imagePath" required="required"/>
                         
                         
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
                             <div className="btn btn-lg text-uppercase" >
+                            <label for="formSubmitButton"/>
                                 <input type="submit" value="submit" id="formSubmitButton"/>
                             </div>
                         {/* </Link> */}
@@ -176,18 +177,6 @@ export function AddNewPet(props) {
                     </form>                    
 
                 </div>
-
-{/* 
-                <div className="btn btn-lg text-uppercase">
-                        <button type="submit" value="submit" onclick={() => {}}> Submit</button>
-                        </div> */}
-
-
-                        
-{/* 
-                <Link to="/petList" className="btn btn-lg text-uppercase">
-                    <button onSubmit={handleFormSubmit} >Submit</button>¸
-                </Link> */}
 
             </main>
             </div>
