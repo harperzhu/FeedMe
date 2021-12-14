@@ -11,6 +11,7 @@ html, body, #root {
   }
 
 body {
+    font-family: "Ubuntu", sans-serif;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -268,6 +269,7 @@ footer p:last-child {
 
 .card-title{
     text-align: center;
+    font-family: "Ubuntu", sans-serif;
 }
 
 .card-text b{
