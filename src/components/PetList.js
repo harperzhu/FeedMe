@@ -18,7 +18,7 @@ function PetCard(props) {
         <img className="pet-image" src={props.pet.img_url} alt={props.pet.name + "'s image"} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">
+          <p className="total-likes">
             <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
 
             {props.pet.likes} likes</p>
