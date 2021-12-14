@@ -3,12 +3,12 @@ import { AboutUs, Description } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";
-import { Profile } from "./components/donation/Profile";
+import { Profile } from "./components/moreinfo/Profile";
 import { PetUpdate } from "./components/mypets/PetUpdate";
 import { MyPets } from "./components/mypets/MyPets";
 import PrivateRoute from './components/PrivateRoute';
 import { Route, Switch, Redirect} from 'react-router-dom';
-import {ErrorPage} from './components/donation/ErrorPage'
+import {ErrorPage} from './components/moreinfo/ErrorPage'
 import SignInPage from "./components/SignInPage";
 import { AddNewPet} from "./components/shelterAdd/AddNewPet";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
