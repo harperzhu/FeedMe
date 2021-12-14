@@ -239,7 +239,7 @@ footer p:last-child {
 }
 
 
-#formSubmitButton{
+.formSubmitButton{
     font-family: 'Ubuntu', sans-serif;
     align-self: center;
     width: 10rem;
