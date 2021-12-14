@@ -100,7 +100,10 @@ export function CardText(props) {
           <b>Gender: {props.pet.gender}</b>
         </div>
         <div className="likes pb-1">
-          <b>Total Likes: {props.pet.likes} Meal</b>
+          <b>Total Likes: {props.pet.likes}</b>
+        </div>
+        <div className="PetName pb-1">
+          <b>{props.pet.description} </b>
         </div>
       </div>
     </div>
