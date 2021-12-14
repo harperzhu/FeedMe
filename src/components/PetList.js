@@ -109,7 +109,7 @@ function FilterControl(props) {
   })
 
   return(
-    <div id="filters" className="d-flex flex-row">
+    <div className="d-flex flex-row filters">
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic" size="lg">
           Species
@@ -130,7 +130,7 @@ function FilterControl(props) {
         </Dropdown.Menu>
       </Dropdown>
 
-      <button id="clear" onClick={() => {props.clearFilterCallback()}}>Clear</button>
+      <button className="clear" onClick={() => {props.clearFilterCallback()}}>Clear</button>
     </div>
   )
 }

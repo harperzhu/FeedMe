@@ -18,6 +18,8 @@ body {
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: row;
 }
 
 button {
@@ -64,12 +66,6 @@ a:visited {
   margin-bottom: 0;
 }
 
-.header-update h1{
-    font-size: 20vh;
-    margin-top: 10vh;
-    margin-bottom: 0;
-  }
-
 .cover-img h1, .cover-img p {
   text-shadow: .5vh .5vh .2vh #cc8561;
   font-family: 'East Sea Dokdo', cursive;
@@ -85,10 +81,6 @@ a:visited {
 
 /* PetList page */
 .petList {
-  background-color: #e3dad0;
-}
-
-.item {
   background-color: #e3dad0;
 }
 
@@ -142,6 +134,7 @@ a:visited {
   margin-bottom: 0rem;
 }
 
+/* Navigation Bar  */
 .navbar {
     /* position: fixed; */
     z-index: 1;
@@ -157,7 +150,6 @@ a:visited {
     padding: 0;
     display: inline;
 }
-
 
 .navbar a {
     font-size: 1.2rem;
@@ -175,7 +167,7 @@ a:visited {
     margin: 0;
 }
 
-
+/* Footer Style */
 footer {
     bottom: 0;
     width: 100%;
@@ -200,6 +192,7 @@ footer p:last-child {
     margin-right: 0.3rem;
 }
 
+/* home page style */
 .introduction h2, .description h2, .contact-info h2 {
     color: #344960;
     font-weight: 300;
@@ -212,23 +205,11 @@ footer p:last-child {
 }
 
 
-
-
-main {
-    display: flex;
-    flex-direction: row;
-}
-
-
 .individual-profile{
     display: flex;
     flex:1;
     flex-direction: column;
 }
-
-
-
-
 
 .individual-profile{
     background-color: #E3DAD0;
@@ -273,11 +254,6 @@ main {
   }
 
 
-
-/* .profile-background-wrapper{
-    background-color: white;
-} */
-
 .picture{
     display: flex;
     justify-content: center;
@@ -297,28 +273,14 @@ main {
 
 /*for mobile screen up to 575px*/
 @media screen and (max-width: 575px){
-
-    .payment-amount .form-type-radio input{
-        display: none;
-      /* background-color: #344960;
-      color: white;
-      font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      justify-content: center;
-      font-size: 100%;
-      text-align: center;   */
-
-  }
-
   .card-text b{
       display: flex;
   }
 
 }
 
-  /*for destop screen larger than 575px*/
+
+/*for destop screen larger than 575px*/
 
 @media screen and (min-width: 575px){
     .header-img, .img-fluid {
@@ -376,23 +338,22 @@ main {
         cursor: pointer;
     }
 
-#filters button{
-    margin-left: 15vw;
-    margin-top: 10vh;
-    background-color: #344960;
-    border-width: 0;
-}
+    .filters button{
+        margin-left: 15vw;
+        margin-top: 10vh;
+        background-color: #344960;
+        border-width: 0;
+    }
 
-#clear {
-    /* margin-top: 10vh; */
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1.25rem;
-    border-radius: 0.3rem;
-}
+    .clear {
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        border-radius: 0.3rem;
+    }
 
-.card-text .material-icons {
-    font-size: 4rem;
-}
+    .card-text .material-icons {
+        font-size: 4rem;
+    }
 
 }

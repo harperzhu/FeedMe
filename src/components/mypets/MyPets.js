@@ -14,11 +14,7 @@ function MyLikedPetCard(props) {
           <h3 className="pet-name">{props.pet.name}</h3>
           <button className="feed-me"
             id={props.pet.name}
-            onClick={
-              (event) => {
-                setredirectTo(props.pet.name);
-              }
-            }
+            onClick={() => {setredirectTo(props.pet.name);}}
           >
             More Info
           </button>
@@ -37,7 +33,7 @@ function MyPets(props) {
   }
 
   return (
-    <div id="petList">
+    <div className="petList">
       <div className='profile-cards'>
         {mapToMyLikedPetCard}
       </div>

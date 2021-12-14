@@ -67,7 +67,7 @@ export function AddNewPet(props) {
             {!shouldRedirect ?
             <div>
             <AddNewPetCover />
-            <main id="about-main">
+            <main>
 
                 <div className="form-group my-5 mx-5 px-5">
                     <form onSubmit={handleFormSubmit}>
