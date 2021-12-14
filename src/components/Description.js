@@ -53,7 +53,7 @@ export function Intro() {
     <div className="container mt-5">
       <div className="row align-items-center">
         <div className="col-lg-6 no-padding right-align">
-          <img className="img-thumbnail" src="./img/puppy.jpg" alt="A cute puppy's image" />
+          <img className="img-thumbnail" src="./img/puppy.jpg" alt="A cute puppy laying down" />
         </div>
         <div className="col-lg-6 home-about-right no-padding">
 							<h1>

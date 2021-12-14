@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AboutUs, Description, Intro, Process, Subscription } from "./components/Description";
+import { AboutUs, Description } from "./components/Description";
 import { PetList } from "./components/PetList";
 import { Cover } from "./components/shared/Cover";
 import { Header, Footer } from "./components/shared/Navigation";

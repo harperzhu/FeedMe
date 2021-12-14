@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { useParams, Link, Redirect, Switch } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { getDatabase, ref, set as firebaseSet } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
