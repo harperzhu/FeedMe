@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect, useParams } from 'react-router-dom';
-import { getDatabase, ref, child, set as firebaseSet, push as firebasePush, onValue, get } from 'firebase/database'
+import { getDatabase, ref, child, get } from 'firebase/database'
 
 
 function MyLikedPetCard(props) {

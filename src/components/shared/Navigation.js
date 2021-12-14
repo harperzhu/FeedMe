@@ -2,7 +2,6 @@ import {React} from 'react';
 import { Link } from 'react-router-dom';
 import {Navbar, Container, NavDropdown, Nav} from 'react-bootstrap';
 import { getAuth, signOut } from 'firebase/auth';
-import { useState } from 'react';
 
 export function Header(props){
     console.log(props.user);

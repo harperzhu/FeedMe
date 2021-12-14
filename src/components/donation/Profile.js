@@ -102,9 +102,6 @@ export function CardText(props) {
         <div className="likes pb-1">
           <b>Total Likes: {props.pet.likes}</b>
         </div>
-        <div className="PetName pb-1">
-          <b>{props.pet.description} </b>
-        </div>
       </div>
     </div>
   );

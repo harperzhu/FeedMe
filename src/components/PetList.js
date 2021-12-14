@@ -2,7 +2,6 @@ import React from 'react';
 import {useParams, Redirect} from 'react-router-dom';
 import {useState} from 'react';
 import {Dropdown} from 'react-bootstrap';
-import { get, child, getDatabase, ref, set as firebaseSet } from "firebase/database";
 
 
 function PetCard(props) {
