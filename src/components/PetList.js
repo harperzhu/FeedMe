@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {useState} from 'react';
 import {Dropdown} from 'react-bootstrap';
 
@@ -42,7 +42,6 @@ function PetCard(props) {
 
 
 function PetList(props) {
-  const {name} = useParams();
 
   const renderPets = (pets) => {
     let listOfPets = [];
