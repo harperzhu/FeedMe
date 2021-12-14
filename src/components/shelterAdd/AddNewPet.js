@@ -165,7 +165,7 @@ export function AddNewPet(props) {
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
                             <div className="btn btn-lg text-uppercase" >
                             <label htmlFor="formSubmitButton">Submit the form here </label>
-                                <input type="submit" value="submit" id="formSubmitButton"/>
+                                <input type="submit" value="submit" class="formSubmitButton"/>
                             </div>
                         {/* </Link> */}
 

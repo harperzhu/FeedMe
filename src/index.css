@@ -270,6 +270,7 @@ footer p:last-child {
     text-align: center;
 }
 
+<<<<<<< HEAD
 
 /*for mobile screen up to 575px*/
 @media screen and (max-width: 575px){
@@ -280,62 +281,17 @@ footer p:last-child {
 }
 
 
+=======
+.card-text b{
+      display: flex;
+  }
+
+>>>>>>> b28f187 (image credits done)
 /*for destop screen larger than 575px*/
 
 @media screen and (min-width: 575px){
     .header-img, .img-fluid {
         display: inline-block;
-    }
-    .payment-amount .custom-amount input{
-        width: 60%;
-        height: 60%;
-        flex-direction: column;
-        align-items:baseline;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #344960;
-        font-size: 150%;
-        text-align: center;
-        display: flex;
-        color: white;
-        padding: 20px;
-        margin: 30px 30px;
-        border: 80px;
-        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .payment-amount{
-        display: flex;
-        flex:1;
-        flex-shrink: 1;
-        flex-wrap: wrap;
-        background-color:white;
-    }
-
-    .payment-amount .form-type-radio input {
-        width: 60%;
-        height: 60%;
-        flex-direction: column;
-        align-items:baseline;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #344960;
-        justify-content: center;
-        font-size: 150%;
-        text-align: center;
-        display: flex;
-        color: white;
-        padding: 20px;
-        margin: 30px 30px;
-        border: 80px;
-        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        cursor: pointer;
     }
 
     .filters button{
