@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {useState} from 'react';
 import {Dropdown} from 'react-bootstrap';
 
@@ -18,7 +18,7 @@ function PetCard(props) {
         <img className="pet-image" src={props.pet.img_url} alt={props.pet.name + "'s image"} />
         <div className="pet-content">
           <h3 className="pet-name">{props.pet.name}</h3>
-          <p className="meals-left">
+          <p className="total-likes">
             <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>
 
             {props.pet.likes} likes</p>
@@ -42,7 +42,6 @@ function PetCard(props) {
 
 
 function PetList(props) {
-  const {name} = useParams();
 
   const renderPets = (pets) => {
     let listOfPets = [];
@@ -109,7 +108,7 @@ function FilterControl(props) {
   })
 
   return(
-    <div id="filters" className="d-flex flex-row">
+    <div className="d-flex flex-row filters">
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic" size="lg">
           Species
@@ -130,7 +129,7 @@ function FilterControl(props) {
         </Dropdown.Menu>
       </Dropdown>
 
-      <button id="clear" onClick={() => {props.clearFilterCallback()}}>Clear</button>
+      <button className="clear" onClick={() => {props.clearFilterCallback()}}>Clear</button>
     </div>
   )
 }

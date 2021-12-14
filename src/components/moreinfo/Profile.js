@@ -10,7 +10,6 @@ export function Profile(props) {
     console.log("asfdfsad");
   }
   let petName = name;
-  console.log(props.pets);
   let currentPetObj = props.pets[petName];
 
   return (
@@ -23,8 +22,8 @@ export function Profile(props) {
             </div>
 
             <div className="col-lg-6 col-md-12">
-              <div className="pet-info container mt-5">
-                <div className='container-fluid text-center'>
+              <div className="container mt-5">
+                <div className='profile-cards container-fluid text-center'>
                   <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
                 </div>
                 <CardTitle pet={currentPetObj} />
@@ -59,7 +58,7 @@ export function CardText(props) {
       offFunction(); //turn the listener off
     }
     return cleanup; //leave the instructions behind
-  }, [db]); //when to re-run (never)
+  }, [db, pet.name]); //when to re-run (never)
 
 
   const addNewPetLikes = () => {
@@ -160,10 +159,7 @@ export function CardPicture(props) {
 
   return (
     <div className="picture">
-      <img className="img-thumbnail"src={props.pet.img} alt= {props.pet.name + "'s picture"} />
-
+      <img className="img-thumbnail pet-image" src={props.pet.img} alt= {props.pet.name + "'s picture"} />
     </div>
   );
-
-
 }

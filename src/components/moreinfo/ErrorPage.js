@@ -12,7 +12,7 @@ export function ErrorPage() {
 
     return (
         <div className="NoPetSpecified mt-5 pt-4 text-center h-100 ">
-          <img id= "errorImage"src="/img/404-image.jpeg" alt="This shows an error appeared"></img>
+          <img src="/img/404-image.jpeg" alt="This shows an error appeared"></img>
           <h2>Uh oh... </h2>
           <h2> We couldn't find the page you are looking for</h2>
 

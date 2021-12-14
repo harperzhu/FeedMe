@@ -34,7 +34,7 @@ export default function SignInPage(props) {
 
   return (
     <div>
-    <div className="card bg-light mt-5 pt-5">
+    <div className="card bg-light pt-5 pb-5">
       <div className="container card-body">
         <StyledFirebaseAuth uiConfig={fireabseUIConfig} firebaseAuth={auth} />
       </div>

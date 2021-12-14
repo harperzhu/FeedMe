@@ -11,12 +11,12 @@ export function ConfirmPetAddition(props) {
   } else {
   return(
     <div className="mt-5 pt-4 text-center h-100">
-      <img src="/img/success.png" alt="cute pet image indicates successful request"></img>
+      <img src="/img/success.png" alt="cute pet indicates successful request"></img>
       <h2>Success! </h2>
       <h2> We Received Your Request</h2>
       <br></br>
-      <h6>You can view your new added pet by clicking the button below 
-      </h6>
+      <p>You can view your new added pet by clicking the button below 
+      </p>
 
       <button className="feed-me"
             id="petlist"
