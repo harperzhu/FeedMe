@@ -1,11 +1,15 @@
 import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDatabase, ref,  get,  child, update as firebaseUpdate, onValue  } from 'firebase/database'
+import { getDatabase, ref, update as firebaseUpdate, onValue  } from 'firebase/database'
 
 export function Profile(props) {
   const { name } = useParams();
-  
+  if(props.pets === undefined){
+    props.reloadPet();
+    console.log("asfdfsad");
+  }
   let petName = name;
+  console.log(props.pets);
   let currentPetObj = props.pets[petName];
 
   return (

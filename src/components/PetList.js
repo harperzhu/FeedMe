@@ -43,11 +43,10 @@ function PetCard(props) {
 
 function PetList(props) {
   const {name} = useParams();
-  
-  let petName = name;
+
   const renderPets = (pets) => {
     let listOfPets = [];
-    Object.values(pets).map((pet) => {
+    Object.values(pets).forEach((pet) => {
       if (props.filterBreed === null && props.filterSpecies === null) {
         listOfPets.push(<PetCard key={pet.name} pet={pet} />);
       } else if (props.filterBreed !== null && props.filterBreed === pet.breed) {
@@ -85,19 +84,13 @@ function PetList(props) {
 
 
 
-function MyPetToggle(props) {
-    return(
-      <div> placeholder </div>
-    )
-}
-
 
 function FilterControl(props) {
   let names = Object.keys(props.pets);
 
   // breeds
   let breeds = new Set();
-  names.map((name) => {
+  names.forEach((name) => {
     breeds.add(props.pets[name].breed);
   })
   let breedsMenu = [];
@@ -107,7 +100,7 @@ function FilterControl(props) {
 
   //species
   let species = new Set();
-  names.map((name) => {
+  names.forEach((name) => {
     species.add(props.pets[name].type);
   })
   let speciesMenu = [];
@@ -142,4 +135,4 @@ function FilterControl(props) {
   )
 }
 
-export {PetCard, PetList, MyPetToggle, FilterControl};
+export {PetCard, PetList, FilterControl};

@@ -15,7 +15,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
 import { getDatabase, ref, child, set as firebaseSet, get } from 'firebase/database'
 
-function App(props) {
+function App() {
     // =======
     // auth stuff
     const [currentUser, setCurrentUser] = useState(undefined);
@@ -71,7 +71,6 @@ function App(props) {
             setCurrentUserObj(snapshot.val());
           })
         } else {
-
           setCurrentUser(null);
         }
       })
@@ -79,7 +78,7 @@ function App(props) {
       return () => { //cleanup
         unregisterAuthListener();
       }
-    }, [])
+    }, [db])
 
     const addNewUser = (user) => {
       return {
@@ -113,7 +112,7 @@ function App(props) {
       setCurrentBreed(null);
       setCurrentSpecies(null);
     }
-
+    
     return(
       <div>
         <Header user={currentUser}/>
@@ -129,7 +128,7 @@ function App(props) {
               <SignInPage user={currentUser} />
             </Route>
 
-            <PrivateRoute path="/petlist" user={currentUserObj}>
+            <PrivateRoute path="/petlist" user={currentUser}>
               <PetList
                 pets={pets}
                 filterBreed={currentBreed}
@@ -144,18 +143,19 @@ function App(props) {
               <ErrorPage/>
             </Route>
 
-            <PrivateRoute  exact path="/moreinfo/:name" user={currentUserObj}>
-              <Profile pets={pets} user={currentUserObj} uid={uid}/>
+            {/* <PrivateRoute  exact path="/moreinfo/:name" user={currentUser}> */}
+            <Route exact path="/moreinfo/:name" >
+              <Profile pets={pets} user={currentUserObj} uid={uid} reloadPet={reloadPet}/>
               <PetUpdate pets={pets} />
+            {/* </PrivateRoute> */}
+            </Route>
 
+            <PrivateRoute  exact path="/liked" user={currentUser}>
+              <MyPets pets={pets} user={currentUserObj} uid={uid} reloadPet={reloadPet}/>
             </PrivateRoute>
 
-            <PrivateRoute  exact path="/liked" user={currentUserObj}>
-              <MyPets pets={pets} user={currentUserObj} uid={uid}/>
-            </PrivateRoute>
-
-            <PrivateRoute  exact path="/liked/:name" user={currentUserObj}>
-              <Profile pets={pets} user={currentUserObj} uid={uid}/>
+            <PrivateRoute  exact path="/liked/:name" user={currentUser}>
+              <Profile pets={pets} user={currentUserObj} uid={uid} reloadPet={reloadPet}/>
               <PetUpdate pets={pets}/>
             </PrivateRoute>
 
@@ -164,7 +164,7 @@ function App(props) {
             </Route>
 
 
-            <PrivateRoute exact path="/addnewpet" user={currentUserObj}>
+            <PrivateRoute exact path="/addnewpet" user={currentUser}>
               {/* <Cover /> */}
               <AddNewPet pets={pets} breeds={currentBreeds} user={currentUserObj} reloadPet={reloadPet}/>
             </PrivateRoute>

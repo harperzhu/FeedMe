@@ -25,6 +25,7 @@ export default function SignInPage(props) {
   const auth = getAuth();
 
   if(props.user === undefined) {
+    console.log(props.user);
     return null;
   }
   if(props.user) {

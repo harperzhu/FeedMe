@@ -39,7 +39,7 @@ export function ConfirmPetAddition(props) {
           >
               Add another pet
           </button>
-    {/* <h6> if your browser doesn't automatically redirect, click <Redirect to="/petList" push/>here </h6> */}
+    
     </div>
   );
   }

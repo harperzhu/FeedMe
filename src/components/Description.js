@@ -77,9 +77,6 @@ export function Intro() {
 
 export function Process() {
 
-  // let heartIcon = "favorite";
-  // let heartColor = "#cc8561";
-
   return (
     <div className="container pt-5 my-5 bg-light">
       <div className="row justify-content-center">
@@ -102,9 +99,6 @@ export function Process() {
           <p>View more pet info and cast votes</p>
 
 
-          {/* <span className="material-icons" style={{ color: heartColor }}>{heartIcon}</span>  */}
-
-  
         </div>
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-magic-wand h3"></span>

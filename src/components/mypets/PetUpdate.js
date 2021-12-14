@@ -64,10 +64,6 @@ return (
 }
 
 
-function MyPetToggle(props) {
-    return(
-      <div> placeholder </div>
-    )
-}
 
-export {MyLikedPetCard, PetUpdate, MyPetToggle};
+
+export {MyLikedPetCard, PetUpdate};
