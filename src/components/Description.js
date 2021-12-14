@@ -41,9 +41,16 @@ export function AboutUs() {
         </section>
 
         <section className="contact-info">
-            <h2>Contact us</h2>
-            <p>Email: <Link to="mailto:feedme@gmail.com">feedme@gmail.com</Link></p>
-            <p>Tel: <Link to="tel:123-456-789">(123)-456-789</Link></p>
+            <h2>Contact us <span className="material-icons" aria-label='email icon'> email</span></h2>
+            <p>
+              Harper Zhu: <Link to="mailto:harperzhu@yahoo.com">harperzhu@yahoo.com </Link>
+              <br></br>
+              Ashley Zhao: <Link to="mailto:zhao8@uw.edu">zhao8@uw.edu </Link>
+              <br></br>
+              Aurora Yin: <Link to="mailto:zyin5@uw.edu">zyin5@uw.edu</Link>
+              <br></br>
+              Crosby Huang: <Link to="mailto:crosbyhz@uw.edu">crosbyhz@uw.edu</Link>  
+            </p>
         </section>
 
       </main>
