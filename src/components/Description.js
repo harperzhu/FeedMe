@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+
 export function Description() {
   return(
     <div>
@@ -11,6 +12,8 @@ export function Description() {
   )
 }
 
+
+//introduces who we are and how our website can help shelter pets
 export function AboutUs() {
   return(
     <div className="mt-5 pt-5">
@@ -48,6 +51,7 @@ export function AboutUs() {
   );
 }
 
+//introduce what our website do in the homepage when user first entered
 export function Intro() {
   return (
     <div className="container mt-5">
@@ -75,6 +79,7 @@ export function Intro() {
   )
 }
 
+//explains the process of how our website works in illustration
 export function Process() {
 
   return (
@@ -115,6 +120,8 @@ export function Process() {
   )
 }
 
+
+//subscription form that allows users to input email
 export function Subscription(){
   return (
     <div className="container p-4 pb-0">
