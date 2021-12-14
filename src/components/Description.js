@@ -15,7 +15,7 @@ export function AboutUs() {
   return(
     <div className="mt-5 pt-5">
       <h1 className="text-center">About Us</h1>
-      <main id="about-main">
+      <main className="flex-column">
         <section className="introduction">
             <h2>Who we are</h2>
             <p>We are a group of students at Unirversity of Washington in Seattle who are animal lovers. We seek ways to utilizing information technology to help build bonds between animal loving people and the animals they are helping.</p>
@@ -93,12 +93,12 @@ export function Process() {
       <div className="row text-center">
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-thumbs-up h3"></span>
-          <h4>Select A Pet</h4>
+          <h3>Select A Pet</h3>
           <p>Select a pet from our list of available pets</p>
         </div>
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-heart h3"></span>
-          <h4>Vote For Pet</h4>
+          <h3>Vote For Pet</h3>
           <p>View more pet info and cast votes</p>
 
 
@@ -108,12 +108,12 @@ export function Process() {
         </div>
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-magic-wand h3"></span>
-          <h4>Connect With Pet</h4>
+          <h3>Connect With Pet</h3>
           <p>Follow up with all the pets you fed in MyPets</p>
         </div>
         <div className="col-lg-3 col-md-6">
           <span className="lnr lnr-upload h3"></span>
-          <h4>Add A Pet</h4>
+          <h3>Add A Pet</h3>
           <p>Add a new pet to our website</p>
         </div>
       </div>
@@ -134,8 +134,8 @@ export function Subscription(){
 
               <div className="col-md-4 col-12 mb-4 mb-md-0">
                   <div className="form-outline mb-4">
-                  <label for="emailInput">Enter your email:</label>
                       <input type="email" id="emailInput" className="form-control" placeholder="feedme@gmail.com" />
+                      <label htmlFor="emailInput">Enter your email here</label>
                   </div>
               </div>
     

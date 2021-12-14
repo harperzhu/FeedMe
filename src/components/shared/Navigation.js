@@ -4,14 +4,13 @@ import {Navbar, Container, NavDropdown, Nav} from 'react-bootstrap';
 import { getAuth, signOut } from 'firebase/auth';
 
 export function Header(props){
-    console.log(props.user);
     const handleSignOut = (event) => {
         signOut(getAuth());
       }
     return (        
         <Navbar collapseOnSelect expand="lg" variant="dark">
             <Container>
-                <Navbar.Brand><Link exact to="/"><img src="../img/icon-dark.jfif"></img></Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/"><img src="../img/icon-dark.jfif" alt="feed me icon"></img></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className="align-middle m-0 p-0 " />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -37,10 +36,10 @@ export function Header(props){
 
 export function Footer() {
     return (
-        <footer className="">
-            <div id="contact-info">
-                <p><span className="material-icons"> email</span> <Link to="mailto:feedme@gmail.com">feedme@gmail.com</Link></p>
-                <p><span className="material-icons"> phone</span> <Link to="tel:123-456-789">(123)-456-789</Link></p>
+        <footer>
+            <div>
+                <p><span className="material-icons" aria-label='email icon'> email</span> <Link to="mailto:feedme@gmail.com" className='text-light'>feedme@gmail.com</Link></p>
+                <p><span className="material-icons" aria-label='phone icon'> phone</span> <Link to="tel:123-456-789" className='text-light'>(123)-456-789</Link></p>
                 <p>&copy; Info340 FeedMe Project 2021. All rights reserved.</p>             
             </div>
         </footer>

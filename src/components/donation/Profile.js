@@ -7,7 +7,6 @@ export function Profile(props) {
   
   let petName = name;
   let currentPetObj = props.pets[petName];
-  console.log(props);
 
   return (
     <div className="donation-page">
@@ -38,18 +37,9 @@ export function Profile(props) {
 export function CardText(props) {
   const user = props.user;
   const pet = props.pet;
-  console.log(pet.likes);
+
   const [isLiked, setIsLiked] = useState(user.PetLikes.indexOf(pet.name) !== -1);
   const [numLikes, setNumLikes] = useState(pet.likes);
-  // const reloadLikes = () => {
-  //   // Get a database reference to likes
-  //   get(child(ref(getDatabase()), "pets/" + pet.name + "/likes")).then((snapshot) => {
-  //     let numLikes = snapshot.val();
-  //     console.log(numLikes);
-  //   }).catch((error) => {
-  //     console.error(error);
-  //   });
-  // }
 
   const db = getDatabase();
 
@@ -70,38 +60,34 @@ export function CardText(props) {
   const addNewPetLikes = () => {
     let PetLikes = user.PetLikes;
     if(!isLiked){
-      console.log(PetLikes);
+
       PetLikes.push(pet.name);
-      console.log(PetLikes);
+
     } else {
       const index = PetLikes.indexOf(pet.name);
       if (index > -1) {
-        console.log("not like");
         PetLikes.splice(index, 1);
         if (PetLikes.length === 0){
           PetLikes = [""];
-          console.log("empty array");
         }
       } 
     }
-    console.log(PetLikes);
+
     return {
       "PetLikes": PetLikes
     }
   }
 
   const changLikesNumber = () => {
-    console.log(numLikes);
     let likes = numLikes;
-    console.log(likes);
+
     if(!isLiked){
       likes++ ;
-      console.log(likes);
+
     } else {
       likes--;
-      console.log(likes);
+
     }
-    console.log(likes);
     return  { "likes": likes }
   }
 

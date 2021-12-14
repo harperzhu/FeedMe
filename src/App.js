@@ -22,6 +22,7 @@ function App(props) {
     const [uid, setUid] = useState(undefined);
     const [pets, setPets] = useState(undefined);
     const [currentUserObj, setCurrentUserObj] = useState(undefined);
+    const [currentBreeds, setCurrentBreeds] = useState(undefined);
     const db = getDatabase();
 
     const reloadPet = () => {
@@ -35,33 +36,42 @@ function App(props) {
       });
     }
 
+    const reloadBreeds = () => {
+      // Get a database reference to our posts
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, "breeds")).then((snapshot) => {
+        let allTheBreeds = snapshot.val();
+        setCurrentBreeds(allTheBreeds);
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+
     
 
     useEffect(() => {
       const auth = getAuth();
       reloadPet();
+      reloadBreeds();
 
       //addEventListener("loginEvent", () => {})
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){ //have a user
-          console.log("logging in", firebaseUser);
           setUid(firebaseUser.uid);
           setCurrentUser(firebaseUser);
           get(child(ref(db), "user/" + firebaseUser.uid)).then((snapshot) => {
             
             if(snapshot.val() === null){
-             console.log(firebaseUser.uid);
+
              firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser))
              .catch((err) => {console.log(err)})
              .then((err) => {console.log()})//handle errors in firebase
             }
-            // setCurrentUserObj(snapshot.val());
-            // console.log(currentUserObj);
-            console.log(snapshot.val());
+
             setCurrentUserObj(snapshot.val());
           })
         } else {
-          console.log("logging out");
+
           setCurrentUser(null);
         }
       })
@@ -156,7 +166,7 @@ function App(props) {
 
             <PrivateRoute exact path="/addnewpet" user={currentUserObj}>
               {/* <Cover /> */}
-              <AddNewPet pets={pets} breeds={props.breeds} user={currentUserObj} reloadPet={reloadPet}/>
+              <AddNewPet pets={pets} breeds={currentBreeds} user={currentUserObj} reloadPet={reloadPet}/>
             </PrivateRoute>
 
             {/* <Redirect to="/addnewpet/success"/> */}

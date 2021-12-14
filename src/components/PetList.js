@@ -43,24 +43,24 @@ function PetCard(props) {
 
 function PetList(props) {
   const {name} = useParams();
-  console.log(props);
+  
+  let petName = name;
   const renderPets = (pets) => {
     let listOfPets = [];
     Object.values(pets).map((pet) => {
       if (props.filterBreed === null && props.filterSpecies === null) {
-        listOfPets.push(<PetCard key={petName} pet={pet} />);
+        listOfPets.push(<PetCard key={pet.name} pet={pet} />);
       } else if (props.filterBreed !== null && props.filterBreed === pet.breed) {
-        listOfPets.push(<PetCard key={petName} pet={pet} />);
+        listOfPets.push(<PetCard key={pet.name} pet={pet} />);
       } else if (props.filterSpecies !== null && props.filterSpecies === pet.type) {
-        listOfPets.push(<PetCard key={petName} pet={pet} />);
+        listOfPets.push(<PetCard key={pet.name} pet={pet} />);
       }
     });
     return listOfPets;
   }
 
-  let petName = name;
     return(
-        <div id="petList">
+        <div className="petList">
           <div className='container-fluid text-center pt-4'>
             <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
             <h1>——Feed a Pet——</h1>
@@ -102,7 +102,7 @@ function FilterControl(props) {
   })
   let breedsMenu = [];
   breeds.forEach((breed) => {
-    breedsMenu.push(<Dropdown.Item id={breed} href="#" onClick={(event)=>{props.filterBreedCallback(event.currentTarget.id)}}> {breed} </Dropdown.Item>);
+    breedsMenu.push(<Dropdown.Item key={breed} id={breed} href="#" onClick={(event)=>{props.filterBreedCallback(event.currentTarget.id)}}> {breed} </Dropdown.Item>);
   });
 
   //species
@@ -112,7 +112,7 @@ function FilterControl(props) {
   })
   let speciesMenu = [];
   species.forEach((oneSpecies) => {
-    speciesMenu.push((<Dropdown.Item id={oneSpecies} href="#" onClick={(event)=>{props.filterSpeciesCallback(event.currentTarget.id)}}> {oneSpecies} </Dropdown.Item>))
+    speciesMenu.push((<Dropdown.Item key={oneSpecies} id={oneSpecies} href="#" onClick={(event)=>{props.filterSpeciesCallback(event.currentTarget.id)}}> {oneSpecies} </Dropdown.Item>))
   })
 
   return(
