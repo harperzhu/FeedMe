@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Redirect } from 'react-router-dom';
 
+//run this function if the Add A Pet form has sucessfully received user input
 export function ConfirmPetAddition(props) {
 
   const [redirectTo, setredirectTo] = useState(undefined);
@@ -18,6 +19,7 @@ export function ConfirmPetAddition(props) {
       <p>You can view your new added pet by clicking the button below 
       </p>
 
+      {/* if the submission button was click and the request was sucessful, redirect to sucess page*/}
       <button className="feed-me"
             id="petlist"
             onClick={
