@@ -50,7 +50,7 @@ export function Footer() {
                     
                 </p>
                 <p>&copy; Image Source: <br/>
-                    <Link to="https://instagram.com/samoyed.hagan?utm_medium=copy_link .">Bear's instagram </Link>, 
+                    <Link to="https://instagram.com/samoyed.hagan?utm_medium=copy_link">Bear's instagram </Link>, 
                     <Link to=" https://instagram.com/reverethecat?utm_medium=copy_link"> Blot's instagram </Link>, 
                     <Link to="https://instagram.com/ashtontherescuehusky?utm_medium=copy_link"> Logan's instagram </Link>, 
                     <Link to=" https://instagram.com/woody_the_hound_dog?utm_medium=copy_link"> Periwinkle's instagram </Link>, 

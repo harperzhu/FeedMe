@@ -91,13 +91,7 @@ function App() {
       }
     }
 
-  
 
-    // =======
-
-    // let [pets, setPets] = useState(props.pets);
-
-    // key for petsMap state
 
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);

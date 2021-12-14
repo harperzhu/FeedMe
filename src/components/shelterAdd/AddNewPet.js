@@ -161,9 +161,9 @@ export function AddNewPet(props) {
                         <br />
                         <input type="file" className="form-control-file" id="imagePath" required="required"/>
                         
-                            <div className="btn btn-lg text-uppercase" >
-                            <label htmlFor="formSubmitButton">Submit the form here </label>
-                                <input type="submit" value="submit" class="formSubmitButton"/>
+                            <div className="btn btn-lg container" >
+                            <label htmlFor="formSubmitButton" className="small">Submit the form here</label>
+                                <input type="submit" value="submit" className="formSubmitButton text-uppercase" />
                             </div>
 
 
