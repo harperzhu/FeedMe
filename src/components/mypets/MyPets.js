@@ -27,7 +27,7 @@ function MyLikedPetCard(props) {
 
 // create single card that contains a pet 
 function MyPets(props) {
-  const likedPets = props.user.PetLikes;
+  let likedPets = props.user.PetLikes.filter((pet) => pet.length > 1);
   const pets = props.pets;
 
   return (
