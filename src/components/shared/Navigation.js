@@ -25,7 +25,7 @@ export function Header(props){
                         <Nav><Link to="/signin">Sign in</Link></Nav>
                     }
                     {props.user &&
-                            <NavDropdown title={"Hello, " + props.user.name} id="collasible-nav-dropdown">
+                            <NavDropdown title={"Hello, " + props.user.displayName} id="collasible-nav-dropdown">
                                 <NavDropdown.Item onClick={handleSignOut}>Sign out</NavDropdown.Item>
                             </NavDropdown>
                     }  

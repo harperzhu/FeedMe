@@ -18,7 +18,8 @@ import { getDatabase, ref, child, set as firebaseSet, get } from 'firebase/datab
 function App(props) {
     // =======
     // auth stuff
-    // const [currentUser, setCurrentUser] = useState(undefined);
+    const [currentUser, setCurrentUser] = useState(undefined);
+    const [uid, setUid] = useState(undefined);
     const [pets, setPets] = useState(undefined);
     const [currentUserObj, setCurrentUserObj] = useState(undefined);
     const db = getDatabase();
@@ -44,23 +45,24 @@ function App(props) {
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){ //have a user
           console.log("logging in", firebaseUser);
-          
+          setUid(firebaseUser.uid);
+          setCurrentUser(firebaseUser);
           get(child(ref(db), "user/" + firebaseUser.uid)).then((snapshot) => {
             
             if(snapshot.val() === null){
              console.log(firebaseUser.uid);
-             firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser)).catch((err) => {console.log(err)}).then((err) => {console.log()})//handle errors in firebase
+             firebaseSet(ref(getDatabase(), "user/" + firebaseUser.uid), addNewUser(firebaseUser))
+             .catch((err) => {console.log(err)})
+             .then((err) => {console.log()})//handle errors in firebase
             }
             // setCurrentUserObj(snapshot.val());
             // console.log(currentUserObj);
             console.log(snapshot.val());
             setCurrentUserObj(snapshot.val());
           })
-          
-          
         } else {
           console.log("logging out");
-          setCurrentUserObj(null);
+          setCurrentUser(null);
         }
       })
 
@@ -104,7 +106,7 @@ function App(props) {
 
     return(
       <div>
-        <Header user={currentUserObj}/>
+        <Header user={currentUser}/>
 
         <div>
           <Switch>
@@ -114,7 +116,7 @@ function App(props) {
             </Route>
 
             <Route path="/signin">
-              <SignInPage user={currentUserObj} />
+              <SignInPage user={currentUser} />
             </Route>
 
             <PrivateRoute path="/petlist" user={currentUserObj}>
@@ -133,17 +135,17 @@ function App(props) {
             </Route>
 
             <PrivateRoute  exact path="/moreinfo/:name" user={currentUserObj}>
-              <Profile pets={pets} user={currentUserObj}/>
+              <Profile pets={pets} user={currentUserObj} uid={uid}/>
               <PetUpdate pets={pets} />
 
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked" user={currentUserObj}>
-              <MyPets pets={pets} user={currentUserObj}/>
+              <MyPets pets={pets} user={currentUserObj} uid={uid}/>
             </PrivateRoute>
 
             <PrivateRoute  exact path="/liked/:name" user={currentUserObj}>
-              <Profile pets={pets} user={currentUserObj}/>
+              <Profile pets={pets} user={currentUserObj} uid={uid}/>
               <PetUpdate pets={pets}/>
             </PrivateRoute>
 

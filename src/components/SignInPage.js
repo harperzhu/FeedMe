@@ -6,9 +6,6 @@ import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 
-
-
-
 //sign in options
 const fireabseUIConfig = {
   signInOptions: [

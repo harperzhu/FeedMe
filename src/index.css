@@ -362,27 +362,11 @@ main {
 
 
 /*for mobile screen up to 575px*/
-@media screen and (max-width: 575px){
-
-    .payment-amount .form-type-radio input{
-        display: none;
-      /* background-color: #344960;
-      color: white;
-      font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      justify-content: center;
-      font-size: 100%;
-      text-align: center;   */
-
-  }
 
   .card-text b{
       display: flex;
   }
 
-}
 
   /*for destop screen larger than 575px*/
 

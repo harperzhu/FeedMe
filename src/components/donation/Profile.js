@@ -1,13 +1,13 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
+import { getDatabase, ref,  get,  child, update as firebaseUpdate, onValue  } from 'firebase/database'
 
 export function Profile(props) {
   const { name } = useParams();
+  
   let petName = name;
   let currentPetObj = props.pets[petName];
-  let user = props.user;
-  console.log(user);
+  console.log(props);
 
   return (
     <div className="donation-page">
@@ -24,7 +24,7 @@ export function Profile(props) {
                   <span className='lnr lnr-paw h1 bg-warning rounded-circle'></span>
                 </div>
                 <CardTitle pet={currentPetObj} />
-                <CardText pet={currentPetObj} user={user}/>
+                <CardText pet={currentPetObj} user={props.user} uid={props.uid}/>
               </div>
             </div>
           </div>
@@ -38,28 +38,79 @@ export function Profile(props) {
 export function CardText(props) {
   const user = props.user;
   const pet = props.pet;
-  const [isLiked, setIsLiked] = useState(user.PetLikes[0].indexOf(pet.name) !== -1);
-  console.log(user.PetLikes[0]);
+  console.log(pet.likes);
+  const [isLiked, setIsLiked] = useState(user.PetLikes.indexOf(pet.name) !== -1);
+  const [numLikes, setNumLikes] = useState(pet.likes);
+  // const reloadLikes = () => {
+  //   // Get a database reference to likes
+  //   get(child(ref(getDatabase()), "pets/" + pet.name + "/likes")).then((snapshot) => {
+  //     let numLikes = snapshot.val();
+  //     console.log(numLikes);
+  //   }).catch((error) => {
+  //     console.error(error);
+  //   });
+  // }
 
-  const addNewPetLikes = (user, isLiked) => {
-    let PetLikes = user.PetLikes;
+  const db = getDatabase();
 
-    if(!isLiked){
-      PetLikes = PetLikes[0].push(pet.name);
-      console.log(PetLikes[0]);
-    } else {
-      const index = PetLikes[0].indexOf(pet.name);
-      if (index > -1) {
-        PetLikes[0].splice(index, 1);
-        console.log(PetLikes[0]);
-      }
+  useEffect(() => { //function when component first loads
+
+    //addEventListener('databaseValueChange', () => {})
+    const offFunction = onValue(ref(getDatabase(), "pets/" + pet.name + "/likes"), (snapshot) => {
+      setNumLikes(snapshot.val());
+    })
+    //instructions on how to leave will be called by React when component unmounts
+    function cleanup() {
+      offFunction(); //turn the listener off
     }
+    return cleanup; //leave the instructions behind
+  }, [db]); //when to re-run (never)
+
+
+  const addNewPetLikes = () => {
+    let PetLikes = user.PetLikes;
+    if(!isLiked){
+      console.log(PetLikes);
+      PetLikes.push(pet.name);
+      console.log(PetLikes);
+    } else {
+      const index = PetLikes.indexOf(pet.name);
+      if (index > -1) {
+        console.log("not like");
+        PetLikes.splice(index, 1);
+        if (PetLikes.length === 0){
+          PetLikes = [""];
+          console.log("empty array");
+        }
+      } 
+    }
+    console.log(PetLikes);
     return {
-      PetLikes: {PetLikes}
+      "PetLikes": PetLikes
     }
   }
+
+  const changLikesNumber = () => {
+    console.log(numLikes);
+    let likes = numLikes;
+    console.log(likes);
+    if(!isLiked){
+      likes++ ;
+      console.log(likes);
+    } else {
+      likes--;
+      console.log(likes);
+    }
+    console.log(likes);
+    return  { "likes": likes }
+  }
+
   const handleClick = (event) => {
-    firebaseSet(ref(getDatabase(), "user/" + Object.keys(user) + "/PetLikes"), addNewPetLikes(user, isLiked))
+    firebaseUpdate(ref(getDatabase(), "user/" + props.uid), addNewPetLikes())
+    .catch((err) => {console.log(err)})
+    .then((err) => {console.log()})//handle errors in firebase
+
+    firebaseUpdate(ref(getDatabase(), "pets/" + pet.name), changLikesNumber())
     .catch((err) => {console.log(err)})
     .then((err) => {console.log()})//handle errors in firebase
     setIsLiked(!isLiked);
@@ -100,7 +151,7 @@ export function CardText(props) {
           <b>Gender: {props.pet.gender}</b>
         </div>
         <div className="likes pb-1">
-          <b>Total Likes: {props.pet.likes} Meal</b>
+          <b>Total Likes: {numLikes}</b>
         </div>
       </div>
     </div>
