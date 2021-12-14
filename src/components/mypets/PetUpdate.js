@@ -5,7 +5,7 @@ function MyLikedPetCard(props) {
   let update = props.update;
 
   return (
-    <div className="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3">
+    <div className="d-flex col-sm-12 col-md-6 col-lg-6 col-xl-3 petList">
 
     <div className="pet-card mb-4 mt-5 pt-4">
       <div className="card-body">

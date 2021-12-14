@@ -28,14 +28,11 @@ function MyPets(props) {
   const likedPets = props.user.PetLikes;
   const pets = props.pets;
 
-  const mapToMyLikedPetCard = (pets) => {
-    likedPets.map((pet) => <MyLikedPetCard key={pet} pet={pets[pet]} />)
-  }
-
   return (
     <div className="petList">
       <div className='profile-cards'>
-        {mapToMyLikedPetCard}
+        {likedPets.map((pet) => <MyLikedPetCard key={pet} pet={pets[pet]} />)}
+        
       </div>
     </div>
   );
