@@ -39,10 +39,10 @@ export function Footer() {
         <footer>
             <div>
                 <span className="material-icons" aria-label='email icon'> email</span>
-                <p className='text-light'>Harper Zhu: harperzhu@yahoo.com   /   </p>
-                <p className='text-light'>Ashley Zhao: zhao8@uw.edu   /   </p>
-                <p className='text-light'>Aurora Yin: zyin5@uw.edu   /   </p>
-                <p className='text-light'>Crosby Huang: crosbyhz@uw.edu   /   </p>
+                <p className='text-light'>Harper Zhu: harperzhu@yahoo.com   /  </p>
+                <p className='text-light'>Ashley Zhao: zhao8@uw.edu   /  </p>
+                <p className='text-light'>Aurora Yin: zyin5@uw.edu   /  </p>
+                <p className='text-light'>Crosby Huang: crosbyhz@uw.edu   /  </p>
                 <p>&copy; Image Source: <br/>
                     <a href="https://instagram.com/samoyed.hagan?utm_medium=copy_link" target="_blank">Bear's instagram </a>, 
                     <a href=" https://instagram.com/reverethecat?utm_medium=copy_link" target="_blank"> Blot's instagram </a>, 
