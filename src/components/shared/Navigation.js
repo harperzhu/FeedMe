@@ -38,24 +38,18 @@ export function Footer() {
     return (
         <footer>
             <div>
-                <p>
-                    <span className="material-icons" aria-label='email icon'> email</span>
-                    <Link to="mailto:harperzhu@yahoo.com" className='text-light'>Harper Zhu: harperzhu@yahoo.com   /   </Link>
-                    <br></br>
-                    <Link to="mailto:zhao8@uw.edu" className='text-light'>Ashley Zhao: zhao8@uw.edu   /   </Link>
-                    <br></br>
-                    <Link to="mailto:zyin5@uw.edu" className='text-light'>Aurora Yin: zyin5@uw.edu   /   </Link>
-                    <br></br>
-                    <Link to="mailto:crosbyhz@uw.edu" className='text-light'>Crosby Huang: crosbyhz@uw.edu   /   </Link>
-                    
-                </p>
+                <span className="material-icons" aria-label='email icon'> email</span>
+                <p className='text-light'>Harper Zhu: harperzhu@yahoo.com   /   </p>
+                <p className='text-light'>Ashley Zhao: zhao8@uw.edu   /   </p>
+                <p className='text-light'>Aurora Yin: zyin5@uw.edu   /   </p>
+                <p className='text-light'>Crosby Huang: crosbyhz@uw.edu   /   </p>
                 <p>&copy; Image Source: <br/>
-                    <Link to="https://instagram.com/samoyed.hagan?utm_medium=copy_link">Bear's instagram </Link>, 
-                    <Link to=" https://instagram.com/reverethecat?utm_medium=copy_link"> Blot's instagram </Link>, 
-                    <Link to="https://instagram.com/ashtontherescuehusky?utm_medium=copy_link"> Logan's instagram </Link>, 
-                    <Link to=" https://instagram.com/woody_the_hound_dog?utm_medium=copy_link"> Periwinkle's instagram </Link>, 
-                    <Link to="https://instagram.com/lela_and_gracie?utm_medium=copy_link"> Rusty's instagram </Link>, 
-                    <Link to="https://www.instagram.com/onecupof.coffee/"> Coffee's instagram </Link>, 
+                    <a href="https://instagram.com/samoyed.hagan?utm_medium=copy_link" target="_blank">Bear's instagram </a>, 
+                    <a href=" https://instagram.com/reverethecat?utm_medium=copy_link" target="_blank"> Blot's instagram </a>, 
+                    <a href="https://instagram.com/ashtontherescuehusky?utm_medium=copy_link" target="_blank"> Logan's instagram </a>, 
+                    <a href=" https://instagram.com/woody_the_hound_dog?utm_medium=copy_link" target="_blank"> Periwinkle's instagram </a>, 
+                    <a href="https://instagram.com/lela_and_gracie?utm_medium=copy_link" target="_blank"> Rusty's instagram </a>, 
+                    <a href="https://www.instagram.com/onecupof.coffee/" target="_blank"> Coffee's instagram </a>, 
                     Muffin photo credits to Harper Zhu,
                     Pochi photo credits to Crosby Huang
                 </p>  
