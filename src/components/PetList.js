@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {Dropdown} from 'react-bootstrap';
 
 
+//renders petCard for every pet
 function PetCard(props) {
   const [redirectTo, setredirectTo] = useState(undefined);
   let heartIcon = "favorite";
@@ -41,6 +42,7 @@ function PetCard(props) {
 
 
 
+//the list of pets that is currently available for voting
 function PetList(props) {
 
   const renderPets = (pets) => {
@@ -83,7 +85,7 @@ function PetList(props) {
 
 
 
-
+//filter pets based on criteria
 function FilterControl(props) {
   let names = Object.keys(props.pets);
 
