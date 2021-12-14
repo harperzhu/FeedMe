@@ -15,8 +15,8 @@ export function ConfirmPetAddition(props) {
       <h2>Success! </h2>
       <h2> We Received Your Request</h2>
       <br></br>
-      <h6>You can view your new added pet by clicking the button below 
-      </h6>
+      <p>You can view your new added pet by clicking the button below 
+      </p>
 
       <button className="feed-me"
             id="petlist"
