@@ -17,11 +17,6 @@ body {
     flex: 1;
 }
 
-
-#about-main {
-    flex-direction: column;
-}
-
 main {
   flex: 1;
 }
@@ -54,22 +49,21 @@ a:visited {
     color: #cc8561;
 }
 
-#cover-img {
+/* Cover  */
+.cover-img {
   height: 100vh;
   text-align: center;
   color: white;
   background-image: url("./css-img/goldens-holding-food-bowls.jpeg");
   background-size: cover;
   flex-direction: column;
-  /* display: none; */
 }
 
-#cover-img h1 {
+.cover-img h1 {
   font-size: 20vh;
   padding-top: 30vh;
   margin-bottom: 0;
 }
-
 
 .header-update h1{
     font-size: 20vh;
@@ -77,19 +71,20 @@ a:visited {
     margin-bottom: 0;
   }
 
-#cover-img h1, #cover-img p {
+.cover-img h1, .cover-img p {
   text-shadow: .5vh .5vh .2vh #cc8561;
   font-family: 'East Sea Dokdo', cursive;
   text-align: center;
   color: white;
 }
 
-#cover-img p {
+.cover-img p {
     margin-top: 0;
     font-size: 7vh;
 }
 
-#petList {
+/* PetList page */
+.petList {
   background-color: #e3dad0;
 }
 
@@ -138,7 +133,7 @@ a:visited {
   font-size: 1.1rem;
 }
 
-#petList .pet-image {
+.petList .pet-image {
     height: 20rem;
 }
 
@@ -181,10 +176,6 @@ a:visited {
     margin: 0;
 }
 
-#sign-in-btn a{
-    color: white;
-}
-
 
 footer {
     bottom: 0;
@@ -193,11 +184,6 @@ footer {
     text-align: left;
     color: white;
     background-color: #344960;
-}
-
-#contact-info a{
-    text-decoration: none;
-    color: white;
 }
 
 .contact-info p:last-child {
@@ -303,7 +289,6 @@ main {
 
 
 #formSubmitButton{
-
     font-family: 'Ubuntu', sans-serif;
     align-self: center;
     width: 10rem;

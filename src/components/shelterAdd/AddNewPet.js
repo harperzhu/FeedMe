@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { useParams, Link, Redirect, Switch } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { getDatabase, ref, set as firebaseSet } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
@@ -50,14 +50,9 @@ export function AddNewPet(props) {
             //error message
             alert("Invalid Name for Pet: Please Rename The Pet");
         }
-        console.log(data)
         return data;
     }
 
-
-    const handleCurrentAddedPetKind = (kind) => {
-        setCurrentAddedPetKind(kind);
-    }
 
     function uploadToDatabase(data){
         const db = getDatabase();
@@ -74,22 +69,22 @@ export function AddNewPet(props) {
             <AddNewPetCover />
             <main id="about-main">
 
-                <div class="form-group my-5 mx-5 px-5">
+                <div className="form-group my-5 mx-5 px-5">
                     <form onSubmit={handleFormSubmit}>
                         <div >
-                            <label for="name">Pet Name</label>
+                            <label htmlFor="name">Pet Name</label>
                             <input type="string"
-                                    class="form-control"
+                                    className="form-control"
                                     id="name"
                                     placeholder="Example: Coffee"
                                     required="required"
                             />
                         </div>
 
-                        <div class="form-group">
-                            <label for="age">Pet Age  (in years old)</label>
-                            <select class="form-control" id="age" required>
-                                <option selected="selected" value="">Select an option</option>
+                        <div className="form-group">
+                            <label htmlFor="age">Pet Age  (in years old)</label>
+                            <select className="form-control" id="age" required>
+                                <option value="selected">Select an option</option>
                                 <option> under 1</option>
                                 <option> 1</option>
                                 <option> 2</option>
@@ -115,19 +110,19 @@ export function AddNewPet(props) {
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="gender">Pet Gender</label>
-                            <select class="form-control" id="gender" required>
-                            <option selected="selected" value="">Select an option</option>
+                        <div className="form-group">
+                            <label htmlFor="gender">Pet Gender</label>
+                            <select className="form-control" id="gender" required>
+                            <option value="selected">Select an option</option>
                                 <option >Female</option>
                                 <option>Male</option>
                             </select>
 
                         </div>
 
-                        <div class="form-group">
-                            <label for="type">Pet Kind</label>
-                            <select class="form-control" id="type" required
+                        <div className="form-group">
+                            <label htmlFor="type">Pet Kind</label>
+                            <select className="form-control" id="type" required
                                 // defaultValue={this.state.selectValue}
                                 onChange={        
                                     (event) => {
@@ -135,13 +130,13 @@ export function AddNewPet(props) {
                                         setCurrentAddedPetKind(selectedValue);
                                   }
                                 }>
-                            <option selected="selected" value="">Select an option</option>
+                            <option value="selected">Select an option</option>
                                 <option>Cat</option>
                                 <option>Dog</option>
                                 <option>Rabbit</option>
                                 <option>Bird</option>
                                 <option>Reptile</option>
-                                <option>Others(please specify below)</option>
+
                             </select>
                         </div>
 
@@ -151,10 +146,10 @@ export function AddNewPet(props) {
 
 
 
-                        <div class="form-group">
-                            <label for="health">Pet Health</label>
-                            <select class="form-control" id="health" required>
-                            <option selected="selected" value="">Select an option</option>
+                        <div className="form-group">
+                            <label htmlFor="health">Pet Health</label>
+                            <select className="form-control" id="health" required>
+                            <option value="selected">Select an option</option>
                                 <option>Special Needs</option>
                                 <option>Healthy</option>
                             </select>
@@ -162,14 +157,14 @@ export function AddNewPet(props) {
 
                         <br />
 
-                        <label for="imagePath">Upload Pet Pictures</label>
+                        <label htmlFor="imagePath">Upload Pet Pictures</label>
                         <br />
-                        <input type="file" class="form-control-file" id="imagePath" required="required"/>
+                        <input type="file" className="form-control-file" id="imagePath" required="required"/>
                         
                         
                         {/* <Link to="/addnewpet/success" className="btn btn-lg text-uppercase btn-light"> */}
                             <div className="btn btn-lg text-uppercase" >
-                            <label for="formSubmitButton"/>
+                            <label htmlFor="formSubmitButton">Submit the form here </label>
                                 <input type="submit" value="submit" id="formSubmitButton"/>
                             </div>
                         {/* </Link> */}
@@ -187,31 +182,20 @@ export function AddNewPet(props) {
 }
 
 
-// const [queryInputName, setQueryInputName] = useState('');
-
-
-
-
-//   const handleFormNameChange = (event) => {
-//     setQueryInputName(event.target.value);
-//   }
-
-
     export function PetBreeds(props) {
-    console.log(props)
     if (props.CurrentAddedPetKind) {
         let options = [];
         props.breeds[props.CurrentAddedPetKind].forEach((option) => {
             options.push(
-                <option> {option} </option>
+                <option key={option}> {option} </option>
             )
         })
 
         return (
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Pet Breed</label>
-                <select class="form-control" id="breed" required>
-                <option selected="selected" value="">Select an option</option>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Pet Breed</label>
+                <select className="form-control" id="breed" required>
+                <option value="selected">Select an option</option>
 
                     {options}
                 </select>
@@ -220,9 +204,9 @@ export function AddNewPet(props) {
     } else{
 
     return (
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Pet Breed</label>
-            <select class="form-control" id="pet-breed">
+        <div className="form-group">
+            <label htmlFor="exampleFormControlSelect1">Pet Breed</label>
+            <select className="form-control" id="pet-breed">
                 <option>{props.breeds.undefined}</option>
             </select>
         </div>
@@ -235,7 +219,7 @@ export function AddNewPet(props) {
 
 function AddNewPetCover() {
     return (
-        <div id="cover-img">
+        <div className="cover-img">
             <h1>Add A New Pet</h1>
             <p className="sub-head">Food and love, all in one meal.</p >
         </div>
