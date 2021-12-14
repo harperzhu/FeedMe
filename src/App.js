@@ -16,8 +16,7 @@ import { ConfirmPetAddition } from "./components/shelterAdd/ConfirmPetAddition";
 import { getDatabase, ref, child, set as firebaseSet, get } from 'firebase/database'
 
 function App() {
-    // =======
-    // auth stuff
+    
     const [currentUser, setCurrentUser] = useState(undefined);
     const [uid, setUid] = useState(undefined);
     const [pets, setPets] = useState(undefined);
@@ -25,8 +24,9 @@ function App() {
     const [currentBreeds, setCurrentBreeds] = useState(undefined);
     const db = getDatabase();
 
+    //get pets object from db
     const reloadPet = () => {
-      // Get a database reference to our posts
+      // Get a database reference 
       const dbRef = ref(getDatabase()); //all the object
       get(child(dbRef, "pets")).then((snapshot) => {
         let allThePets = snapshot.val();
@@ -36,8 +36,9 @@ function App() {
       });
     }
 
+    //get breeds object from db
     const reloadBreeds = () => {
-      // Get a database reference to our posts
+      // Get a database reference 
       const dbRef = ref(getDatabase());
       get(child(dbRef, "breeds")).then((snapshot) => {
         let allTheBreeds = snapshot.val();
@@ -48,12 +49,14 @@ function App() {
     }
 
     
-
+    
     useEffect(() => {
       const auth = getAuth();
       reloadPet();
       reloadBreeds();
 
+      // =======
+      // auth stuff
       //addEventListener("loginEvent", () => {})
       const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
         if(firebaseUser){ //have a user
@@ -80,6 +83,7 @@ function App() {
       }
     }, [db])
 
+    //create a object for new user 
     const addNewUser = (user) => {
       return {
         name: user.displayName,
@@ -98,6 +102,7 @@ function App() {
     let [currentSpecies, setCurrentSpecies] = useState(null);
     let [currentBreed, setCurrentBreed] = useState(null);
 
+    //callback function on the current species and breed
     const handleCurrentSpecies = (species) => {
       setCurrentSpecies(species);
       setCurrentBreed(null);

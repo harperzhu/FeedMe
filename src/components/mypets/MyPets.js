@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 
+// create cards that contains only the pets user
 function MyLikedPetCard(props) {
   const [redirectTo, setredirectTo] = useState();
 
@@ -28,6 +29,7 @@ function MyLikedPetCard(props) {
   }
 }
 
+// create single card that contains a pet 
 function MyPets(props) {
   const likedPets = props.user.PetLikes;
   const pets = props.pets;

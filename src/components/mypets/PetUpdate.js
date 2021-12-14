@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams} from 'react-router-dom';
 
+// create the card that contains the update images of the current pet
 function MyLikedPetCard(props) {
   let update = props.update;
 

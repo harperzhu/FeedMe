@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDatabase, ref, update as firebaseUpdate, onValue  } from 'firebase/database'
 
+//create page profile that shows information about the current pet
 export function Profile(props) {
   const { name } = useParams();
   if(props.pets === undefined){
