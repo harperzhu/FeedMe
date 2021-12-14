@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 * {
     box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
     height: 100%;
-  }
+}
 
 body {
     font-family: 'Ubuntu', sans-serif;
@@ -17,8 +18,12 @@ body {
     flex: 1;
 }
 
+#about-main {
+    flex-direction: column;
+}
+
 main {
-  flex: 1;
+    flex: 1;
 }
 
 button {
@@ -26,17 +31,17 @@ button {
     align-self: center;
     width: 10rem;
     font-size: 1rem;
-    padding:0.46em 1.6em;
-    border:0.1em solid #cc8561;
-    margin:0 0.2em 2em 0rem;
-    border-radius:0.5em;
+    padding: 0.46em 1.6em;
+    border: 0.1em solid #cc8561;
+    margin: 0 0.2em 2em 0rem;
+    border-radius: 0.5em;
     background-color: white;
-    color:#cc8561;
+    color: #cc8561;
     transition: all 0.15s;
 }
 
-button:hover{
-  background-color: #f7e1d6;
+button:hover {
+    background-color: #f7e1d6;
 }
 
 a:link {
@@ -49,98 +54,98 @@ a:visited {
     color: #cc8561;
 }
 
-/* Cover  */
-.cover-img {
-  height: 100vh;
-  text-align: center;
-  color: white;
-  background-image: url("./css-img/goldens-holding-food-bowls.jpeg");
-  background-size: cover;
-  flex-direction: column;
+#cover-img {
+    height: 100vh;
+    text-align: center;
+    color: white;
+    background-image: url("./css-img/goldens-holding-food-bowls.jpeg");
+    background-size: cover;
+    flex-direction: column;
+    /* display: none; */
 }
 
-.cover-img h1 {
-  font-size: 20vh;
-  padding-top: 30vh;
-  margin-bottom: 0;
+#cover-img h1 {
+    font-size: 20vh;
+    padding-top: 30vh;
+    margin-bottom: 0;
 }
 
-.header-update h1{
+.header-update h1 {
     font-size: 20vh;
     margin-top: 10vh;
     margin-bottom: 0;
-  }
-
-.cover-img h1, .cover-img p {
-  text-shadow: .5vh .5vh .2vh #cc8561;
-  font-family: 'East Sea Dokdo', cursive;
-  text-align: center;
-  color: white;
 }
 
-.cover-img p {
+#cover-img h1,
+#cover-img p {
+    text-shadow: .5vh .5vh .2vh #cc8561;
+    font-family: 'East Sea Dokdo', cursive;
+    text-align: center;
+    color: white;
+}
+
+#cover-img p {
     margin-top: 0;
     font-size: 7vh;
 }
 
-/* PetList page */
-.petList {
-  background-color: #e3dad0;
+#petList {
+    background-color: #e3dad0;
 }
 
 .item {
-  background-color: #e3dad0;
+    background-color: #e3dad0;
 }
 
 .profile-cards {
-  display: flex;
-  flex: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: #E3DAD0;
+    display: flex;
+    flex: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #E3DAD0;
 }
 
 .pet-card {
-  text-align: center;
-  background-color: white;
-  padding: .5rem;
-  margin: .5rem;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    text-align: center;
+    background-color: white;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
 }
 
 .pet-name {
-  font-size: 2rem;
-  margin-top: 1rem;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 
 .pet-content {
-  margin-top: 0;
+    margin-top: 0;
 }
 
-.meals-left, .feed-me {
-  color: #cc8561;
-  text-align: center;
-  font-size: 1.5rem;
+.meals-left,
+.feed-me {
+    color: #cc8561;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .meals-left {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .feed-me {
-  font-size: 1.1rem;
+    font-size: 1.1rem;
 }
 
-.petList .pet-image {
+#petList .pet-image {
     height: 20rem;
 }
 
 .pet-image {
-  height: 18rem;
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 0rem;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0rem;
 }
 
 .navbar {
@@ -149,7 +154,7 @@ a:visited {
     top: 0;
     left: 0;
     width: 100%;
-    background-color:#cc8561;
+    background-color: #cc8561;
     box-shadow: 1px 2px grey;
 }
 
@@ -159,14 +164,13 @@ a:visited {
     display: inline;
 }
 
-
 .navbar a {
     font-size: 1.2rem;
     color: #344960;
     padding: 0 0.7rem;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #32485f;
 }
 
@@ -176,6 +180,9 @@ a:visited {
     margin: 0;
 }
 
+#sign-in-btn a {
+    color: white;
+}
 
 footer {
     bottom: 0;
@@ -184,6 +191,11 @@ footer {
     text-align: left;
     color: white;
     background-color: #344960;
+}
+
+#contact-info a {
+    text-decoration: none;
+    color: white;
 }
 
 .contact-info p:last-child {
@@ -196,83 +208,60 @@ footer p:last-child {
 }
 
 .material-icons {
-    display:inline-block;
+    display: inline-block;
     vertical-align: middle;
     margin-right: 0.3rem;
 }
 
-.introduction h2, .description h2, .contact-info h2 {
+.introduction h2,
+.description h2,
+.contact-info h2 {
     color: #344960;
     font-weight: 300;
     padding-top: 1.5rem;
 }
 
-.introduction, .description, .contact-info {
+.introduction,
+.description,
+.contact-info {
     padding-left: 10%;
     padding-right: 10%;
 }
 
-.donation-page{
+.moreinfo-page {
     display: flex;
-    flex:1;
+    flex: 1;
     flex-direction: row;
     background-color: red;
 }
 
-.donation-window{
-    display: flex;
-    flex:1;
-    flex-direction: column;
-}
 
 main {
     display: flex;
     flex-direction: row;
 }
 
-
-.individual-profile{
+.individual-profile {
     display: flex;
-    flex:1;
+    flex: 1;
     flex-direction: column;
 }
 
 
-.donation-window {
-    width: 100%;
-    min-height: 100%;
-    image-rendering: crisp-edges;
-    display: flex;
-    width: 70%;
-}
 
-.donation-steps {
-    display: flex;
-    height: fit-content;
-    overflow: hidden;
-    display: flex;
-    flex:1;
-    overflow: hidden;
-    text-align: center;
-    padding-right: 10%;
-    padding-left:20%;
-    justify-content: center;
-    align-items: center;
-}
-
-.individual-profile{
+.individual-profile {
     background-color: #E3DAD0;
     display: flex;
-
 }
 
-.card-text b{
-    color:#8C7B6E;
-    font-family:"Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif
+.card-text b {
+    color: #8C7B6E;
+    font-family: "Museo Slab 700", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", sans-serif
 }
 
-.progress-buttons .donate{
-    background-color: #877471; /* Green */
+.progress-buttons .donate {
+    background-color: #877471;
+    /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -283,12 +272,11 @@ main {
     margin-bottom: 5%;
 }
 
-.progress-buttons{
-    padding:10px 250px;
+.progress-buttons {
+    padding: 10px 250px;
 }
 
-
-#formSubmitButton{
+#formSubmitButton {
     font-family: 'Ubuntu', sans-serif;
     align-self: center;
     width: 10rem;
@@ -300,8 +288,7 @@ main {
     background-color: white;
     color: #cc8561;
     transition: all 0.15s;
-  }
-
+}
 
 
 /* .profile-background-wrapper{
@@ -309,49 +296,29 @@ main {
 
 } */
 
-.picture{
+.picture {
     display: flex;
     justify-content: center;
     padding: 2%;
     height: 35rem;
 }
 
-.card-text{
+.card-text {
     text-align: center;
     margin-bottom: 5%;
 }
 
-.card-title{
+.card-title {
     text-align: center;
-}
-
-.donation-button-wrapper{
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.donation-window h1{
-    text-align: center;
-}
-
-.donation-slogan-text p{
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-shrink: 1;
-    text-size-adjust: 100%;
-    font-size: 100%;
 }
 
 
 /*for mobile screen up to 575px*/
-@media screen and (max-width: 575px){
 
-    .payment-amount .form-type-radio input{
+@media screen and (max-width: 575px) {
+    .payment-amount .form-type-radio input {
         display: none;
-      /* background-color: #344960;
+        /* background-color: #344960;
       color: white;
       font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
       -webkit-border-radius: 5px;
@@ -360,39 +327,26 @@ main {
       justify-content: center;
       font-size: 100%;
       text-align: center;   */
-
-  }
-
-  .card-text b{
-      display: flex;
-  }
-
+    }
+    .card-text b {
+        display: flex;
+    }
 }
 
-  /*for destop screen larger than 575px*/
 
-@media screen and (min-width: 575px){
-    .header-img, .img-fluid {
+/*for destop screen larger than 575px*/
+
+@media screen and (min-width: 575px) {
+    .header-img,
+    .img-fluid {
         display: inline-block;
     }
-    .donation-steps{
-        display: flex;
-        height: fit-content;
-        overflow: hidden;
-        display: flex;
-        flex:1;
-        overflow: hidden;
-        text-align: center;
-        padding-right: 12.5%;
-        padding-left:25%;
-        justify-content: center;
-        align-items: center;
-    }
-    .payment-amount .custom-amount input{
+
+    .payment-amount .custom-amount input {
         width: 60%;
         height: 60%;
         flex-direction: column;
-        align-items:baseline;
+        align-items: baseline;
         flex-wrap: wrap;
         justify-content: center;
         background-color: #344960;
@@ -403,25 +357,24 @@ main {
         padding: 20px;
         margin: 30px 30px;
         border: 80px;
-        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+        font-family: "Museo Slab 700", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", sans-serif;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         cursor: pointer;
     }
-    .payment-amount{
+    .payment-amount {
         display: flex;
-        flex:1;
+        flex: 1;
         flex-shrink: 1;
         flex-wrap: wrap;
-        background-color:white;
+        background-color: white;
     }
-
     .payment-amount .form-type-radio input {
         width: 60%;
         height: 60%;
         flex-direction: column;
-        align-items:baseline;
+        align-items: baseline;
         flex-wrap: wrap;
         justify-content: center;
         background-color: #344960;
@@ -433,30 +386,26 @@ main {
         padding: 20px;
         margin: 30px 30px;
         border: 80px;
-        font-family: "Museo Slab 700","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+        font-family: "Museo Slab 700", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", sans-serif;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         cursor: pointer;
     }
-
-#filters button{
-    margin-left: 15vw;
-    margin-top: 10vh;
-    background-color: #344960;
-    border-width: 0;
-}
-
-#clear {
-    /* margin-top: 10vh; */
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1.25rem;
-    border-radius: 0.3rem;
-}
-
-.card-text .material-icons {
-    font-size: 4rem;
-}
-
+    #filters button {
+        margin-left: 15vw;
+        margin-top: 10vh;
+        background-color: #344960;
+        border-width: 0;
+    }
+    #clear {
+        /* margin-top: 10vh; */
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        border-radius: 0.3rem;
+    }
+    .card-text .material-icons {
+        font-size: 4rem;
+    }
 }

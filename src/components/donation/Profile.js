@@ -9,7 +9,7 @@ export function Profile(props) {
   let currentPetObj = props.pets[petName];
 
   return (
-    <div className="donation-page">
+    <div className="moreinfo-page">
       <div className="individual-profile">
         <div className="profile-background-wrapper container-fluid pt-4">
           <div className="row">
