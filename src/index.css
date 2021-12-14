@@ -270,23 +270,10 @@ footer p:last-child {
     text-align: center;
 }
 
-<<<<<<< HEAD
-
-/*for mobile screen up to 575px*/
-@media screen and (max-width: 575px){
-  .card-text b{
-      display: flex;
-  }
-
-}
-
-
-=======
 .card-text b{
       display: flex;
   }
 
->>>>>>> b28f187 (image credits done)
 /*for destop screen larger than 575px*/
 
 @media screen and (min-width: 575px){
