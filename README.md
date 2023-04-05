@@ -97,7 +97,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
-* [![HTML][HTML.com]][HTML-url]
+* [![firebase][firebase.com]][firebase-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -198,7 +198,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Harper Zhu - harperzhu@yahoo.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
@@ -247,8 +247,10 @@ Use this space to list resources you find helpful and would like to give credit 
 [Vue-url]: https://vuejs.org/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
-[HTML.io]:https://img.shields.io/badge/HTML-e34c26?style=for-the-badge&logo=HTML5&logoColor=white
-[HTML-url]:https://html.com/
+
+[firebase.com]:https://img.shields.io/badge/firebase-FFCB2B?style=for-the-badge&logo=firebase&logoColor=white
+[firebase-url]:https://firebase.google.com/
+
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
