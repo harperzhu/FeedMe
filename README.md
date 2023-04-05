@@ -98,6 +98,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 * [![firebase][firebase.com]][firebase-url]
+* [![heroku][heroku.com]][heroku-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -250,6 +251,10 @@ Use this space to list resources you find helpful and would like to give credit 
 
 [firebase.com]:https://img.shields.io/badge/firebase-FFCB2B?style=for-the-badge&logo=firebase&logoColor=white
 [firebase-url]:https://firebase.google.com/
+
+[heroku.com]:https://img.shields.io/badge/heroku-6567a5?style=for-the-badge&logo=heroku&logoColor=white
+[heroku-url]:https://www.heroku.com/
+
 
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
