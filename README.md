@@ -100,6 +100,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![firebase][firebase.com]][firebase-url]
 * [![heroku][heroku.com]][heroku-url]
 * [![express][express.com]][express-url]
+* [![figma][figma.com]][figma-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -259,6 +260,15 @@ Use this space to list resources you find helpful and would like to give credit 
 [express.com]:https://img.shields.io/badge/Express-303030?style=for-the-badge&logo=express&logoColor=white
 [express-url]:https://expressjs.com/
 
+
+[figma.com]:https://img.shields.io/badge/Figma-00BEFF?style=for-the-badge&logo=figma&logoColor=white
+[figma-url]:https://www.figma.com/
+
+[Azure.com]:https://img.shields.io/badge/Azure-007FFF?style=for-the-badge&logo=Microsoftazure&logoColor=white
+[Azure-url]:https://azure.microsoft.com/en-us
+
+[websocket.com]:https://img.shields.io/badge/WebSocket-007FFF?style=for-the-badge&logo=logo-image/websocket-logo.jpg&logoColor=white
+[websocket-url]:https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
 
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
