@@ -1,6 +1,5 @@
 {
   "projects": {
-    "feedme": "feedme-6f956"
-  },
-  "targets": {}
+    "default": "feedme-97f21"
+  }
 }
