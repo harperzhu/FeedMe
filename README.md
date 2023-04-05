@@ -99,6 +99,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![JQuery][JQuery.com]][JQuery-url]
 * [![firebase][firebase.com]][firebase-url]
 * [![heroku][heroku.com]][heroku-url]
+* [![express][express.com]][express-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -254,6 +255,9 @@ Use this space to list resources you find helpful and would like to give credit 
 
 [heroku.com]:https://img.shields.io/badge/heroku-6567a5?style=for-the-badge&logo=heroku&logoColor=white
 [heroku-url]:https://www.heroku.com/
+
+[express.com]:https://img.shields.io/badge/Express-303030?style=for-the-badge&logo=express&logoColor=white
+[express-url]:https://expressjs.com/
 
 
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
