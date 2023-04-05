@@ -101,6 +101,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![heroku][heroku.com]][heroku-url]
 * [![express][express.com]][express-url]
 * [![figma][figma.com]][figma-url]
+* [![websocket][websocket.com]][websocket-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
